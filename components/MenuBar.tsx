@@ -17,6 +17,8 @@ export default function MenuBar() {
         redOffset={0}
         greenOffset={0}
         blueOffset={0}
+        xChannel="R"
+        yChannel="R"
         className="menu-bar"
       >
         <div className="menu-bar__content">
