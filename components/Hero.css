@@ -57,10 +57,10 @@
   border: 0;
   background: transparent;
   color: #fff;
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-family: var(--font-rubik), var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   cursor: pointer;
 }
 
