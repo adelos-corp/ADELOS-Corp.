@@ -37,7 +37,7 @@ export default function Home() {
 
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero__content">
-          {introComplete && (
+          {introComplete ? (
             <div className="hero__text">
               <SplitText
                 text="ADELOS Corp."
@@ -59,6 +59,13 @@ export default function Home() {
                 threshold={0.1}
                 rootMargin="-100px"
               />
+            </div>
+          ) : (
+            <div className="hero__text hero__text--placeholder" aria-hidden="true">
+              <h1 className="hero__title">ADELOS Corp.</h1>
+              <p className="hero__subtitle">
+                Advanced Distributed Evolution of Logic Operating Systems
+              </p>
             </div>
           )}
 
