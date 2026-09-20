@@ -6,7 +6,7 @@ import "./MenuBar.css";
 
 const rubik = Rubik({ weight: "700", subsets: ["latin"] });
 
-const menuItems = ["Home", "Contact", "Preferences"];
+const menuItems = ["Contact", "Preferences"];
 
 export default function MenuBar() {
   return (
