@@ -12,16 +12,6 @@ export default function MenuBar() {
         width="100%"
         height={64}
         borderRadius={18}
-        brightness={50}
-        opacity={0.3}
-        blur={5}
-        displace={0.8}
-        backgroundOpacity={0.015}
-        saturation={1.08}
-        distortionScale={-70}
-        redOffset={0}
-        greenOffset={3}
-        blueOffset={6}
         className="menu-bar"
       >
         <div className="menu-bar__content">
