@@ -30,7 +30,13 @@ export default function MenuBar() {
         className="menu-bar"
       >
         <div className="menu-bar__content">
-          <div className="menu-bar__brand">adelOS</div>
+          <button
+            type="button"
+            className="menu-bar__home"
+            aria-label="ADELOS home"
+          >
+            <img src="/adelos-logo.svg" alt="" />
+          </button>
           <nav className="menu-bar__nav" aria-label="Primary navigation">
             {menuItems.map((item) => (
               <button key={item} type="button" className="menu-bar__item">
