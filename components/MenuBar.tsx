@@ -26,6 +26,7 @@ export default function MenuBar() {
         xChannel="R"
         yChannel="G"
         mixBlendMode="difference"
+        chromaticAberration={false}
         className="menu-bar"
       >        <div className="menu-bar__content">
           <div className="menu-bar__brand">adelOS</div>
