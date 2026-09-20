@@ -3,6 +3,7 @@
 import LightPillar from "@/components/LightPillar";
 import MenuBar from "@/components/MenuBar";
 import SplitText from "@/components/SplitText";
+import GlassSurface from "@/components/GlassSurface";
 import "@/components/Hero.css";
 
 export default function Home() {
