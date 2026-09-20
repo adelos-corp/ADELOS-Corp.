@@ -18,7 +18,7 @@ export default function MenuBar() {
         blur={11}
         displace={0.5}
         backgroundOpacity={0.1}
-        saturation={1}
+        saturation={1.7}
         distortionScale={-180}
         redOffset={0}
         greenOffset={10}
