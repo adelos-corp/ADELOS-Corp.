@@ -1,6 +1,7 @@
 "use client";
 
 import { Rubik } from "next/font/google";
+import Link from "next/link";
 import GlassSurface from "@/components/GlassSurface";
 import "./MenuBar.css";
 
@@ -33,13 +34,13 @@ export default function MenuBar() {
         className="menu-bar"
       >
         <div className="menu-bar__content">
-          <button
-            type="button"
+          <Link
+            href="/"
             className="menu-bar__home"
             aria-label="ADELOS home"
           >
-            <img src="/adelos-logo.svg" alt="" />
-          </button>
+            <img src="/adelos-logo.svg" alt="ADELOS" />
+          </Link>
           <nav className={`menu-bar__nav ${rubik.className}`} aria-label="Primary navigation">
             {menuItems.map((item) => (
               <button key={item} type="button" className="menu-bar__item">
