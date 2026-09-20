@@ -47,6 +47,32 @@ export default function Home() {
             threshold={0.1}
             rootMargin="-100px"
           />
+
+          <GlassSurface
+            width={150}
+            height={48}
+            borderRadius={50}
+            borderWidth={0.07}
+            brightness={50}
+            opacity={0.93}
+            blur={11}
+            displace={0.5}
+            backgroundOpacity={0.1}
+            saturation={1.7}
+            distortionScale={-180}
+            redOffset={0}
+            greenOffset={10}
+            blueOffset={20}
+            xChannel="R"
+            yChannel="G"
+            mixBlendMode="difference"
+            chromaticAberration={false}
+            className="hero__explore"
+          >
+            <button type="button" className="hero__explore-button">
+              Explore
+            </button>
+          </GlassSurface>
         </div>
       </section>
     </main>
