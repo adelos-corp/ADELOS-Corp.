@@ -31,8 +31,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 38px;
+  height: 38px;
   padding: 0;
   border: 0;
   background: transparent;
@@ -43,8 +43,8 @@
 
 .menu-bar__home img {
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
 }
 
@@ -108,13 +108,13 @@
   }
 
   .menu-bar__home {
-    width: 26px;
-    height: 26px;
+    width: 34px;
+    height: 34px;
   }
 
   .menu-bar__home img {
-    width: 20px;
-    height: 20px;
+    width: 27px;
+    height: 27px;
   }
 
   .menu-bar__nav {
