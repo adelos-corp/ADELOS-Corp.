@@ -5,6 +5,37 @@ import MenuBar from "@/components/MenuBar";
 import GlassSurface from "@/components/GlassSurface";
 import "@/components/Products.css";
 
+const products = [
+  { name: "VISA", stage: "prototype stage", tone: "prototype" },
+  { name: "William Graham", stage: "refinement stage", tone: "refinement" },
+  { name: "Studenthome", stage: "prototype stage", tone: "prototype" },
+  { name: "QESA", stage: "research stage", tone: "research" },
+  { name: "TENSA", stage: "research stage", tone: "research" },
+  { name: "HISA", stage: "research stage", tone: "research" },
+  { name: "CODELOS", stage: "prototype stage", tone: "prototype" },
+];
+
+const glassProps = {
+  width: "100%" as const,
+  height: 220,
+  borderRadius: 36,
+  borderWidth: 0.025,
+  brightness: 45,
+  opacity: 0.9,
+  blur: 7,
+  displace: 0.16,
+  backgroundOpacity: 0.055,
+  saturation: 1.2,
+  distortionScale: -70,
+  redOffset: 0,
+  greenOffset: 10,
+  blueOffset: 20,
+  xChannel: "R" as const,
+  yChannel: "G" as const,
+  mixBlendMode: "difference" as const,
+  chromaticAberration: false,
+};
+
 export default function ProductsPage() {
   return (
     <main className="relative h-screen w-screen overflow-hidden bg-black products-page">
@@ -32,117 +63,20 @@ export default function ProductsPage() {
         </div>
 
         <div className="products-grid">
-          <GlassSurface
-            width="100%"
-            height={220}
-            borderRadius={36}
-            borderWidth={0.025}
-            brightness={45}
-            opacity={0.9}
-            blur={7}
-            displace={0.16}
-            backgroundOpacity={0.055}
-            saturation={1.2}
-            distortionScale={-70}
-            redOffset={0}
-            greenOffset={10}
-            blueOffset={20}
-            xChannel="R"
-            yChannel="G"
-            mixBlendMode="difference"
-            chromaticAberration={false}
-            className="product-card"
-          >
-            <div className="product-card__content">
-              <span className="product-card__label">PRODUCT</span>
-              <h2>William Graham</h2>
-              <p>Personalized intelligence, built around the individual.</p>
-            </div>
-          </GlassSurface>
-
-          <GlassSurface
-            width="100%"
-            height={220}
-            borderRadius={36}
-            borderWidth={0.025}
-            brightness={45}
-            opacity={0.9}
-            blur={7}
-            displace={0.16}
-            backgroundOpacity={0.055}
-            saturation={1.2}
-            distortionScale={-70}
-            redOffset={0}
-            greenOffset={10}
-            blueOffset={20}
-            xChannel="R"
-            yChannel="G"
-            mixBlendMode="difference"
-            chromaticAberration={false}
-            className="product-card"
-          >
-            <div className="product-card__content">
-              <span className="product-card__label">PRODUCT</span>
-              <h2>Studenthome</h2>
-              <p>A digital environment designed around student life.</p>
-            </div>
-          </GlassSurface>
-
-          <GlassSurface
-            width="100%"
-            height={220}
-            borderRadius={36}
-            borderWidth={0.025}
-            brightness={45}
-            opacity={0.9}
-            blur={7}
-            displace={0.16}
-            backgroundOpacity={0.055}
-            saturation={1.2}
-            distortionScale={-70}
-            redOffset={0}
-            greenOffset={10}
-            blueOffset={20}
-            xChannel="R"
-            yChannel="G"
-            mixBlendMode="difference"
-            chromaticAberration={false}
-            className="product-card"
-          >
-            <div className="product-card__content">
-              <span className="product-card__label">PRODUCT</span>
-              <h2>Daemon</h2>
-              <p>Developer tooling for building, testing, and shipping software.</p>
-            </div>
-          </GlassSurface>
-
-          <GlassSurface
-            width="100%"
-            height={220}
-            borderRadius={36}
-            borderWidth={0.025}
-            brightness={45}
-            opacity={0.9}
-            blur={7}
-            displace={0.16}
-            backgroundOpacity={0.055}
-            saturation={1.2}
-            distortionScale={-70}
-            redOffset={0}
-            greenOffset={10}
-            blueOffset={20}
-            xChannel="R"
-            yChannel="G"
-            mixBlendMode="difference"
-            chromaticAberration={false}
-            className="product-card"
-          >
-            <div className="product-card__content">
-              <span className="product-card__label">PRODUCT</span>
-              <h2>VISA</h2>
-              <p>Visual Intelligence Systems Architecture.</p>
-            </div>
-          </GlassSurface>
+          {products.map((product) => (
+            <GlassSurface
+              key={product.name}
+              {...glassProps}
+              className="product-card"
+            >
+              <div className="product-card__content">
+                <span className={`product-card__stage product-card__stage--${product.tone}`}>
+                  {product.stage}
+                </span>
+                <h2>{product.name}</h2>
+              </div>
+            </GlassSurface>
+          ))}
         </div>
       </section>
     </main>
