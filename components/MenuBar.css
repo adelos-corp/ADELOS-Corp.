@@ -26,12 +26,34 @@
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
-.menu-bar__brand {
+.menu-bar__home {
   justify-self: start;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: lowercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: opacity 160ms ease, background-color 160ms ease;
+}
+
+.menu-bar__home img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.menu-bar__home:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.menu-bar__home:active {
+  opacity: 0.72;
 }
 
 .menu-bar__nav {
@@ -83,6 +105,16 @@
   .menu-bar__content {
     grid-template-columns: auto 1fr;
     padding: 0 12px;
+  }
+
+  .menu-bar__home {
+    width: 26px;
+    height: 26px;
+  }
+
+  .menu-bar__home img {
+    width: 20px;
+    height: 20px;
   }
 
   .menu-bar__nav {
