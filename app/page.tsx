@@ -3,7 +3,7 @@
 import LightPillar from "@/components/LightPillar";
 import MenuBar from "@/components/MenuBar";
 import SplitText from "@/components/SplitText";
-import "./Hero.css";
+import "@/components/Hero.css";
 
 export default function Home() {
   return (
