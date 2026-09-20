@@ -10,8 +10,8 @@ export default function MenuBar() {
     <div className="menu-bar-wrap">
       <GlassSurface
         width="100%"
-        height={60}
-        borderRadius={50}
+        height={42}
+        borderRadius={35}
         borderWidth={0.07}
         brightness={50}
         opacity={0.93}
@@ -28,7 +28,8 @@ export default function MenuBar() {
         mixBlendMode="difference"
         chromaticAberration={false}
         className="menu-bar"
-      >        <div className="menu-bar__content">
+      >
+        <div className="menu-bar__content">
           <div className="menu-bar__brand">adelOS</div>
           <nav className="menu-bar__nav" aria-label="Primary navigation">
             {menuItems.map((item) => (
