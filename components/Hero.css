@@ -16,6 +16,10 @@
   display: contents;
 }
 
+.hero__text--placeholder {
+  visibility: hidden;
+}
+
 .hero {
   position: absolute;
   inset: 0;
