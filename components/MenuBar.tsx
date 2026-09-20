@@ -10,8 +10,13 @@ export default function MenuBar() {
     <div className="menu-bar-wrap">
       <GlassSurface
         width="100%"
-        height={64}
-        borderRadius={18}
+        height={60}
+        borderRadius={12}
+        borderWidth={0.035}
+        distortionScale={-42}
+        redOffset={0}
+        greenOffset={0}
+        blueOffset={0}
         className="menu-bar"
       >
         <div className="menu-bar__content">
