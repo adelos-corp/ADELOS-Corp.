@@ -1,9 +1,12 @@
 "use client";
 
+import { Rubik } from "next/font/google";
 import GlassSurface from "@/components/GlassSurface";
 import "./MenuBar.css";
 
-const menuItems = ["System", "Research", "Projects"];
+const rubik = Rubik({ weight: "700", subsets: ["latin"] });
+
+const menuItems = ["Home", "Contact", "Preferences"];
 
 export default function MenuBar() {
   return (
@@ -37,7 +40,7 @@ export default function MenuBar() {
           >
             <img src="/adelos-logo.svg" alt="" />
           </button>
-          <nav className="menu-bar__nav" aria-label="Primary navigation">
+          <nav className={`menu-bar__nav ${rubik.className}`} aria-label="Primary navigation">
             {menuItems.map((item) => (
               <button key={item} type="button" className="menu-bar__item">
                 {item}
