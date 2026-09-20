@@ -1,6 +1,7 @@
 "use client";
 
 import { Rubik } from "next/font/google";
+import Link from "next/link";
 import LightPillar from "@/components/LightPillar";
 import MenuBar from "@/components/MenuBar";
 import SplitText from "@/components/SplitText";
@@ -73,9 +74,12 @@ export default function Home() {
             chromaticAberration={false}
             className="hero__explore"
           >
-            <button type="button" className={`hero__explore-button ${rubik.className}`}>
+            <Link
+              href="/products"
+              className={`hero__explore-button ${rubik.className}`}
+            >
               Explore
-            </button>
+            </Link>
           </GlassSurface>
         </div>
       </section>
