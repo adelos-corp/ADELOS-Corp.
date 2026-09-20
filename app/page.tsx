@@ -14,8 +14,8 @@ export default function Home() {
     <main className="relative h-screen w-screen overflow-hidden bg-black">
       <MenuBar />
       <LightPillar
-        topColor="#06b6d4"
-        bottomColor="#7c3aed"
+        topColor="#5227ff"
+        bottomColor="#ff9ffc"
         intensity={1}
         rotationSpeed={0.9}
         interactive={false}
