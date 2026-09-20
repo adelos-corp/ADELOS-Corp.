@@ -10,8 +10,8 @@ export default function MenuBar() {
     <div className="menu-bar-wrap">
       <GlassSurface
         width="100%"
-        height={42}
-        borderRadius={35}
+        height={60}
+        borderRadius={50}
         borderWidth={0.07}
         brightness={50}
         opacity={0.93}
