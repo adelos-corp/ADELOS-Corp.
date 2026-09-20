@@ -17,7 +17,7 @@
 
 .menu-bar__content {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
   width: 100%;
   height: 100%;
@@ -66,7 +66,7 @@
   align-items: center;
   grid-column: 2;
   justify-content: flex-end;
-  gap: 4px;
+  gap: 0;
 }
 
 .menu-bar__item {
@@ -74,10 +74,10 @@
   border: 0;
   background: transparent;
   color: #fff;
-  padding: 9px 15px;
+  padding: 9px 10px;
   border-radius: 10px;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.06em;
   cursor: pointer;
@@ -91,13 +91,6 @@
   background: rgba(255, 255, 255, 0.07);
 }
 
-.menu-bar__status {
-  justify-self: end;
-  font-size: 8px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.34);
-}
 
 @media (max-width: 720px) {
   .menu-bar-wrap {
@@ -130,11 +123,8 @@
   }
 
   .menu-bar__item {
-    padding: 7px 8px;
-    font-size: 11px;
+    padding: 7px 7px;
+    font-size: 13px;
   }
 
-  .menu-bar__status {
-    display: none;
-  }
 }
