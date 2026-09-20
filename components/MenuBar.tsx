@@ -47,7 +47,6 @@ export default function MenuBar() {
               </button>
             ))}
           </nav>
-          <div className="menu-bar__status">ADELOS</div>
         </div>
       </GlassSurface>
     </div>
