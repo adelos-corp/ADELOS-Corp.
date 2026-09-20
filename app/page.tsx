@@ -2,6 +2,8 @@
 
 import LightPillar from "@/components/LightPillar";
 import MenuBar from "@/components/MenuBar";
+import SplitText from "@/components/SplitText";
+import "./Hero.css";
 
 export default function Home() {
   return (
@@ -22,6 +24,31 @@ export default function Home() {
         quality="high"
         lightMode={false}
       />
+
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="hero__content">
+          <SplitText
+            text="ADELOS Corp."
+            className="hero__title"
+            tag="h1"
+            delay={45}
+            duration={1.25}
+            splitType="chars"
+            threshold={0.1}
+            rootMargin="-100px"
+          />
+          <SplitText
+            text="Advanced Distributed Evolution of Logic Operating Systems"
+            className="hero__subtitle"
+            tag="p"
+            delay={25}
+            duration={1.1}
+            splitType="chars"
+            threshold={0.1}
+            rootMargin="-100px"
+          />
+        </div>
+      </section>
     </main>
   );
 }
