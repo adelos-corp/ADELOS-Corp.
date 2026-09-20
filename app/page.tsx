@@ -45,7 +45,7 @@ export default function Home() {
             text="Advanced Distributed Evolution of Logic Operating Systems"
             className="hero__subtitle"
             tag="p"
-            delay={25}
+            delay={10}
             duration={1.1}
             splitType="chars"
             threshold={0.1}
