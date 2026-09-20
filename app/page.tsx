@@ -1,10 +1,13 @@
 "use client";
 
+import { Rubik } from "next/font/google";
 import LightPillar from "@/components/LightPillar";
 import MenuBar from "@/components/MenuBar";
 import SplitText from "@/components/SplitText";
 import GlassSurface from "@/components/GlassSurface";
 import "@/components/Hero.css";
+
+const rubik = Rubik({ weight: "700", subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -70,7 +73,7 @@ export default function Home() {
             chromaticAberration={false}
             className="hero__explore"
           >
-            <button type="button" className="hero__explore-button">
+            <button type="button" className={`hero__explore-button ${rubik.className}`}>
               Explore
             </button>
           </GlassSurface>
