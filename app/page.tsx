@@ -1,10 +1,12 @@
 "use client";
 
 import LightPillar from "@/components/LightPillar";
+import MenuBar from "@/components/MenuBar";
 
 export default function Home() {
   return (
     <main className="relative h-screen w-screen overflow-hidden bg-black">
+      <MenuBar />
       <LightPillar
         topColor="#06b6d4"
         bottomColor="#7c3aed"
