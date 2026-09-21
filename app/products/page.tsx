@@ -45,14 +45,15 @@ const borderGlowProps = {
 
 export default function ProductsPage() {
   const [williamHovered, setWilliamHovered] = useState(false);
+  const [visaHovered, setVisaHovered] = useState(false);
 
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden bg-black products-page">
       <MenuBar />
 
       <LightPillar
-        topColor="#5227ff"
-        bottomColor={williamHovered ? "#aa61ff" : "#ff9ffc"}
+        topColor={visaHovered ? "#27ff52" : "#5227ff"}
+        bottomColor={visaHovered ? "#f2ff61" : williamHovered ? "#aa61ff" : "#ff9ffc"}
         intensity={1}
         rotationSpeed={0.9}
         interactive={false}
@@ -82,8 +83,14 @@ export default function ProductsPage() {
               key={product.name}
               {...borderGlowProps}
               className="product-card"
-              onPointerEnter={() => product.name === "William Graham" && setWilliamHovered(true)}
-              onPointerLeave={() => product.name === "William Graham" && setWilliamHovered(false)}
+              onPointerEnter={() => {
+                if (product.name === "William Graham") setWilliamHovered(true);
+                if (product.name === "VISA") setVisaHovered(true);
+              }}
+              onPointerLeave={() => {
+                if (product.name === "William Graham") setWilliamHovered(false);
+                if (product.name === "VISA") setVisaHovered(false);
+              }}
             >
               <div className="product-card__magic">
                 <MagicBento
