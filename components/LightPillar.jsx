@@ -374,7 +374,23 @@ const LightPillar = ({
 
   useEffect(() => {
     if (!materialRef.current) return;
-    materialRef.current.uniforms.uIntensity.value = intensity;
+
+    const uniform = materialRef.current.uniforms.uIntensity;
+    const startValue = uniform.value;
+    const endValue = intensity;
+    const start = performance.now();
+    const duration = 1100;
+    let frame;
+
+    const tick = now => {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      uniform.value = startValue + (endValue - startValue) * eased;
+      if (t < 1) frame = requestAnimationFrame(tick);
+    };
+
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
   }, [intensity]);
 
   useEffect(() => {
@@ -384,7 +400,23 @@ const LightPillar = ({
 
   useEffect(() => {
     if (!materialRef.current) return;
-    materialRef.current.uniforms.uGlowAmount.value = glowAmount;
+
+    const uniform = materialRef.current.uniforms.uGlowAmount;
+    const startValue = uniform.value;
+    const endValue = glowAmount;
+    const start = performance.now();
+    const duration = 1100;
+    let frame;
+
+    const tick = now => {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      uniform.value = startValue + (endValue - startValue) * eased;
+      if (t < 1) frame = requestAnimationFrame(tick);
+    };
+
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
   }, [glowAmount]);
 
   useEffect(() => {
