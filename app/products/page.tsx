@@ -65,10 +65,10 @@ export default function ProductsPage() {
                 ? "#aa61ff"
                 : "#ff9ffc"
         }
-        intensity={1}
+        intensity={studenthomeHovered ? 1.5 : 1}
         rotationSpeed={0.9}
         interactive={false}
-        glowAmount={0.002}
+        glowAmount={studenthomeHovered ? 0.0045 : 0.002}
         pillarWidth={3}
         pillarHeight={0.3}
         noiseIntensity={0.5}
