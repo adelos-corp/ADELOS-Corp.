@@ -152,7 +152,8 @@
 .product-card__stage {
   position: absolute;
   top: 24px;
-  left: 24px;
+  right: 24px;
+  left: auto;
   padding: 7px 10px;
   border-radius: 6px;
   font-size: 0.58rem;
@@ -258,7 +259,8 @@
 
   .product-card__stage {
     top: 18px;
-    left: 18px;
+    right: 18px;
+    left: auto;
   }
 
   .product-card__arrow {
