@@ -22,7 +22,7 @@ const borderGlowProps = {
   edgeSensitivity: 34,
   coneSpread: 18,
   animated: false,
-  backgroundColor: "#111018",
+  backgroundColor: "rgba(17, 16, 24, 0.52)",
   colors: ["#5227ff", "#ff9ffc", "#38bdf8"],
   fillOpacity: 0.10,
 };
