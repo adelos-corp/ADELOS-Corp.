@@ -2,7 +2,7 @@
 
 import LightPillar from "@/components/LightPillar";
 import MenuBar from "@/components/MenuBar";
-import GlassSurface from "@/components/GlassSurface";
+import BorderGlow from "@/components/BorderGlow";
 import "@/components/Products.css";
 
 const products = [
@@ -15,25 +15,16 @@ const products = [
   { name: "CODELOS", stage: "prototype stage", tone: "prototype" },
 ];
 
-const glassProps = {
-  width: "100%" as const,
-  height: 220,
+const borderGlowProps = {
   borderRadius: 36,
-  borderWidth: 0.012,
-  brightness: 38,
-  opacity: 0.88,
-  blur: 50,
-  displace: 0.07,
-  backgroundOpacity: 0.12,
-  saturation: 1.05,
-  distortionScale: -35,
-  redOffset: 0,
-  greenOffset: 0,
-  blueOffset: 0,
-  xChannel: "R" as const,
-  yChannel: "G" as const,
-  mixBlendMode: "normal" as const,
-  chromaticAberration: false,
+  glowRadius: 40,
+  glowIntensity: 0.8,
+  edgeSensitivity: 24,
+  coneSpread: 25,
+  animated: false,
+  backgroundColor: "#120F17",
+  colors: ["#5227ff", "#ff9ffc", "#38bdf8"],
+  fillOpacity: 0.22,
 };
 
 export default function ProductsPage() {
@@ -66,9 +57,9 @@ export default function ProductsPage() {
 
         <div className="products-grid">
           {products.map((product) => (
-            <GlassSurface
+            <BorderGlow
               key={product.name}
-              {...glassProps}
+              {...borderGlowProps}
               className="product-card"
             >
               <div className="product-card__content">
@@ -77,7 +68,7 @@ export default function ProductsPage() {
                 </span>
                 <h2>{product.name}</h2>
               </div>
-            </GlassSurface>
+            </BorderGlow>
           ))}
         </div>
       </section>
