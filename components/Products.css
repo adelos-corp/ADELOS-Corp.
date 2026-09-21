@@ -2,12 +2,20 @@
   min-height: 100vh;
 }
 
+.products-page__background {
+  position: fixed !important;
+  inset: 0;
+  z-index: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  pointer-events: none;
+}
+
 .products-hero {
   position: relative;
   z-index: 10;
   min-height: 100vh;
   padding: 150px 48px 64px;
-  overflow-y: auto;
 }
 
 .products-hero__heading {
