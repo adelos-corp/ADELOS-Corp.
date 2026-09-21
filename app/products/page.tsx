@@ -105,7 +105,9 @@ export default function ProductsPage() {
                   ? "/products/visa"
                   : product.name === "William Graham"
                     ? "/products/william-graham"
-                    : "/products/studenthome"
+                    : product.name === "Studenthome"
+                    ? "/products/studenthome"
+                    : "#"
               }
               className="product-card-link"
             >
@@ -146,6 +148,9 @@ export default function ProductsPage() {
               </div>
 
               <div className="product-card__content">
+                {product.label && product.name === "Daemon" && (
+                  <span className="product-card__subtitle">{product.label}</span>
+                )}
                 <span className={`product-card__stage product-card__stage--${product.tone}`}>
                   {product.stage}
                 </span>
