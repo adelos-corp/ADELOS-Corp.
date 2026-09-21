@@ -57,8 +57,9 @@
   min-height: 340px;
   border: 0;
   box-shadow: none;
-  backdrop-filter: blur(18px) saturate(1.08);
-  -webkit-backdrop-filter: blur(18px) saturate(1.08);
+  transition: transform 180ms ease, background-color 180ms ease;
+  backdrop-filter: blur(14px) saturate(1.04);
+  -webkit-backdrop-filter: blur(14px) saturate(1.04);
 }
 
 .product-card__content {
