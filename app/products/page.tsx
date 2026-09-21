@@ -16,15 +16,15 @@ const products = [
 ];
 
 const borderGlowProps = {
-  borderRadius: 36,
-  glowRadius: 40,
-  glowIntensity: 0.8,
-  edgeSensitivity: 24,
-  coneSpread: 25,
+  borderRadius: 24,
+  glowRadius: 28,
+  glowIntensity: 0.55,
+  edgeSensitivity: 34,
+  coneSpread: 18,
   animated: false,
-  backgroundColor: "#120F17",
+  backgroundColor: "#111018",
   colors: ["#5227ff", "#ff9ffc", "#38bdf8"],
-  fillOpacity: 0.22,
+  fillOpacity: 0.10,
 };
 
 export default function ProductsPage() {
