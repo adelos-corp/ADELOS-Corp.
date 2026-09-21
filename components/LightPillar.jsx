@@ -334,7 +334,7 @@ const LightPillar = ({
     );
     let frame;
     const start = performance.now();
-    const duration = 650;
+    const duration = 1100;
 
     const tick = now => {
       const t = Math.min((now - start) / duration, 1);
@@ -358,7 +358,7 @@ const LightPillar = ({
     );
     let frame;
     const start = performance.now();
-    const duration = 650;
+    const duration = 1100;
 
     const tick = now => {
       const t = Math.min((now - start) / duration, 1);
