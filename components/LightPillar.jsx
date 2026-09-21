@@ -326,20 +326,50 @@ const LightPillar = ({
 
   useEffect(() => {
     if (!materialRef.current) return;
-    const parseColor = hex => {
-      const color = new THREE.Color(hex);
-      return new THREE.Vector3(color.r, color.g, color.b);
+    const target = new THREE.Color(topColor);
+    const current = new THREE.Color(
+      materialRef.current.uniforms.uTopColor.value.x,
+      materialRef.current.uniforms.uTopColor.value.y,
+      materialRef.current.uniforms.uTopColor.value.z
+    );
+    let frame;
+    const start = performance.now();
+    const duration = 650;
+
+    const tick = now => {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      const color = current.clone().lerp(target, eased);
+      materialRef.current.uniforms.uTopColor.value.set(color.r, color.g, color.b);
+      if (t < 1) frame = requestAnimationFrame(tick);
     };
-    materialRef.current.uniforms.uTopColor.value = parseColor(topColor);
+
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
   }, [topColor]);
 
   useEffect(() => {
     if (!materialRef.current) return;
-    const parseColor = hex => {
-      const color = new THREE.Color(hex);
-      return new THREE.Vector3(color.r, color.g, color.b);
+    const target = new THREE.Color(bottomColor);
+    const current = new THREE.Color(
+      materialRef.current.uniforms.uBottomColor.value.x,
+      materialRef.current.uniforms.uBottomColor.value.y,
+      materialRef.current.uniforms.uBottomColor.value.z
+    );
+    let frame;
+    const start = performance.now();
+    const duration = 650;
+
+    const tick = now => {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      const color = current.clone().lerp(target, eased);
+      materialRef.current.uniforms.uBottomColor.value.set(color.r, color.g, color.b);
+      if (t < 1) frame = requestAnimationFrame(tick);
     };
-    materialRef.current.uniforms.uBottomColor.value = parseColor(bottomColor);
+
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
   }, [bottomColor]);
 
   useEffect(() => {
