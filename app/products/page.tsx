@@ -9,10 +9,6 @@ const products = [
   { name: "VISA", stage: "prototype stage", tone: "prototype" },
   { name: "William Graham", stage: "refinement stage", tone: "refinement" },
   { name: "Studenthome", stage: "prototype stage", tone: "prototype" },
-  { name: "QESA", stage: "research stage", tone: "research" },
-  { name: "TENSA", stage: "research stage", tone: "research" },
-  { name: "HISA", stage: "research stage", tone: "research" },
-  { name: "CODELOS", stage: "prototype stage", tone: "prototype" },
 ];
 
 const borderGlowProps = {
