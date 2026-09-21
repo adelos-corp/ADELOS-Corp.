@@ -46,14 +46,25 @@ const borderGlowProps = {
 export default function ProductsPage() {
   const [williamHovered, setWilliamHovered] = useState(false);
   const [visaHovered, setVisaHovered] = useState(false);
+  const [studenthomeHovered, setStudenthomeHovered] = useState(false);
 
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden bg-black products-page">
       <MenuBar />
 
       <LightPillar
-        topColor={visaHovered ? "#27ff52" : "#5227ff"}
-        bottomColor={visaHovered ? "#f2ff61" : williamHovered ? "#aa61ff" : "#ff9ffc"}
+        topColor={
+          visaHovered ? "#27ff52" : studenthomeHovered ? "#010070" : "#5227ff"
+        }
+        bottomColor={
+          visaHovered
+            ? "#f2ff61"
+            : studenthomeHovered
+              ? "#6262a8"
+              : williamHovered
+                ? "#aa61ff"
+                : "#ff9ffc"
+        }
         intensity={1}
         rotationSpeed={0.9}
         interactive={false}
@@ -86,10 +97,12 @@ export default function ProductsPage() {
               onPointerEnter={() => {
                 if (product.name === "William Graham") setWilliamHovered(true);
                 if (product.name === "VISA") setVisaHovered(true);
+                if (product.name === "Studenthome") setStudenthomeHovered(true);
               }}
               onPointerLeave={() => {
                 if (product.name === "William Graham") setWilliamHovered(false);
                 if (product.name === "VISA") setVisaHovered(false);
+                if (product.name === "Studenthome") setStudenthomeHovered(false);
               }}
             >
               <div className="product-card__magic">
