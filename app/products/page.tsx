@@ -22,7 +22,7 @@ const glassProps = {
   borderWidth: 0.012,
   brightness: 38,
   opacity: 0.88,
-  blur: 12,
+  blur: 50,
   displace: 0.07,
   backgroundOpacity: 0.12,
   saturation: 1.05,
