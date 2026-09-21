@@ -57,6 +57,8 @@
   min-height: 340px;
   border: 0;
   box-shadow: none;
+  backdrop-filter: blur(18px) saturate(1.08);
+  -webkit-backdrop-filter: blur(18px) saturate(1.08);
 }
 
 .product-card__content {
