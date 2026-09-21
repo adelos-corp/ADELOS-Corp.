@@ -1,3 +1,10 @@
+.product-card-link {
+  display: block;
+  min-width: 0;
+  min-height: min(64vh, 720px);
+  color: inherit;
+  text-decoration: none;
+}
 .products-page {
   min-height: 100vh;
   background: #07060b;
