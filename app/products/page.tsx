@@ -3,24 +3,43 @@
 import LightPillar from "@/components/LightPillar";
 import MenuBar from "@/components/MenuBar";
 import BorderGlow from "@/components/BorderGlow";
+import MagicBento from "@/components/MagicBento";
 import "@/components/Products.css";
 
 const products = [
-  { name: "VISA", stage: "prototype stage", tone: "prototype" },
-  { name: "William Graham", stage: "refinement stage", tone: "refinement" },
-  { name: "Studenthome", stage: "prototype stage", tone: "prototype" },
+  {
+    name: "VISA",
+    stage: "prototype stage",
+    tone: "prototype",
+    label: "Visual Intelligence Systems Architecture",
+    description: "A visual intelligence system moving from concept into working prototype.",
+  },
+  {
+    name: "William Graham",
+    stage: "refinement stage",
+    tone: "refinement",
+    label: "Systems & Intelligence",
+    description: "An evolving system being refined into a more complete product.",
+  },
+  {
+    name: "Studenthome",
+    stage: "prototype stage",
+    tone: "prototype",
+    label: "Student Platform",
+    description: "A focused platform concept being shaped into its first usable form.",
+  },
 ];
 
 const borderGlowProps = {
-  borderRadius: 32,
-  glowRadius: 40,
-  glowIntensity: 0.8,
-  edgeSensitivity: 24,
-  coneSpread: 25,
+  borderRadius: 18,
+  glowRadius: 34,
+  glowIntensity: 0.72,
+  edgeSensitivity: 26,
+  coneSpread: 22,
   animated: false,
-  backgroundColor: "rgba(17, 16, 24, 0.34)",
+  backgroundColor: "rgba(12, 11, 18, 0.54)",
   colors: ["#5227ff", "#ff9ffc", "#38bdf8"],
-  fillOpacity: 0.16,
+  fillOpacity: 0.12,
 };
 
 export default function ProductsPage() {
@@ -45,11 +64,14 @@ export default function ProductsPage() {
         className="products-page__background"
       />
 
-      <section className="products-hero" aria-labelledby="products-title">
-        <div className="products-hero__heading">
-          <h1 id="products-title">Products</h1>
-          <p>Technology built to become part of the world around it.</p>
-        </div>
+      <section className="products-shell" aria-labelledby="products-title">
+        <header className="products-heading">
+          <div>
+            <span className="products-heading__eyebrow">ADELOS / PORTFOLIO</span>
+            <h1 id="products-title">Products</h1>
+          </div>
+          <p>Systems in motion. Prototypes, refinements, and ideas becoming real.</p>
+        </header>
 
         <div className="products-grid">
           {products.map((product) => (
@@ -58,11 +80,33 @@ export default function ProductsPage() {
               {...borderGlowProps}
               className="product-card"
             >
+              <div className="product-card__magic">
+                <MagicBento
+                  cards={[{
+                    color: "transparent",
+                    title: product.name,
+                    description: product.description,
+                    label: product.label,
+                  }]}
+                  textAutoHide={false}
+                  enableStars={true}
+                  enableSpotlight={false}
+                  enableBorderGlow={false}
+                  disableAnimations={false}
+                  particleCount={8}
+                  enableTilt={false}
+                  glowColor="82, 39, 255"
+                  clickEffect={true}
+                  enableMagnetism={false}
+                />
+              </div>
+
               <div className="product-card__content">
                 <span className={`product-card__stage product-card__stage--${product.tone}`}>
                   {product.stage}
                 </span>
                 <h2>{product.name}</h2>
+                <span className="product-card__arrow" aria-hidden="true">↗</span>
               </div>
             </BorderGlow>
           ))}
