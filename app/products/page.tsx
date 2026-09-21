@@ -30,6 +30,13 @@ const products = [
     label: "Student Platform",
     description: "A focused platform concept being shaped into its first usable form.",
   },
+  {
+    name: "Daemon",
+    stage: "",
+    tone: "prototype",
+    label: "a part of CODELOS.",
+    description: "",
+  },
 ];
 
 const borderGlowProps = {
