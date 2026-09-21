@@ -38,8 +38,9 @@ const glassProps = {
 
 export default function ProductsPage() {
   return (
-    <main className="relative h-screen w-screen overflow-hidden bg-black products-page">
+    <main className="relative min-h-screen w-screen overflow-x-hidden bg-black products-page">
       <MenuBar />
+
       <LightPillar
         topColor="#5227ff"
         bottomColor="#ff9ffc"
@@ -54,6 +55,7 @@ export default function ProductsPage() {
         pillarRotation={25}
         quality="high"
         lightMode={false}
+        className="products-page__background"
       />
 
       <section className="products-hero" aria-labelledby="products-title">
