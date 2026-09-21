@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import LightPillar from "@/components/LightPillar";
 import MenuBar from "@/components/MenuBar";
 import BorderGlow from "@/components/BorderGlow";
@@ -90,7 +91,18 @@ export default function ProductsPage() {
 
         <div className="products-grid">
           {products.map((product) => (
-            <BorderGlow
+            <Link
+              key={product.name}
+              href={
+                product.name === "VISA"
+                  ? "/products/visa"
+                  : product.name === "William Graham"
+                    ? "/products/william-graham"
+                    : "/products/studenthome"
+              }
+              className="product-card-link"
+            >
+              <BorderGlow
               key={product.name}
               {...borderGlowProps}
               className="product-card"
@@ -133,7 +145,8 @@ export default function ProductsPage() {
                 <h2>{product.name}</h2>
                 <span className="product-card__arrow" aria-hidden="true">↗</span>
               </div>
-            </BorderGlow>
+              </BorderGlow>
+            </Link>
           ))}
         </div>
       </section>
