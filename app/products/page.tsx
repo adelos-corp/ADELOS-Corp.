@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import LightPillar from "@/components/LightPillar";
 import MenuBar from "@/components/MenuBar";
 import BorderGlow from "@/components/BorderGlow";
@@ -43,13 +44,15 @@ const borderGlowProps = {
 };
 
 export default function ProductsPage() {
+  const [williamHovered, setWilliamHovered] = useState(false);
+
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden bg-black products-page">
       <MenuBar />
 
       <LightPillar
         topColor="#5227ff"
-        bottomColor="#ff9ffc"
+        bottomColor={williamHovered ? "#aa61ff" : "#ff9ffc"}
         intensity={1}
         rotationSpeed={0.9}
         interactive={false}
@@ -79,6 +82,8 @@ export default function ProductsPage() {
               key={product.name}
               {...borderGlowProps}
               className="product-card"
+              onPointerEnter={() => product.name === "William Graham" && setWilliamHovered(true)}
+              onPointerLeave={() => product.name === "William Graham" && setWilliamHovered(false)}
             >
               <div className="product-card__magic">
                 <MagicBento
