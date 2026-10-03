@@ -1,0 +1,11 @@
+.site-footer{position:relative;z-index:10;width:min(1380px,calc(100% - 40px));margin:0 auto;padding:38px 0 46px;border-top:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.45);font-family:var(--font-geist-sans),system-ui,sans-serif}
+.site-footer__brand strong{display:block;color:rgba(255,255,255,.78);font-size:1rem}
+.site-footer__brand p{margin:5px 0 0;font-size:.78rem;line-height:1.45}
+.site-footer__columns{display:flex;gap:90px;margin-top:28px}
+.site-footer__columns>div{display:flex;flex-direction:column;gap:7px}
+.site-footer__columns span{margin-bottom:4px;color:rgba(255,255,255,.38);font-size:.62rem;font-weight:650;letter-spacing:.12em;text-transform:uppercase}
+.site-footer__columns a,.site-footer__bottom a{color:rgba(255,255,255,.55);font-size:.78rem;text-decoration:none;transition:color 160ms ease}
+.site-footer__columns a:hover,.site-footer__bottom a:hover{color:#fff}
+.site-footer__bottom{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.06);font-size:.72rem}
+.site-footer__bottom nav{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end}
+@media(max-width:620px){.site-footer{width:calc(100% - 20px);padding-bottom:30px}.site-footer__columns{gap:48px}.site-footer__bottom{align-items:flex-start;flex-direction:column}.site-footer__bottom nav{justify-content:flex-start}}
