@@ -1,88 +1,83 @@
 "use client";
 
-import { Rubik } from "next/font/google";
 import Link from "next/link";
 import LightPillar from "@/components/LightPillar";
 import MenuBar from "@/components/MenuBar";
-import SplitText from "@/components/SplitText";
-import GlassSurface from "@/components/GlassSurface";
-import "@/components/Hero.css";
+import "@/components/Home.css";
 
-const rubik = Rubik({ weight: "700", subsets: ["latin"] });
+const technologies = [
+  {name:"William Graham",stage:"Working",text:"Privacy-first artificial intelligence running on local architecture with secure cloud synchronization. Built for the modern enterprise.",href:"/products/william-graham"},
+  {name:"Studenthome",stage:"Beta",text:"A seamless, unified destination for global students. Bridging the gap between distributed education systems and continuous learning.",href:"/products/studenthome"},
+  {name:"CODELOS",stage:"Beta",text:"The next evolution of the integrated development environment. Intelligent, distributed, and engineered for high-performance programming.",href:"/portfolio"},
+  {name:"HISA",stage:"Under active development",text:"Trust-based intelligence architectures prioritizing continuity and absolute privacy in the most demanding environments.",href:"/portfolio"},
+  {name:"QESA",stage:"Under active development",text:"Future enterprise cybersecurity. Quantum-ready networking and secure infrastructure with AI-assisted monitoring.",href:"/portfolio"},
+  {name:"TENSA",stage:"Coming soon",text:"Mechanically intelligent robotics. Advanced biomechanics research enabling true physical intelligence through artificial tendon systems.",href:"/portfolio"}
+];
 
 export default function Home() {
-  return (
-    <main className="relative h-screen w-screen overflow-hidden bg-black">
-      <MenuBar />
-      <LightPillar
-        topColor="#5227ff"
-        bottomColor="#ff9ffc"
-        intensity={1}
-        rotationSpeed={0.9}
-        interactive={false}
-        glowAmount={0.002}
-        pillarWidth={3}
-        pillarHeight={0.3}
-        noiseIntensity={0.5}
-        mixBlendMode="screen"
-        pillarRotation={25}
-        quality="high"
-        lightMode={false}
-      />
+  return <main className="home-page">
+    <MenuBar />
+    <LightPillar topColor="#5227ff" bottomColor="#ff9ffc" intensity={1} rotationSpeed={0.9}
+      interactive={false} glowAmount={0.002} pillarWidth={3} pillarHeight={0.3}
+      noiseIntensity={0.5} mixBlendMode="screen" pillarRotation={25} quality="high"
+      lightMode={false} className="home-page__background" />
 
-      <section className="hero" aria-labelledby="hero-title">
-        <div className="hero__content">
-          <SplitText
-            text="ADELOS Corp."
-            className="hero__title"
-            tag="h1"
-            delay={45}
-            duration={1.25}
-            splitType="chars"
-            threshold={0.1}
-            rootMargin="-100px"
-          />
-          <SplitText
-            text="Advanced Distributed Evolution of Logic Operating Systems"
-            className="hero__subtitle"
-            tag="p"
-            delay={25}
-            duration={1.1}
-            splitType="chars"
-            threshold={0.1}
-            rootMargin="-100px"
-          />
+    <section className="home-hero">
+      <div className="home-hero__content">
+        <h1 className="home-hero__title">Engineering Solutions That Solve Tomorrow.</h1>
+        <p className="home-hero__subtitle">Advanced Distributed Evolution of Logic Operating Systems</p>
+        <Link href="/portfolio" className="home-hero__button">Explore ADELOS</Link>
+      </div>
+    </section>
 
-          <GlassSurface
-            width={150}
-            height={48}
-            borderRadius={50}
-            borderWidth={0.025}
-            brightness={45}
-            opacity={0.9}
-            blur={7}
-            displace={0.16}
-            backgroundOpacity={0.055}
-            saturation={1.2}
-            distortionScale={-70}
-            redOffset={0}
-            greenOffset={10}
-            blueOffset={20}
-            xChannel="R"
-            yChannel="G"
-            mixBlendMode="difference"
-            chromaticAberration={false}
-            className="hero__explore"
-          >
-            <Link
-              href="/products"
-              className={`hero__explore-button ${rubik.className}`}
-            >
-              Explore
-            </Link>
-          </GlassSurface>
+    <section className="home-content">
+      <article className="home-panel">
+        <span className="home-panel__eyebrow">ADELOS / TECHNOLOGY PORTFOLIO</span>
+        <h2>Products people use. Architectures the world builds upon.</h2>
+        <p>ADELOS develops both products and research architectures. Products solve today's problems. Research architectures enable tomorrow's innovations.</p>
+        <div className="home-grid">
+          {technologies.map((technology) => <Link href={technology.href} className="home-card" key={technology.name}>
+            <span className="home-card__meta">{technology.stage}</span>
+            <h3>{technology.name}</h3>
+            <p>{technology.text}</p>
+            <span className="home-card__arrow">↗</span>
+          </Link>)}
         </div>
-      </section>
-    </main>
-  );
+      </article>
+
+      <article className="home-panel">
+        <span className="home-panel__eyebrow">ADELOS / PHILOSOPHY</span>
+        <h2>Research First. Products Second.</h2>
+        <p>ADELOS believes breakthrough engineering begins with first-principles research. Rather than creating isolated applications, ADELOS develops foundational architectures that support future generations of technology.</p>
+        <p>It will emerge from the convergence of intelligent systems, secure architectures, advanced mechanics, and scientific research. ADELOS exists to engineer that future.</p>
+        <Link href="/philosophy" className="home-card__arrow">Explore philosophy ↗</Link>
+      </article>
+
+      <article className="home-panel">
+        <span className="home-panel__eyebrow">ADELOS / RESEARCH</span>
+        <h2>The future will not be built by software alone.</h2>
+        <p>It will emerge from the convergence of intelligent systems, secure architectures, advanced mechanics, and scientific research.</p>
+        <Link href="/research" className="home-card__arrow">Explore research ↗</Link>
+      </article>
+
+      <article className="home-panel">
+        <span className="home-panel__eyebrow">ADELOS / CAREERS</span>
+        <h2>Help Build Tomorrow.</h2>
+        <p>ADELOS seeks engineers, researchers, designers, and builders who enjoy solving fundamental engineering challenges.</p>
+        <div className="home-grid">
+          {["Software Engineering","Cybersecurity","Quantum Computing","Biomechanics","Artificial Intelligence","Developer Tools","UI/UX Design","Research"].map((role) =>
+            <div className="home-card" key={role}><h3>{role}</h3></div>
+          )}
+        </div>
+        <Link href="/careers" className="home-card__arrow">View Open Roles ↗</Link>
+      </article>
+    </section>
+
+    <footer className="home-footer">
+      <strong>ADELOS</strong>
+      <p>Advanced Distributed Evolution of Logic Operating Systems.</p>
+      <p>Engineering Tomorrow's Foundations.</p>
+      <p>© 2026 ADELOS. All rights reserved.</p>
+    </footer>
+  </main>;
 }
