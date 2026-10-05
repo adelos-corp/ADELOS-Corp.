@@ -1,5 +1,4 @@
 import Link from "next/link";
-import MenuBar from "@/components/MenuBar";
 import Aurora from "@/components/Aurora";
 import SiteFooter from "@/components/SiteFooter";
 import "@/components/Products.css";
@@ -14,7 +13,6 @@ const products = [
 export default function ProductsPage() {
   return (
     <main className="products-page">
-      <MenuBar />
       <section className="products-shell">
         <header className="products-heading">
           <div>
