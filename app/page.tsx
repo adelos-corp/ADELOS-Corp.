@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Link from "next/link";
 import MenuBar from "@/components/MenuBar";
-import OrbitalVisual from "@/components/OrbitalVisual";
+import Aurora from "@/components/Aurora";
 import SiteFooter from "@/components/SiteFooter";
 import "@/components/Home.css";
 
@@ -22,7 +22,7 @@ export default function Home() {
     <main className="home-page">
       <MenuBar />
       <section className="home-hero">
-        <OrbitalVisual />
+        <div className="home-hero__aurora"><Aurora colorStops={["#7cff67", "#B497CF", "#5227FF"]} blend={0.5} amplitude={1.0} speed={1} /></div>
         <div className="home-hero__content">
           <span className="home-hero__eyebrow">ADELOS CORP.</span>
           <h1>Engineering<br/>solutions<br/>that solve<br/>tomorrow.</h1>
@@ -45,7 +45,7 @@ export default function Home() {
         <div className="home-products__track" ref={trackRef}>
           {products.map(product => (
             <Link href={product.href} className={`home-product home-product--${product.accent}`} key={product.name}>
-              <OrbitalVisual accent={product.accent} small />
+              <div className="home-product__aurora"><Aurora colorStops={["#7cff67", "#B497CF", "#5227FF"]} blend={0.5} amplitude={1.0} speed={1} /></div>
               <span className="home-product__number">{product.number}</span>
               <h2>{product.name}</h2>
               <p>{product.text}</p>
