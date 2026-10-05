@@ -29,7 +29,7 @@ export default function ProductsPage() {
             <Link key={product.name} href={product.href} className="product-card-link">
               <div className="product-card__aurora">
                 <Aurora
-                  colorStops={["#7cff67", "#B497CF", "#5227FF"]}
+                  colorStops={["#8dff78", "#c9b4df", "#684dff"]}
                   blend={0.5}
                   amplitude={1.0}
                   speed={1}
