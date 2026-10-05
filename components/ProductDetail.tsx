@@ -27,7 +27,7 @@ export default function ProductDetail({
       <section className={`product-detail-hero product-detail-hero--${accent}`}>
         <div className="product-detail-aurora">
           <Aurora
-            colorStops={["#7cff67", "#B497CF", "#5227FF"]}
+            colorStops={["#8dff78", "#c9b4df", "#684dff"]}
             blend={0.5}
             amplitude={1.0}
             speed={1}
