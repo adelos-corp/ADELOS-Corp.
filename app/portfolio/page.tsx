@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import LightPillar from "@/components/LightPillar";
-import MenuBar from "@/components/MenuBar";
 import BorderGlow from "@/components/BorderGlow";
 import SiteFooter from "@/components/SiteFooter";
 import "@/components/Portfolio.css";
