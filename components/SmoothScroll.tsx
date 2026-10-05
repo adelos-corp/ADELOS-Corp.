@@ -8,6 +8,7 @@ export default function SmoothScroll() {
     let current = target;
     let frame = 0;
     let lastTime = performance.now();
+    let isAnimating = false;
 
     const clampTarget = () => {
       const max = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
@@ -24,7 +25,11 @@ export default function SmoothScroll() {
       target += event.deltaY;
       clampTarget();
 
-      if (!frame) frame = requestAnimationFrame(animate);
+      if (!frame) {
+        isAnimating = true;
+        lastTime = performance.now();
+        frame = requestAnimationFrame(animate);
+      }
     };
 
     const animate = (time: number) => {
@@ -39,6 +44,7 @@ export default function SmoothScroll() {
         current = target;
         window.scrollTo(0, current);
         frame = 0;
+        isAnimating = false;
         return;
       }
 
@@ -47,6 +53,7 @@ export default function SmoothScroll() {
     };
 
     const sync = () => {
+      if (isAnimating) return;
       target = window.scrollY;
       current = target;
     };
