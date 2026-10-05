@@ -1,5 +1,2 @@
 import ProductDetail from "@/components/ProductDetail";
-
-export default function WilliamGrahamPage() {
-  return <ProductDetail topColor="#5227ff" bottomColor="#aa61ff" />;
-}
+export default function WilliamGrahamPage(){return <ProductDetail name="William Graham" number="02" category="Artificial Intelligence" description="ADELOS's flagship artificial intelligence system, designed around capable, private, integrated intelligence." accent="violet" status="In development"/>;}
