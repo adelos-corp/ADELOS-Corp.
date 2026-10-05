@@ -1,59 +1,63 @@
 "use client";
 
 import Link from "next/link";
-import LightPillar from "@/components/LightPillar";
 import MenuBar from "@/components/MenuBar";
+import OrbitalVisual from "@/components/OrbitalVisual";
 import SiteFooter from "@/components/SiteFooter";
 import "@/components/Home.css";
 
-const technologies = [
-  {name:"William Graham",stage:"Working",text:"Privacy-first artificial intelligence running on local architecture with secure cloud synchronization. Built for the modern enterprise.",href:"/products/william-graham"},
-  {name:"Studenthome",stage:"Beta",text:"A seamless, unified destination for global students. Bridging the gap between distributed education systems and continuous learning.",href:"/products/studenthome"},
-  {name:"CODELOS",stage:"Beta",text:"The next evolution of the integrated development environment. Intelligent, distributed, and engineered for high-performance programming.",href:"/portfolio"},
-  {name:"HISA",stage:"Under active development",text:"Trust-based intelligence architectures prioritizing continuity and absolute privacy in the most demanding environments.",href:"/portfolio"},
-  {name:"QESA",stage:"Under active development",text:"Future enterprise cybersecurity. Quantum-ready networking and secure infrastructure with AI-assisted monitoring.",href:"/portfolio"},
-  {name:"TENSA",stage:"Coming soon",text:"Mechanically intelligent robotics. Advanced biomechanics research enabling true physical intelligence through artificial tendon systems.",href:"/portfolio"}
+const products = [
+  { number:"01", name:"VISA", text:"Visual Intelligence Systems Architecture.", href:"/products/visa", accent:"green" as const },
+  { number:"02", name:"William Graham", text:"Flagship artificial intelligence system.", href:"/products/william-graham", accent:"violet" as const },
+  { number:"03", name:"Studenthome", text:"Global student infrastructure.", href:"/products/studenthome", accent:"blue" as const },
+  { number:"04", name:"Daemon", text:"Distributed systems & compute infrastructure.", href:"/products", accent:"orange" as const },
 ];
 
 export default function Home() {
-  return <main className="home-page">
-    <MenuBar />
-    <LightPillar topColor="#5227ff" bottomColor="#ff9ffc" intensity={1} rotationSpeed={0.9} interactive={false} glowAmount={0.002} pillarWidth={3} pillarHeight={0.3} noiseIntensity={0.5} mixBlendMode="screen" pillarRotation={25} quality="high" lightMode={false} className="home-page__background" />
-    <section className="home-hero">
-      <div className="home-hero__content">
-        <h1 className="home-hero__title">Engineering Solutions That Solve Tomorrow.</h1>
-        <p className="home-hero__subtitle">Advanced Distributed Evolution of Logic Operating Systems</p>
-        <Link href="/portfolio" className="home-hero__button">Explore ADELOS</Link>
-      </div>
-    </section>
-    <section className="home-content">
-      <article className="home-panel">
-        <span className="home-panel__eyebrow">ADELOS / TECHNOLOGY PORTFOLIO</span>
-        <h2>Products people use. Architectures the world builds upon.</h2>
-        <p>ADELOS develops both products and research architectures. Products solve today's problems. Research architectures enable tomorrow's innovations.</p>
-        <div className="home-grid">{technologies.map(technology=><Link href={technology.href} className="home-card" key={technology.name}><span className="home-card__meta">{technology.stage}</span><h3>{technology.name}</h3><p>{technology.text}</p><span className="home-card__arrow">↗</span></Link>)}</div>
-      </article>
-      <article className="home-panel">
-        <span className="home-panel__eyebrow">ADELOS / PHILOSOPHY</span>
-        <h2>Research First. Products Second.</h2>
-        <p>ADELOS believes breakthrough engineering begins with first-principles research. Rather than creating isolated applications, ADELOS develops foundational architectures that support future generations of technology.</p>
-        <p>It will emerge from the convergence of intelligent systems, secure architectures, advanced mechanics, and scientific research.</p>
-        <Link href="/philosophy" className="home-card__arrow">Explore philosophy ↗</Link>
-      </article>
-      <article className="home-panel">
-        <span className="home-panel__eyebrow">ADELOS / RESEARCH</span>
-        <h2>The future will not be built by software alone.</h2>
-        <p>It will emerge from the convergence of intelligent systems, secure architectures, advanced mechanics, and scientific research. ADELOS exists to engineer that future.</p>
-        <Link href="/research" className="home-card__arrow">Explore research ↗</Link>
-      </article>
-      <article className="home-panel">
-        <span className="home-panel__eyebrow">ADELOS / CAREERS</span>
-        <h2>Help Build Tomorrow.</h2>
-        <p>ADELOS seeks engineers, researchers, designers, and builders who enjoy solving fundamental engineering challenges.</p>
-        <div className="home-grid">{["Software Engineering","Cybersecurity","Quantum Computing","Biomechanics","Artificial Intelligence","Developer Tools","UI/UX Design","Research"].map(role=><div className="home-card" key={role}><h3>{role}</h3></div>)}</div>
-        <Link href="/careers" className="home-card__arrow">View Open Roles ↗</Link>
-      </article>
-    </section>
-    <SiteFooter />
-  </main>;
+  return (
+    <main className="home-page">
+      <MenuBar />
+      <section className="home-hero">
+        <OrbitalVisual />
+        <div className="home-hero__content">
+          <span className="home-hero__eyebrow">ADELOS CORP.</span>
+          <h1>Engineering<br/>solutions<br/>that solve<br/>tomorrow.</h1>
+          <p>Advanced systems. Deeper integration.<br/>A more capable tomorrow.</p>
+          <div className="home-hero__actions">
+            <Link href="/products" className="home-hero__primary">Explore <span>→</span></Link>
+            <Link href="/research" className="home-hero__secondary">Our Research</Link>
+          </div>
+        </div>
+        <div className="home-hero__rail"><span className="is-active">01</span><span>02</span><span>03</span><span>04</span></div>
+        <span className="home-hero__scroll">SCROLL</span>
+      </section>
+
+      <section className="home-products">
+        <div className="home-products__heading">
+          <span>OUR PRODUCTS</span>
+          <div className="home-products__controls"><button aria-label="Previous">←</button><button aria-label="Next">→</button></div>
+        </div>
+        <div className="home-products__intro">Systems<br/><span>for a more<br/>capable future.</span></div>
+        <div className="home-products__track">
+          {products.map(product => (
+            <Link href={product.href} className={`home-product home-product--${product.accent}`} key={product.name}>
+              <OrbitalVisual accent={product.accent} small />
+              <span className="home-product__number">{product.number}</span>
+              <h2>{product.name}</h2>
+              <p>{product.text}</p>
+              <span className="home-product__arrow">↗</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="home-statement">
+        <span>THE ADELOS APPROACH</span>
+        <h2>We build systems by understanding the systems beneath them.</h2>
+        <Link href="/about">About ADELOS <span>→</span></Link>
+      </section>
+
+      <SiteFooter />
+    </main>
+  );
 }
