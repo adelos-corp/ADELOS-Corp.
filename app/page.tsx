@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import Link from "next/link";
 import MenuBar from "@/components/MenuBar";
 import OrbitalVisual from "@/components/OrbitalVisual";
@@ -14,6 +15,9 @@ const products = [
 ];
 
 export default function Home() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const move = (direction: number) => trackRef.current?.scrollBy({ left: direction * 430, behavior: "smooth" });
+
   return (
     <main className="home-page">
       <MenuBar />
@@ -35,10 +39,10 @@ export default function Home() {
       <section className="home-products">
         <div className="home-products__heading">
           <span>OUR PRODUCTS</span>
-          <div className="home-products__controls"><button aria-label="Previous">←</button><button aria-label="Next">→</button></div>
+          <div className="home-products__controls"><button onClick={() => move(-1)} aria-label="Previous products">←</button><button onClick={() => move(1)} aria-label="Next products">→</button></div>
         </div>
         <div className="home-products__intro">Systems<br/><span>for a more<br/>capable future.</span></div>
-        <div className="home-products__track">
+        <div className="home-products__track" ref={trackRef}>
           {products.map(product => (
             <Link href={product.href} className={`home-product home-product--${product.accent}`} key={product.name}>
               <OrbitalVisual accent={product.accent} small />
