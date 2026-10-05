@@ -1,42 +1,11 @@
-"use client";
-
-import LightPillar from "@/components/LightPillar";
+import Link from "next/link";
 import MenuBar from "@/components/MenuBar";
-import "@/components/ProductDetail.css";
+import OrbitalVisual from "@/components/OrbitalVisual";
+import SiteFooter from "@/components/SiteFooter";
+import "./ProductDetail.css";
 
-type ProductDetailProps = {
-  topColor: string;
-  bottomColor: string;
-  intensity?: number;
-  glowAmount?: number;
-};
+type ProductDetailProps={name:string;number:string;category:string;description:string;accent?:"violet"|"blue"|"green"|"orange";status:string};
 
-export default function ProductDetail({
-  topColor,
-  bottomColor,
-  intensity = 1,
-  glowAmount = 0.002,
-}: ProductDetailProps) {
-  return (
-    <main className="product-detail-page">
-      <MenuBar />
-
-      <LightPillar
-        topColor={topColor}
-        bottomColor={bottomColor}
-        intensity={intensity}
-        rotationSpeed={0.9}
-        interactive={false}
-        glowAmount={glowAmount}
-        pillarWidth={3}
-        pillarHeight={0.3}
-        noiseIntensity={0.5}
-        mixBlendMode="screen"
-        pillarRotation={25}
-        quality="high"
-        lightMode={false}
-        className="product-detail-page__background"
-      />
-    </main>
-  );
+export default function ProductDetail({name,number,category,description,accent="violet",status}:ProductDetailProps){
+ return <main className="product-detail-page"><MenuBar/><section className={`product-detail-hero product-detail-hero--${accent}`}><OrbitalVisual accent={accent}/><div className="product-detail-copy"><span>{number} / {category}</span><h1>{name}</h1><p>{description}</p><div><Link href="/products" className="product-detail-link">All Products <b>→</b></Link></div></div><div className="product-detail-status">{status}</div></section><SiteFooter/></main>;
 }
