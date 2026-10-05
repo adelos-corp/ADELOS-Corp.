@@ -1,5 +1,4 @@
 import Link from "next/link";
-import MenuBar from "@/components/MenuBar";
 import SiteFooter from "@/components/SiteFooter";
 import "./CorporatePage.css";
 
@@ -32,7 +31,6 @@ export default function CorporatePage({
 }: CorporatePageProps) {
   return (
     <main className="corporate-page">
-      <MenuBar />
       <section className="corporate-shell">
         <header className="corporate-heading">
           <span>{eyebrow}</span>
