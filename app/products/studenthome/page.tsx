@@ -1,5 +1,2 @@
 import ProductDetail from "@/components/ProductDetail";
-
-export default function StudenthomePage() {
-  return <ProductDetail topColor="#010070" bottomColor="#6262a8" intensity={1.5} glowAmount={0.0045} />;
-}
+export default function StudenthomePage(){return <ProductDetail name="Studenthome" number="03" category="Global Infrastructure" description="A unified destination for global students, connecting distributed education systems and continuous learning." accent="blue" status="In development"/>;}
