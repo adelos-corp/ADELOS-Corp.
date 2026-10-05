@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import GlassSurface from "./GlassSurface";
 import "./MenuBar.css";
 
 const menuItems = [
@@ -28,7 +29,8 @@ export default function MenuBar() {
         <img src="/adelos-logo.png" alt="ADELOS" />
       </Link>
 
-      <nav className="menu-bar__nav" aria-label="Primary navigation">
+      <GlassSurface className="menu-bar__nav" width="auto" height="auto" borderRadius={999} brightness={50} opacity={0.93} blur={11} backgroundOpacity={0} saturation={1}>
+        <nav aria-label="Primary navigation">
         {menuItems.map((item) => {
           const active = activeHref === item.href;
 
@@ -51,7 +53,8 @@ export default function MenuBar() {
             </Link>
           );
         })}
-      </nav>
+        </nav>
+      </GlassSurface>
 
       <div className="menu-bar__spacer" aria-hidden="true" />
     </header>
