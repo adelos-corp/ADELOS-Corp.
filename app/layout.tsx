@@ -6,12 +6,10 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ADELOS | Engineering Tomorrow's Foundations",
-  description: "ADELOS Corp. is a deep technology research and engineering corporation focused on building intelligent software and advanced technologies.",
+  title: "adelOS | Engineering solutions that solve tomorrow.",
+  description: "adelOS by ADELOS Corp. builds advanced systems, research architectures, and engineering solutions.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
-  return <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-    <body className="min-h-full flex flex-col">{children}</body>
-  </html>;
+  return <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}><body>{children}</body></html>;
 }
