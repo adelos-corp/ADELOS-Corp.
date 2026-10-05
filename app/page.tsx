@@ -32,8 +32,6 @@ export default function Home() {
             <Link href="/research" className="home-hero__secondary">Our Research</Link>
           </div>
         </div>
-        <div className="home-hero__rail"><span className="is-active">01</span><span>02</span><span>03</span><span>04</span></div>
-        <span className="home-hero__scroll">SCROLL</span>
       </section>
 
       <section className="home-products">
