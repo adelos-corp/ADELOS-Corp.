@@ -1,5 +1,4 @@
 import Link from "next/link";
-import MenuBar from "@/components/MenuBar";
 import Aurora from "@/components/Aurora";
 import SiteFooter from "@/components/SiteFooter";
 import "./ProductDetail.css";
@@ -23,7 +22,6 @@ export default function ProductDetail({
 }: ProductDetailProps) {
   return (
     <main className="product-detail-page">
-      <MenuBar />
       <section className={`product-detail-hero product-detail-hero--${accent}`}>
         <div className="product-detail-aurora">
           <Aurora
