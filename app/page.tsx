@@ -42,7 +42,7 @@ export default function Home() {
           <div className="home-products__controls"><button onClick={() => move(-1)} aria-label="Previous products">←</button><button onClick={() => move(1)} aria-label="Next products">→</button></div>
         </div>
         <div className="home-products__intro">Systems<br/><span>for a more<br/>capable future.</span></div>
-        <div className="home-products__track" ref={trackRef}>
+        <div className="home-products__track" ref={trackRef} data-lenis-prevent>
           {products.map(product => (
             <Link href={product.href} className={`home-product home-product--${product.accent}`} key={product.name}>
               <div className="home-product__aurora"><Aurora colorStops={["#a6ff91", "#c9b4df", "#684dff"]} blend={0.5} amplitude={1.0} speed={1} /></div>
