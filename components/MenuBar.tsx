@@ -1,37 +1,35 @@
 "use client";
 
-import { Rubik } from "next/font/google";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import GlassSurface from "@/components/GlassSurface";
 import "./MenuBar.css";
 
-const rubik = Rubik({ weight: "700", subsets: ["latin"] });
-
 const menuItems = [
-  { label: "About", href: "/about" },
-  { label: "Philosophy", href: "/philosophy" },
-  { label: "Portfolio", href: "/portfolio" },
+  { label: "Products", href: "/products" },
   { label: "Research", href: "/research" },
+  { label: "About", href: "/about" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
-  { label: "Preferences", href: "/settings" },
 ];
 
 export default function MenuBar() {
   const pathname = usePathname();
 
-  return <div className="menu-bar-wrap">
-    <GlassSurface width="100%" height={60} borderRadius={50} borderWidth={0.07} brightness={50} opacity={0.93} blur={11} displace={0.5} backgroundOpacity={0.1} saturation={1.7} distortionScale={-180} redOffset={0} greenOffset={10} blueOffset={20} xChannel="R" yChannel="G" mixBlendMode="difference" chromaticAberration={false} className="menu-bar">
-      <div className="menu-bar__content">
-        <Link href="/" className="menu-bar__home" aria-label="ADELOS home"><img src="/adelos-logo.svg" alt="ADELOS" /></Link>
-        <nav className={`menu-bar__nav ${rubik.className}`} aria-label="Primary navigation">
-          {menuItems.map(item => {
-            const active = pathname === item.href || pathname?.startsWith(`${item.href}/`);
-            return <Link key={item.label} href={item.href} className={`menu-bar__item ${active ? "menu-bar__item--active" : ""}`}>{item.label}</Link>;
-          })}
-        </nav>
+  return (
+    <header className="menu-bar-wrap">
+      <Link href="/" className="menu-bar__brand" aria-label="adelOS home">adelOS</Link>
+      <nav className="menu-bar__nav" aria-label="Primary navigation">
+        {menuItems.map((item) => {
+          const active = pathname === item.href || pathname?.startsWith(`${item.href}/`);
+          return <Link key={item.label} href={item.href} className={`menu-bar__item ${active ? "menu-bar__item--active" : ""}`}>{item.label}</Link>;
+        })}
+      </nav>
+      <div className="menu-bar__actions">
+        <button className="menu-bar__search" aria-label="Search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.2 4.2"/></svg>
+        </button>
+        <Link href="/contact" className="menu-bar__cta">Get Started <span aria-hidden="true">→</span></Link>
       </div>
-    </GlassSurface>
-  </div>;
+    </header>
+  );
 }
