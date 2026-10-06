@@ -57,13 +57,6 @@ export default function Home() {
         <Link href="/about">About ADELOS <span>→</span></Link>
       </section>
 
-      <section className="home-bottom-aurora" aria-hidden="true">
-        <div className="home-bottom-aurora__field">
-          <Aurora colorStops={["#a6ff91", "#c9b4df", "#684dff"]} blend={0.5} amplitude={1.0} speed={1} />
-        </div>
-        <div className="home-bottom-aurora__veil" />
-      </section>
-
       <SiteFooter />
 
       <section className="home-bottom-aurora" aria-hidden="true">
