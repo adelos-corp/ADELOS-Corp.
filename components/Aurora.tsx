@@ -198,6 +198,12 @@ export default function Aurora(props: AuroraProps) {
     });
 
     const mesh = new Mesh(gl, { geometry, program });
+    gl.canvas.style.display = 'block';
+    gl.canvas.style.position = 'absolute';
+    gl.canvas.style.inset = '0';
+    gl.canvas.style.width = '100%';
+    gl.canvas.style.height = '100%';
+    gl.canvas.style.pointerEvents = 'none';
     ctn.appendChild(gl.canvas);
 
     let animateId = 0;
@@ -227,9 +233,13 @@ export default function Aurora(props: AuroraProps) {
     animateId = requestAnimationFrame(update);
     resize();
 
+    const resizeObserver = new ResizeObserver(resize);
+    resizeObserver.observe(ctn);
+
     return () => {
       cancelAnimationFrame(animateId);
       window.removeEventListener('resize', resize);
+      resizeObserver.disconnect();
 
       if (ctn && gl.canvas.parentNode === ctn) {
         ctn.removeChild(gl.canvas);
