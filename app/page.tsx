@@ -21,9 +21,6 @@ export default function Home() {
     <main className="home-page">
       <section className="home-hero">
         <div className="home-hero__aurora"><Aurora colorStops={["#a6ff91", "#c9b4df", "#684dff"]} blend={0.5} amplitude={1.0} speed={1} /></div>
-        <div className="home-hero__aurora home-hero__aurora--bottom" aria-hidden="true">
-          <Aurora colorStops={["#a6ff91", "#c9b4df", "#684dff"]} blend={0.5} amplitude={1.0} speed={1} />
-        </div>
         <div className="home-hero__content">
           <span className="home-hero__eyebrow">ADELOS CORP.</span>
           <h1>Engineering<br/>solutions<br/>that solve<br/>tomorrow.</h1>
@@ -58,6 +55,13 @@ export default function Home() {
         <span>THE ADELOS APPROACH</span>
         <h2>We build systems by understanding the systems beneath them.</h2>
         <Link href="/about">About ADELOS <span>→</span></Link>
+      </section>
+
+      <section className="home-bottom-aurora" aria-hidden="true">
+        <div className="home-bottom-aurora__field">
+          <Aurora colorStops={["#a6ff91", "#c9b4df", "#684dff"]} blend={0.5} amplitude={1.0} speed={1} />
+        </div>
+        <div className="home-bottom-aurora__veil" />
       </section>
 
       <SiteFooter />
