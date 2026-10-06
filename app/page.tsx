@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import Link from "next/link";
-import MenuBar from "@/components/MenuBar";
 import Aurora from "@/components/Aurora";
 import SiteFooter from "@/components/SiteFooter";
 import "@/components/Home.css";
@@ -20,7 +19,6 @@ export default function Home() {
 
   return (
     <main className="home-page">
-      <MenuBar />
       <section className="home-hero">
         <div className="home-hero__aurora"><Aurora colorStops={["#a6ff91", "#c9b4df", "#684dff"]} blend={0.5} amplitude={1.0} speed={1} /></div>
         <div className="home-hero__aurora home-hero__aurora--bottom" aria-hidden="true">
