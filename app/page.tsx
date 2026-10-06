@@ -23,6 +23,9 @@ export default function Home() {
       <MenuBar />
       <section className="home-hero">
         <div className="home-hero__aurora"><Aurora colorStops={["#a6ff91", "#c9b4df", "#684dff"]} blend={0.5} amplitude={1.0} speed={1} /></div>
+        <div className="home-hero__aurora home-hero__aurora--bottom" aria-hidden="true">
+          <Aurora colorStops={["#a6ff91", "#c9b4df", "#684dff"]} blend={0.5} amplitude={1.0} speed={1} />
+        </div>
         <div className="home-hero__content">
           <span className="home-hero__eyebrow">ADELOS CORP.</span>
           <h1>Engineering<br/>solutions<br/>that solve<br/>tomorrow.</h1>
