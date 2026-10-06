@@ -65,6 +65,13 @@ export default function Home() {
       </section>
 
       <SiteFooter />
+
+      <section className="home-bottom-aurora" aria-hidden="true">
+        <div className="home-bottom-aurora__field">
+          <Aurora colorStops={["#7cff67", "#B497CF", "#5227FF"]} blend={0.5} amplitude={1.0} speed={1} />
+        </div>
+      </section>
+
     </main>
   );
 }
