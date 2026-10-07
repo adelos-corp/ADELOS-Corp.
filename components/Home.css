@@ -1,5 +1,5 @@
 .home-page{position:relative;min-height:100vh;overflow-x:hidden;background:transparent;color:#f5f5f7;scroll-behavior:smooth;border-radius:0 0 50px 50px}
-.home-hero{position:relative;min-height:100svh;overflow:hidden;border-bottom:0;border-radius:0;background:#000}
+.home-hero{position:relative;min-height:100svh;overflow:hidden;border-bottom:0;border-radius:0;background:transparent}
 .home-hero:after{content:"";position:absolute;z-index:2;inset:0;background:radial-gradient(circle at 63% 55%,rgba(255,255,255,.035),transparent 30%),linear-gradient(90deg,rgba(3,3,5,.68) 0%,rgba(3,3,5,.42) 34%,rgba(3,3,5,.08) 66%,rgba(3,3,5,.28) 100%);pointer-events:none}
 .home-hero__content{position:relative;z-index:5;width:min(1380px,calc(100% - 72px));margin:0 auto;padding-top:clamp(180px,22vh,250px)}
 .home-hero__eyebrow{display:block;margin-bottom:18px;color:rgba(255,255,255,.58);font-size:.62rem;letter-spacing:.34em}
