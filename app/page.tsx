@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import Link from "next/link";
-import Aurora from "@/components/Aurora";
 import SiteFooter from "@/components/SiteFooter";
 import "@/components/Home.css";
 
@@ -20,7 +19,6 @@ export default function Home() {
   return (
     <main className="home-page">
       <section className="home-hero">
-        <div className="home-hero__aurora"><Aurora colorStops={["#7cff67", "#c9b4df", "#684dff"]} blend={0.5} amplitude={1.0} speed={1} /></div>
         <div className="home-hero__content">
           <span className="home-hero__eyebrow">ADELOS CORP.</span>
           <h1>Engineering<br/>solutions<br/>that solve<br/>tomorrow.</h1>
@@ -42,7 +40,6 @@ export default function Home() {
           <div className="home-products__track" ref={trackRef} data-lenis-prevent>
             {products.map(product => (
               <Link href={product.href} className={`home-product home-product--${product.accent}`} key={product.name}>
-                <div className="home-product__aurora"><Aurora colorStops={["#a6ff91", "#c9b4df", "#684dff"]} blend={0.5} amplitude={1.0} speed={1} /></div>
                 <span className="home-product__number">{product.number}</span>
                 <h2>{product.name}</h2>
                 <p>{product.text}</p>
