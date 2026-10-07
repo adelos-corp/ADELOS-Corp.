@@ -32,30 +32,32 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-products">
-        <div className="home-products__heading">
-          <span>OUR PRODUCTS</span>
-          <div className="home-products__controls"><button onClick={() => move(-1)} aria-label="Previous products">←</button><button onClick={() => move(1)} aria-label="Next products">→</button></div>
-        </div>
-        <div className="home-products__intro">Systems<br/><span>for a more<br/>capable future.</span></div>
-        <div className="home-products__track" ref={trackRef} data-lenis-prevent>
-          {products.map(product => (
-            <Link href={product.href} className={`home-product home-product--${product.accent}`} key={product.name}>
-              <div className="home-product__aurora"><Aurora colorStops={["#a6ff91", "#c9b4df", "#684dff"]} blend={0.5} amplitude={1.0} speed={1} /></div>
-              <span className="home-product__number">{product.number}</span>
-              <h2>{product.name}</h2>
-              <p>{product.text}</p>
-              <span className="home-product__arrow">↗</span>
-            </Link>
-          ))}
-        </div>
-      </section>
+      <div className="home-gradient-sheet">
+        <section className="home-products">
+          <div className="home-products__heading">
+            <span>OUR PRODUCTS</span>
+            <div className="home-products__controls"><button onClick={() => move(-1)} aria-label="Previous products">←</button><button onClick={() => move(1)} aria-label="Next products">→</button></div>
+          </div>
+          <div className="home-products__intro">Systems<br/><span>for a more<br/>capable future.</span></div>
+          <div className="home-products__track" ref={trackRef} data-lenis-prevent>
+            {products.map(product => (
+              <Link href={product.href} className={`home-product home-product--${product.accent}`} key={product.name}>
+                <div className="home-product__aurora"><Aurora colorStops={["#a6ff91", "#c9b4df", "#684dff"]} blend={0.5} amplitude={1.0} speed={1} /></div>
+                <span className="home-product__number">{product.number}</span>
+                <h2>{product.name}</h2>
+                <p>{product.text}</p>
+                <span className="home-product__arrow">↗</span>
+              </Link>
+            ))}
+          </div>
+        </section>
 
-      <section className="home-statement">
-        <span>THE ADELOS APPROACH</span>
-        <h2>We build systems by understanding the systems beneath them.</h2>
-        <Link href="/about">About ADELOS <span>→</span></Link>
-      </section>
+        <section className="home-statement">
+          <span>THE ADELOS APPROACH</span>
+          <h2>We build systems by understanding the systems beneath them.</h2>
+          <Link href="/about">About ADELOS <span>→</span></Link>
+        </section>
+      </div>
 
       <SiteFooter />
 
