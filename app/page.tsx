@@ -57,9 +57,9 @@ export default function Home() {
           <h2>We build systems by understanding the systems beneath them.</h2>
           <Link href="/about">About ADELOS <span>→</span></Link>
         </section>
-      </div>
 
-      <SiteFooter />
+        <SiteFooter />
+      </div>
 
     </main>
   );
