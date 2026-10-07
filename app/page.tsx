@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <main className="home-page">
       <section className="home-hero">
-        <div className="home-hero__aurora"><Aurora colorStops={["#a6ff91", "#c9b4df", "#684dff"]} blend={0.5} amplitude={1.0} speed={1} /></div>
+        <div className="home-hero__aurora"><Aurora colorStops={["#7cff67", "#c9b4df", "#684dff"]} blend={0.5} amplitude={1.0} speed={1} /></div>
         <div className="home-hero__content">
           <span className="home-hero__eyebrow">ADELOS CORP.</span>
           <h1>Engineering<br/>solutions<br/>that solve<br/>tomorrow.</h1>
