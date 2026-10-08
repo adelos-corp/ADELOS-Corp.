@@ -13,12 +13,6 @@ const products = [
   { number:"05", name:"TENSA", text:"Tendon Engineered Natural SA.", href:"/products", accent:"violet" as const },
   { number:"06", name:"VISA", text:"VIsual Intelligence SA.", href:"/products/visa", accent:"blue" as const },
 ];
-/*
-  { number:"01", name:"VISA", text:"Visual Intelligence Systems Architecture.", href:"/products/visa", accent:"green" as const },
-  { number:"02", name:"William Graham", text:"Flagship artificial intelligence system.", href:"/products/william-graham", accent:"violet" as const },
-  { number:"03", name:"Studenthome", text:"Global student infrastructure.", href:"/products/studenthome", accent:"blue" as const },
-  { number:"04", name:"Daemon", text:"Distributed systems & compute infrastructure.", href:"/products", accent:"orange" as const },
-*/
 
 export default function Home() {
   const trackRef = useRef<HTMLDivElement>(null);
