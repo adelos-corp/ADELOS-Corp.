@@ -1,13 +1,14 @@
 import Link from "next/link";
-import Aurora from "@/components/Aurora";
 import SiteFooter from "@/components/SiteFooter";
 import "@/components/Products.css";
 
 const products = [
-  { number: "01", name: "VISA", stage: "In development", text: "Visual Intelligence Systems Architecture.", href: "/products/visa" },
-  { number: "02", name: "William Graham", stage: "In development", text: "Flagship artificial intelligence system.", href: "/products/william-graham" },
-  { number: "03", name: "Studenthome", stage: "In development", text: "Global student infrastructure.", href: "/products/studenthome" },
-  { number: "04", name: "Daemon", stage: "Part of CODELOS", text: "Distributed systems and compute infrastructure.", href: "/products" },
+  { number: "01", name: "William Graham", stage: "In development", text: "Flagship artificial intelligence system.", href: "/products/william-graham" },
+  { number: "02", name: "Studenthome", stage: "In development", text: "Global student infrastructure.", href: "/products/studenthome" },
+  { number: "03", name: "Codelos", stage: "Platform", text: "Codelos IDE · Daemon · Sailwind · COCOA · Fly", href: "/products" },
+  { number: "04", name: "QESA", stage: "In development", text: "Quantum Encrypted Systems Architecture.", href: "/products" },
+  { number: "05", name: "TENSA", stage: "In development", text: "Tendon Engineered Natural SA.", href: "/products" },
+  { number: "06", name: "VISA", stage: "In development", text: "VIsual Intelligence SA.", href: "/products/visa" },
 ];
 
 export default function ProductsPage() {
@@ -25,14 +26,7 @@ export default function ProductsPage() {
         <div className="products-grid">
           {products.map((product) => (
             <Link key={product.name} href={product.href} className="product-card-link">
-              <div className="product-card__aurora">
-                <Aurora
-                  colorStops={["#a6ff91", "#c9b4df", "#684dff"]}
-                  blend={0.5}
-                  amplitude={1.0}
-                  speed={1}
-                />
-              </div>
+
 
               <div className="product-card__content">
                 <span className="product-card__number">{product.number}</span>
