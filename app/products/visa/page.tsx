@@ -1,2 +1,12 @@
 import ProductDetail from "@/components/ProductDetail";
-export default function VISAPage(){return <ProductDetail name="VISA" number="01" category="Visual Intelligence" description="Visual Intelligence Systems Architecture. A research architecture for intelligent visual systems." accent="green" status="In development"/>;}
+
+export default function VISAPage(){
+  return <ProductDetail
+    name="VISA"
+    number="06"
+    category="Visual Intelligence Software"
+    description="A spatial intelligence software platform designed to bring advanced visual computing, contextual awareness, and immersive interaction to everyday computing."
+    accent="green"
+    status="In development"
+  />;
+}
