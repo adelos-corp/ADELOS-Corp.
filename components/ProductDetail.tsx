@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Aurora from "@/components/Aurora";
 import SiteFooter from "@/components/SiteFooter";
 import "./ProductDetail.css";
 
@@ -23,14 +22,6 @@ export default function ProductDetail({
   return (
     <main className="product-detail-page">
       <section className={`product-detail-hero product-detail-hero--${accent}`}>
-        <div className="product-detail-aurora">
-          <Aurora
-            colorStops={["#a6ff91", "#c9b4df", "#684dff"]}
-            blend={0.5}
-            amplitude={1.0}
-            speed={1}
-          />
-        </div>
         <div className="product-detail-copy">
           <span>{number} / {category}</span>
           <h1>{name}</h1>
