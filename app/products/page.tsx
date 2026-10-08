@@ -5,10 +5,10 @@ import "@/components/Products.css";
 const products = [
   { number: "01", name: "William Graham", stage: "In development", text: "Flagship artificial intelligence system.", href: "/products/william-graham" },
   { number: "02", name: "Studenthome", stage: "In development", text: "Global student infrastructure.", href: "/products/studenthome" },
-  { number: "03", name: "Codelos", stage: "Platform", text: "Codelos IDE · Daemon · Sailwind · COCOA · Fly", href: "/products" },
-  { number: "04", name: "QESA", stage: "In development", text: "Quantum Encrypted Systems Architecture.", href: "/products" },
-  { number: "05", name: "TENSA", stage: "In development", text: "Tendon Engineered Natural SA.", href: "/products" },
-  { number: "06", name: "VISA", stage: "In development", text: "VIsual Intelligence SA.", href: "/products/visa" },
+  { number: "03", name: "Codelos", stage: "Platform", text: "Codelos IDE · Daemon · Sailwind · COCOA · Fly", href: "/products/codelos" },
+  { number: "04", name: "QESA", stage: "In development", text: "Quantum Encryption Systems Architecture.", href: "/products/qesa" },
+  { number: "05", name: "TENSA", stage: "In development", text: "Tendon Engineered Natural Systems Architecture.", href: "/products/tensa" },
+  { number: "06", name: "VISA", stage: "In development", text: "VIsual Intelligence Systems Architecture.", href: "/products/visa" },
 ];
 
 export default function ProductsPage() {
