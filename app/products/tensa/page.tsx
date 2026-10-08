@@ -1,3 +1,5 @@
+import ProductDetail from "@/components/ProductDetail";
+
 export default function TENSAPage() {
-  return <main><h1>TENSA</h1><p>Product page.</p></main>;
+  return <ProductDetail name="TENSA" number="05" category="Tendon Engineered Natural Systems Architecture" description="Mechanically intelligent robotics. Advanced biomechanics research enabling true physical intelligence." accent="orange" status="Coming soon"/>;
 }
