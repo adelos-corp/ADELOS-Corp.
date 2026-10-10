@@ -26,10 +26,6 @@
 .home-william__specs>div>span,.home-william__architecture-grid>div>span{grid-row:span 2;color:#c4a5ff;font-size:.68rem;letter-spacing:.12em;padding-top:3px}
 .home-william__specs strong,.home-william__architecture-grid strong{font-size:.92rem;font-weight:550}
 .home-william__specs small,.home-william__architecture-grid small{color:rgba(255,255,255,.7);font-size:.8rem;line-height:1.45}
-@supports (animation-timeline: view()) {
-  .home-william__copy{animation:william-rise linear both;animation-timeline:view();animation-range:contain 0% contain 100%}
-  @keyframes william-rise{from{opacity:0;transform:translate3d(0,76px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
-}
 .home-william__link{display:inline-flex;align-items:center;gap:18px;color:#fff;text-decoration:none;font-size:.9rem;padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,.48);transition:gap 220ms ease,border-color 220ms ease}
 .home-william__link:hover{gap:25px;border-color:rgba(255,255,255,.9)}
 @media(max-width:1050px){.home-hero__content{width:calc(100% - 48px)}.home-william{padding-left:24px;padding-right:24px}.home-william__copy,.home-william__copy--wide{width:min(920px,100%)}}
