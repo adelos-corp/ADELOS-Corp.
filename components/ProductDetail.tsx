@@ -9,6 +9,7 @@ type ProductDetailProps = {
   description: string;
   accent?: "violet" | "blue" | "green" | "orange";
   status: string;
+  openHref?: string;
   relatedProducts?: { name: string; href: string; description: string }[];
 };
 
@@ -19,6 +20,7 @@ export default function ProductDetail({
   description,
   accent = "violet",
   status,
+  openHref,
   relatedProducts,
 }: ProductDetailProps) {
   return (
@@ -29,6 +31,9 @@ export default function ProductDetail({
           <h1>{name}</h1>
           <p>{description}</p>
           <div>
+            <Link href={openHref ?? "/products"} className="product-detail-open">
+              Open {name} <b aria-hidden="true">↗</b>
+            </Link>
             <Link href="/products" className="product-detail-link">
               All Products <b>→</b>
             </Link>
