@@ -14,14 +14,19 @@ img,video,canvas,svg{max-width:100%}
 button,input,textarea,select{font:inherit}
 ::selection{background:rgba(255,255,255,.2);color:#fff}
 
-/* Fade the page in without transforming the body, so fixed UI stays viewport-anchored. */
+/* Fade the whole page while content rises independently, keeping fixed UI viewport-anchored. */
 @keyframes adelos-page-enter {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-body { animation: adelos-page-enter 850ms cubic-bezier(.2,.75,.25,1) both; }
+@keyframes adelos-content-enter {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+body { animation: adelos-page-enter 1.25s cubic-bezier(.2,.75,.25,1) both; }
+body > main { animation: adelos-content-enter 1.15s cubic-bezier(.2,.75,.25,1) both; }
 @media (prefers-reduced-motion: reduce) {
-  body { animation: none; }
+  body,body > main { animation: none; }
 }
 
 /* Mobile is edge-to-edge; the rounded desktop frame stays untouched. */
