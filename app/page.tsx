@@ -32,11 +32,11 @@ export default function Home() {
               <span className="home-william__eyebrow">02 / PRIVATE BY DESIGN</span>
               <h2 id="william-enterprise-title"><SplitText text="Built for the" tag="span" /><br/><SplitText text="modern enterprise." tag="span" className="home-william__accent" /></h2>
               <SplitText text="Privacy-first artificial intelligence running on local architecture with secure cloud synchronization." tag="p" className="home-william__split-caption" delay={5} duration={420} />
-              <div className="home-william__specs" aria-label="Platform capabilities">
-                <div><span>01</span><strong>Local inference</strong><small>Keep sensitive workloads close to the source.</small></div>
-                <div><span>02</span><strong>Encrypted sync</strong><small>Protected state across trusted devices.</small></div>
-                <div><span>03</span><strong>Policy-aware runtime</strong><small>Granular controls for data access and execution.</small></div>
-                <div><span>04</span><strong>Resilient orchestration</strong><small>Graceful handoff between local and cloud resources.</small></div>
+              <div className="home-william__capabilities" aria-label="Platform capabilities">
+                <p><strong>Local inference</strong><span>Keep sensitive workloads close to the source.</span></p>
+                <p><strong>Encrypted sync</strong><span>Protected state across trusted devices.</span></p>
+                <p><strong>Policy-aware runtime</strong><span>Granular controls for data access and execution.</span></p>
+                <p><strong>Resilient orchestration</strong><span>Graceful handoff between local and cloud resources.</span></p>
               </div>
             </div>
           </section>
@@ -46,11 +46,11 @@ export default function Home() {
               <span className="home-william__eyebrow">03 / ENGINEERED SYSTEMS</span>
               <h2 id="william-architecture-title"><SplitText text="Architecture" tag="span" /><br/><SplitText text="Overview." tag="span" className="home-william__accent" /></h2>
               <SplitText text="This technology represents the forefront of ADELOS engineering. By combining advanced logic systems with distributed computing models, we aim to achieve unprecedented levels of reliability and performance." tag="p" className="home-william__split-caption" delay={5} duration={420} />
-              <div className="home-william__architecture-grid" aria-label="Architecture principles">
-                <div><span>01</span><strong>Reasoning layer</strong><small>Composable logic pipelines</small></div>
-                <div><span>02</span><strong>Execution fabric</strong><small>Distributed task scheduling</small></div>
-                <div><span>03</span><strong>Trust boundary</strong><small>Least-privilege access model</small></div>
-                <div><span>04</span><strong>Continuity layer</strong><small>Fault-aware state recovery</small></div>
+              <div className="home-william__architecture-list" aria-label="Architecture principles">
+                <p><strong>Reasoning layer</strong><span>Composable logic pipelines</span></p>
+                <p><strong>Execution fabric</strong><span>Distributed task scheduling</span></p>
+                <p><strong>Trust boundary</strong><span>Least-privilege access model</span></p>
+                <p><strong>Continuity layer</strong><span>Fault-aware state recovery</span></p>
               </div>
             </div>
           </section>
