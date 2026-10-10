@@ -16,6 +16,7 @@ export default function Home() {
 
       <div className="home-gradient-sheet">
         <section className="home-william" aria-labelledby="william-title">
+          <div className="home-william__background" aria-hidden="true" />
           <div className="home-william__copy">
             <span className="home-william__eyebrow">01 / PERSONALIZED AI</span>
             <h2 id="william-title">William<br/><span>Graham.</span></h2>
