@@ -9,6 +9,7 @@ type ProductDetailProps = {
   description: string;
   accent?: "violet" | "blue" | "green" | "orange";
   status: string;
+  relatedProducts?: { name: string; href: string; description: string }[];
 };
 
 export default function ProductDetail({
@@ -18,6 +19,7 @@ export default function ProductDetail({
   description,
   accent = "violet",
   status,
+  relatedProducts,
 }: ProductDetailProps) {
   return (
     <main className="product-detail-page">
@@ -32,6 +34,18 @@ export default function ProductDetail({
             </Link>
           </div>
         </div>
+        {relatedProducts && relatedProducts.length > 0 && (
+          <nav className="product-detail-related" aria-label="Related products">
+            <span>WITHIN CODELOS</span>
+            <div>{relatedProducts.map((item) => (
+              <Link key={item.href} href={item.href}>
+                <strong>{item.name}</strong>
+                <small>{item.description}</small>
+                <b aria-hidden="true">↗</b>
+              </Link>
+            ))}</div>
+          </nav>
+        )}
         <div className="product-detail-status">{status}</div>
       </section>
       <SiteFooter />
