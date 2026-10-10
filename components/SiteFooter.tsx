@@ -3,7 +3,7 @@ import "./SiteFooter.css";
 
 export default function SiteFooter() {
   return <footer className="site-footer">
-    <div className="site-footer__brand"><strong>adelOS</strong><p>Engineering solutions that solve tomorrow.</p></div>
+    <div className="site-footer__brand"><strong>ADELOS Corp.</strong><p>Engineering solutions that solve tomorrow.</p></div>
     <div className="site-footer__columns">
       <div><span>Products</span><Link href="/products/visa">VISA</Link><Link href="/products/william-graham">William Graham</Link><Link href="/products/studenthome">Studenthome</Link><Link href="/products">Daemon</Link></div>
       <div><span>Company</span><Link href="/research">Research</Link><Link href="/about">About</Link><Link href="/careers">Careers</Link><Link href="/contact">Contact</Link></div>
