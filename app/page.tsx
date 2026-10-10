@@ -1,12 +1,9 @@
 "use client";
 
 import { useRef } from "react";
-import { Roboto_Condensed } from "next/font/google";
 import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
 import "@/components/Home.css";
-
-const robotoCondensed = Roboto_Condensed({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 
 const products = [
@@ -27,7 +24,7 @@ export default function Home() {
       <section className="home-hero">
         <div className="home-hero__content">
           <span className="home-hero__eyebrow">ADELOS CORP.</span>
-          <h1 className={robotoCondensed.className}><span>Engineering solutions</span><span>that solve tomorrow.</span></h1>
+          <h1><span>Engineering solutions</span><span>that solve tomorrow.</span></h1>
           <p>Advanced systems. Deeper integration.<br/>A more capable tomorrow.</p>
           <div className="home-hero__actions">
             <Link href="/products" className="home-hero__primary">Explore <span>→</span></Link>
