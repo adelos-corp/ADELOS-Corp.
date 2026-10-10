@@ -5,6 +5,11 @@ import Aurora from "@/components/Aurora";
 import "./GlobalAurora.css";
 
 export default function GlobalAurora() {
+  const pathname = usePathname();
+
+  // The Products page owns its own fixed, interactive Aurora layer.
+  if (pathname === "/products" || pathname?.startsWith("/products/")) return null;
+
   return (
     <div className="global-aurora" aria-hidden="true">
       <Aurora
