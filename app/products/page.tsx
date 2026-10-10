@@ -9,16 +9,16 @@ import "@/components/Products.css";
 const defaultPalette = ["#00F5D4", "#7C3CFF", "#FF3D9A"];
 
 const products = [
-  { number: "01", name: "William Graham", category: "Personalized AI", stage: "Working", text: "Privacy-first personalized AI with local processing and secure cloud synchronization.", href: "/products/william-graham", visual: "william" },
-  { number: "02", name: "Studenthome", category: "Education", stage: "Beta", text: "A unified destination for global students and distributed education systems.", href: "/products/studenthome", visual: "studenthome" },
-  { number: "03", name: "Codelos", category: "Engineering platform", stage: "Under active development", text: "An intelligent, distributed engineering platform for high-performance programming.", href: "/products/codelos", visual: "codelos" },
-  { number: "04", name: "QESA", category: "Security architecture", stage: "Coming soon", text: "Quantum Encryption Systems Architecture for quantum-ready networking and secure infrastructure.", href: "/products/qesa", visual: "qesa" },
-  { number: "05", name: "TENSA", category: "Biomimetics & robotics", stage: "Under active development", text: "Tendon Engineered Natural Systems Architecture for artificial-tendon biomechanics and robotics research.", href: "/products/tensa", visual: "tensa" },
-  { number: "06", name: "VISA", category: "Spatial computing", stage: "In development", text: "Visual Intelligence Systems Architecture: immersive spatial-computing software, not a headset.", href: "/products/visa", visual: "visa" },
+  { number: "01", name: "William Graham", category: "Personalized AI", stage: "Working", text: "Privacy-first personalized AI with local processing and secure cloud synchronization.", href: "/products/william-graham", visual: "william", palette: ["#5F00C9", "#591F8E", "#5227FF"] },
+  { number: "02", name: "Studenthome", category: "Education", stage: "Beta", text: "A unified destination for global students and distributed education systems.", href: "/products/studenthome", visual: "studenthome", palette: ["#0049BA", "#2F8CF4", "#0079C1"] },
+  { number: "03", name: "Codelos", category: "Engineering platform", stage: "Under active development", text: "An intelligent, distributed engineering platform for high-performance programming.", href: "/products/codelos", visual: "codelos", palette: ["#574CFD", "#0E0597", "#002FFF"] },
+  { number: "04", name: "QESA", category: "Security architecture", stage: "Coming soon", text: "Quantum Encryption Systems Architecture for quantum-ready networking and secure infrastructure.", href: "/products/qesa", visual: "qesa", palette: ["#012901", "#134216", "#023A02"] },
+  { number: "05", name: "TENSA", category: "Biomimetics & robotics", stage: "Under active development", text: "Tendon Engineered Natural Systems Architecture for artificial-tendon biomechanics and robotics research.", href: "/products/tensa", visual: "tensa", palette: ["#290101", "#421313", "#3A0202"] },
+  { number: "06", name: "VISA", category: "Spatial computing", stage: "In development", text: "Visual Intelligence Systems Architecture: immersive spatial-computing software, not a headset.", href: "/products/visa", visual: "visa", palette: ["#00FF07", "#75FF00", "#D1FF00"] },
 ];
 
 export default function ProductsPage() {
-  const [activePalette] = useState(defaultPalette);
+  const [activePalette, setActivePalette] = useState<string[]>(defaultPalette);
 
   return (
     <main className="products-page">
@@ -39,7 +39,15 @@ export default function ProductsPage() {
 
         <div className="products-grid">
           {products.map((product) => (
-            <Link key={product.name} href={product.href} className={`product-card-link product-card-link--${product.visual}`}>
+            <Link
+              key={product.name}
+              href={product.href}
+              className={`product-card-link product-card-link--${product.visual}`}
+              onMouseEnter={() => setActivePalette(product.palette)}
+              onMouseLeave={() => setActivePalette(defaultPalette)}
+              onFocus={() => setActivePalette(product.palette)}
+              onBlur={() => setActivePalette(defaultPalette)}
+            >
               <div className="product-card__content">
                 <div className="product-card__meta">
                   <span className="product-card__number">{product.number} / {product.category}</span>
