@@ -140,6 +140,10 @@ export default function Aurora(props: AuroraProps) {
 
   const propsRef = useRef<AuroraProps>(props);
   propsRef.current = props;
+  const currentStopsRef = useRef<number[][]>(colorStops.map((hex) => {
+    const c = new Color(hex);
+    return [c.r, c.g, c.b];
+  }));
 
   const ctnDom = useRef<HTMLDivElement>(null);
 
@@ -221,10 +225,16 @@ export default function Aurora(props: AuroraProps) {
           (propsRef.current.lightMode ?? lightMode) ? 1 : 0;
 
         const stops = propsRef.current.colorStops ?? colorStops;
-        program.uniforms.uColorStops.value = stops.map((hex: string) => {
+        const targetStops = stops.map((hex: string) => {
           const c = new Color(hex);
           return [c.r, c.g, c.b];
         });
+        currentStopsRef.current = currentStopsRef.current.map((current, index) =>
+          current.map((channel, channelIndex) =>
+            channel + (targetStops[index][channelIndex] - channel) * 0.035
+          )
+        );
+        program.uniforms.uColorStops.value = currentStopsRef.current;
 
         renderer.render({ scene: mesh });
       }
