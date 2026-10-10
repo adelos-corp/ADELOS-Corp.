@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto_Condensed, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import MenuBar from "@/components/MenuBar";
 import GlobalAurora from "@/components/GlobalAurora";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const robotoCondensed = Roboto_Condensed({ variable: "--font-roboto-condensed", subsets: ["latin"], weight: "100 900" });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${robotoCondensed.variable} ${geistMono.variable}`}>
       <body>
         <GlobalAurora />
         <MenuBar />
