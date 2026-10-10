@@ -31,9 +31,15 @@ export default function ProductDetail({
           <h1>{name}</h1>
           <p>{description}</p>
           <div>
-            <Link href={openHref ?? "/products"} className="product-detail-open">
-              Open {name} <b aria-hidden="true">↗</b>
-            </Link>
+            {openHref ? (
+              <Link href={openHref} className="product-detail-open">
+                Open {name} <b aria-hidden="true">↗</b>
+              </Link>
+            ) : (
+              <button type="button" className="product-detail-open" disabled title="Product launch destination has not been configured yet">
+                Open {name} <b aria-hidden="true">↗</b>
+              </button>
+            )}
             <Link href="/products" className="product-detail-link">
               All Products <b>→</b>
             </Link>
