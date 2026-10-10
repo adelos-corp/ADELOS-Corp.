@@ -50,3 +50,7 @@
 .home-william__capabilities strong,.home-william__architecture-list strong{font-size:1rem;font-weight:550;letter-spacing:-.015em}
 .home-william__capabilities span,.home-william__architecture-list span{color:rgba(255,255,255,.7);font-size:.88rem;line-height:1.5}
 @media(max-width:700px){.home-william__capabilities,.home-william__architecture-list{grid-template-columns:1fr;column-gap:0;margin-top:24px}.home-william__capabilities p,.home-william__architecture-list p{padding:14px 0}.home-william__capabilities span,.home-william__architecture-list span{font-size:.82rem}}
+
+
+.home-william__split-caption--lines{display:flex;flex-direction:column;align-items:center}
+.home-william__split-caption-line{display:block}
