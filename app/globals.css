@@ -10,9 +10,9 @@ html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 .lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
 body{position:relative;margin:0;min-height:100vh;background:#000;color:#f5f5f7;font-family:var(--font-roboto-condensed),system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;border-radius:50px 50px 0 0;overflow-x:clip;clip-path:inset(0 round 50px 50px 0 0)}
+img,video,canvas,svg{max-width:100%}
 button,input,textarea,select{font:inherit}
 ::selection{background:rgba(255,255,255,.2);color:#fff}
-
 
 /* A restrained page entrance on every fresh load or refresh. */
 @keyframes adelos-page-enter {
@@ -22,4 +22,12 @@ button,input,textarea,select{font:inherit}
 body { animation: adelos-page-enter 850ms cubic-bezier(.2,.75,.25,1) both; }
 @media (prefers-reduced-motion: reduce) {
   body { animation: none; }
+}
+
+/* Mobile is edge-to-edge; the rounded desktop frame stays untouched. */
+@media(max-width:700px){
+  html,body{width:100%;max-width:100%;border-radius:0!important;clip-path:none!important}
+  body{overflow-x:hidden}
+  main,section,header,footer{max-width:100%}
+  button,a{-webkit-tap-highlight-color:transparent}
 }
