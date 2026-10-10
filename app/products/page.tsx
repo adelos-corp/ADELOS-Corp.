@@ -1,6 +1,12 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import Aurora from "@/components/Aurora";
 import SiteFooter from "@/components/SiteFooter";
 import "@/components/Products.css";
+
+const defaultPalette = ["#00F5D4", "#7C3CFF", "#FF3D9A"];
 
 const products = [
   { number: "01", name: "William Graham", category: "Personalized AI", stage: "Working", text: "Privacy-first personalized AI with local processing and secure cloud synchronization.", href: "/products/william-graham", visual: "william" },
@@ -12,8 +18,13 @@ const products = [
 ];
 
 export default function ProductsPage() {
+  const [activePalette] = useState(defaultPalette);
+
   return (
     <main className="products-page">
+      <div className="products-aurora" aria-hidden="true">
+        <Aurora colorStops={activePalette} blend={0.62} amplitude={1.12} speed={1} />
+      </div>
       <section className="products-shell">
         <header className="products-heading">
           <div className="products-heading__title">
@@ -29,12 +40,6 @@ export default function ProductsPage() {
         <div className="products-grid">
           {products.map((product) => (
             <Link key={product.name} href={product.href} className={`product-card-link product-card-link--${product.visual}`}>
-              <div className="product-card__visual" aria-hidden="true">
-                <span className="product-card__visual-orbit" />
-                <span className="product-card__visual-core" />
-                <span className="product-card__visual-line" />
-                <span className="product-card__visual-mark">{product.number}</span>
-              </div>
               <div className="product-card__content">
                 <div className="product-card__meta">
                   <span className="product-card__number">{product.number} / {product.category}</span>
