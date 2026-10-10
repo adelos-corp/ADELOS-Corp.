@@ -5,8 +5,8 @@ export default function QESAPage() {
     name="QESA"
     number="04"
     category="Quantum Encryption Systems Architecture"
-    description="Future enterprise cybersecurity. Quantum-ready networking and secure infrastructure with AI-assisted monitoring."
+    description="An enterprise cybersecurity architecture for quantum-ready networking and secure infrastructure, with AI-assisted monitoring."
     accent="violet"
-    status="Under active development"
+    status="Coming soon"
   />;
 }
