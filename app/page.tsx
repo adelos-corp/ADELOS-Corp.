@@ -1,12 +1,10 @@
 "use client";
 
 import { useRef } from "react";
-import { Oswald } from "next/font/google";
 import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
 import "@/components/Home.css";
 
-const oswald = Oswald({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 const products = [
   { number:"01", name:"William Graham", text:"Privacy-first personalized AI.", href:"/products/william-graham", accent:"violet" as const },
@@ -26,7 +24,7 @@ export default function Home() {
       <section className="home-hero">
         <div className="home-hero__content">
           <span className="home-hero__eyebrow">ADELOS CORP.</span>
-          <h1 className={oswald.className}><span>Engineering solutions</span><span>that solve tomorrow.</span></h1>
+          <h1><span>Engineering solutions</span><span>that solve tomorrow.</span></h1>
           <p>Advanced systems. Deeper integration.<br/>A more capable tomorrow.</p>
           <div className="home-hero__actions">
             <Link href="/products" className="home-hero__primary">Explore <span>→</span></Link>
