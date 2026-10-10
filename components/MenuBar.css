@@ -13,8 +13,9 @@
   .menu-bar-wrap{top:14px;width:calc(100% - 28px);grid-template-columns:1fr auto;gap:14px}
   .menu-bar__brand{width:34px;height:34px}
   .menu-bar__nav{display:none}
-  .menu-bar__mobile-toggle{position:relative;z-index:102;display:flex;justify-self:end;width:46px;height:46px;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:1px solid rgba(255,255,255,.16);border-radius:50%;background:rgba(8,8,12,.68);color:#fff;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);cursor:pointer}
-  .menu-bar__mobile-toggle span{display:block;width:17px;height:1px;background:#fff;transition:transform 180ms ease}
+  .menu-bar__mobile-toggle{position:relative;z-index:102;display:flex;justify-self:end;width:46px;height:46px;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;color:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;cursor:pointer;appearance:none;-webkit-appearance:none}
+  .menu-bar__mobile-toggle:focus-visible{outline:1px solid rgba(255,255,255,.5);outline-offset:3px}
+  .menu-bar__mobile-toggle span{display:block;width:20px;height:1px;background:#fff;transition:transform 180ms ease}
   .menu-bar__mobile-toggle.is-open span:first-child{transform:translateY(3.5px) rotate(45deg)}
   .menu-bar__mobile-toggle.is-open span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
   .menu-bar__mobile-panel{position:fixed;z-index:101;top:0;left:0;right:0;display:flex;min-height:100svh;flex-direction:column;justify-content:center;padding:100px 28px 36px;background:rgba(4,4,7,.96);border:0;backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px)}
