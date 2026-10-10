@@ -45,7 +45,11 @@ export default function Home() {
             <div className="home-william__copy home-william__copy--wide">
               <span className="home-william__eyebrow">03 / ENGINEERED SYSTEMS</span>
               <h2 id="william-architecture-title"><SplitText text="Architecture" tag="span" /><br/><SplitText text="Overview." tag="span" className="home-william__accent" /></h2>
-              <SplitText text="This technology represents the forefront of ADELOS engineering. By combining advanced logic systems with distributed computing models, we aim to achieve unprecedented levels of reliability and performance." tag="p" className="home-william__split-caption" delay={5} duration={420} />
+              <div className="home-william__split-caption home-william__split-caption--lines" aria-label="This technology represents the forefront of ADELOS engineering. By combining advanced logic systems with distributed computing models, we aim to achieve unprecedented levels of reliability and performance.">
+                <SplitText text="This technology represents the forefront of ADELOS engineering." tag="span" className="home-william__split-caption-line" delay={5} duration={420} />
+                <SplitText text="By combining advanced logic systems with distributed computing models," tag="span" className="home-william__split-caption-line" delay={5} duration={420} />
+                <SplitText text="we aim to achieve unprecedented levels of reliability and performance." tag="span" className="home-william__split-caption-line" delay={5} duration={420} />
+              </div>
               <div className="home-william__architecture-list" aria-label="Architecture principles">
                 <p><strong>Reasoning layer</strong><span>Composable logic pipelines</span></p>
                 <p><strong>Execution fabric</strong><span>Distributed task scheduling</span></p>
