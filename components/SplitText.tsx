@@ -50,7 +50,7 @@ export default function SplitText({
     return () => observer.disconnect();
   }, [threshold]);
 
-  const units = splitType === "words" ? text.split(/(\\s+)/) : Array.from(text);
+  const units = splitType === "words" ? text.split(/(\s+)/) : Array.from(text);
 
   return (
     <Tag
@@ -60,10 +60,11 @@ export default function SplitText({
       aria-label={text}
     >
       {units.map((unit, index) => {
-        if (/^\\s+$/.test(unit)) {
+        if (/^\s+$/.test(unit)) {
           return <span aria-hidden="true" key={`space-${index}`}>{unit}</span>;
         }
 
+        const displayUnit = splitType === "chars" && unit === " " ? "\u00a0" : unit;
         return (
           <span
             className="split-text__unit"
@@ -75,7 +76,7 @@ export default function SplitText({
               "--split-duration": `${duration}ms`
             } as CSSProperties}
           >
-            {unit}
+            {displayUnit}
           </span>
         );
       })}
