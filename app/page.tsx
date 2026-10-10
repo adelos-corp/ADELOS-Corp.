@@ -27,13 +27,7 @@ export default function Home() {
             <Link href="/products/william-graham" className="home-william__link">Discover William Graham <span aria-hidden="true">↗</span></Link>
           </div>
           <Link href="/products/william-graham" className="home-william__visual" aria-label="Explore William Graham">
-            <div className="wg-orb" aria-hidden="true">
-              <div className="wg-orb__halo" />
-              <div className="wg-orb__shell" />
-              <div className="wg-orb__core" />
-              <div className="wg-orb__filament wg-orb__filament--one" />
-              <div className="wg-orb__filament wg-orb__filament--two" />
-            </div>
+            <img className="wg-reference-image" src="/wg-reference.webp" alt="A luminous violet and pink energy sphere representing William Graham" />
           </Link>
         </section>
         <SiteFooter />
