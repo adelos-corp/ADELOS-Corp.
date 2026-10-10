@@ -54,3 +54,12 @@
 
 .home-william__split-caption--lines{display:flex;flex-direction:column;align-items:center}
 .home-william__split-caption-line{display:block}
+
+
+/* Brain-inspired memory and contextual recall screens */
+.home-william--memory h2,.home-william--recall h2{font-size:clamp(3.7rem,6.8vw,7.2rem);line-height:.95;letter-spacing:-.07em}
+.home-william__memory-list{display:grid;width:100%;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;row-gap:0;margin-top:38px;text-align:left}
+.home-william__memory-list p{display:flex;flex-direction:column;gap:7px;margin:0;padding:20px 0;border-top:1px solid rgba(255,255,255,.22)}
+.home-william__memory-list strong{font-size:1rem;font-weight:550;letter-spacing:-.015em}
+.home-william__memory-list span{color:rgba(255,255,255,.7);font-size:.88rem;line-height:1.5}
+@media(max-width:700px){.home-william--memory h2,.home-william--recall h2{font-size:clamp(2.9rem,10vw,4.6rem)}.home-william__memory-list{grid-template-columns:1fr;column-gap:0;margin-top:24px}.home-william__memory-list p{padding:14px 0}.home-william__memory-list span{font-size:.82rem}}
