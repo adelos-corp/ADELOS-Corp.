@@ -31,7 +31,6 @@ export default function ProductsPage() {
                 <span className="product-card__stage">{product.stage}</span>
                 <h2>{product.name}</h2>
                 <p>{product.text}</p>
-                <span className="product-card__open">Open {product.name} <span aria-hidden="true">↗</span></span>
                 <span className="product-card__arrow" aria-hidden="true">↗</span>
               </div>
             </Link>
