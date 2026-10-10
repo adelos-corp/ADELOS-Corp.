@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import GlassSurface from "./GlassSurface";
 import "./MenuBar.css";
 
@@ -19,6 +20,20 @@ const getActiveHref = (pathname: string | null) =>
 export default function MenuBar() {
   const pathname = usePathname();
   const activeHref = getActiveHref(pathname);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <header className="menu-bar-wrap">
@@ -51,6 +66,45 @@ export default function MenuBar() {
         })}
         </nav>
       </GlassSurface>
+
+      <button
+        type="button"
+        className={`menu-bar__mobile-toggle ${mobileMenuOpen ? "is-open" : ""}`}
+        aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={mobileMenuOpen}
+        aria-controls="mobile-primary-navigation"
+        onClick={() => setMobileMenuOpen((open) => !open)}
+      >
+        <span />
+        <span />
+      </button>
+
+      {mobileMenuOpen && (
+        <motion.nav
+          id="mobile-primary-navigation"
+          className="menu-bar__mobile-panel"
+          aria-label="Mobile navigation"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.2 }}
+        >
+          <span className="menu-bar__mobile-kicker">ADELOS CORP. / NAVIGATION</span>
+          {menuItems.map((item, index) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className={`menu-bar__mobile-link ${activeHref === item.href ? "is-active" : ""}`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              {item.label}
+              <b aria-hidden="true">↗</b>
+            </Link>
+          ))}
+          <Link href="/" className="menu-bar__mobile-home" onClick={() => setMobileMenuOpen(false)}>Back to home <span>↗</span></Link>
+        </motion.nav>
+      )}
 
       <div className="menu-bar__spacer" aria-hidden="true" />
     </header>
