@@ -25,7 +25,7 @@ export default function MenuBar() {
 
   return (
     <header className="menu-bar-wrap">
-      <Link href="/" className="menu-bar__brand" aria-label="adelOS home">
+      <Link href="/" className="menu-bar__brand" aria-label="ADELOS Corp. home">
         <img src="/adelos-logo.png" alt="ADELOS" />
       </Link>
 
