@@ -23,7 +23,7 @@ export default function Home() {
       <section className="home-hero">
         <div className="home-hero__content">
           <span className="home-hero__eyebrow">ADELOS CORP.</span>
-          <h1>Engineering<br/>solutions<br/>that solve<br/>tomorrow.</h1>
+          <h1><span>Engineering solutions</span><span>that solve tomorrow.</span></h1>
           <p>Advanced systems. Deeper integration.<br/>A more capable tomorrow.</p>
           <div className="home-hero__actions">
             <Link href="/products" className="home-hero__primary">Explore <span>→</span></Link>
