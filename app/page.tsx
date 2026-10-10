@@ -45,7 +45,6 @@ export default function Home() {
                 <span className="home-product__number">{product.number}</span>
                 <h2>{product.name}</h2>
                 <p>{product.text}</p>
-                <span className="home-product__open">Open {product.name} <span aria-hidden="true">↗</span></span>
                 <span className="home-product__arrow" aria-hidden="true">↗</span>
               </Link>
             ))}
