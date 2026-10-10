@@ -8,8 +8,8 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "adelOS | Engineering solutions that solve tomorrow.",
-  description: "adelOS by ADELOS Corp. builds advanced systems, research architectures, and engineering solutions.",
+  title: "ADELOS Corp. | Engineering solutions that solve tomorrow.",
+  description: "ADELOS Corp. builds advanced systems, research architectures, and engineering solutions.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
