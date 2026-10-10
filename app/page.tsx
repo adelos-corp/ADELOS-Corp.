@@ -26,9 +26,7 @@ export default function Home() {
             <p>Intelligence that feels less like a tool, and more like an extension of you.</p>
             <Link href="/products/william-graham" className="home-william__link">Discover William Graham <span aria-hidden="true">↗</span></Link>
           </div>
-          <Link href="/products/william-graham" className="home-william__visual" aria-label="Explore William Graham">
-            <img className="wg-reference-image" src="/wg-reference.webp" alt="A luminous violet and pink energy sphere representing William Graham" />
-          </Link>
+
         </section>
         <SiteFooter />
       </div>
