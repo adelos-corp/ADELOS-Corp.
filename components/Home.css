@@ -42,3 +42,11 @@
 .home-william__split-caption{max-width:760px;margin:32px auto 28px;color:rgba(255,255,255,.92);font-size:clamp(1.05rem,1.35vw,1.25rem);line-height:1.65;letter-spacing:-.015em}
 @media(max-width:700px){.home-william__split-caption{max-width:440px;margin:24px auto;font-size:1rem}}
 @media(prefers-reduced-motion:reduce){.split-text__unit{opacity:1;transform:none;transition:none}}
+
+
+/* Text-led capability lists replace the previous card grids */
+.home-william__capabilities,.home-william__architecture-list{display:grid;width:100%;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;row-gap:0;margin-top:38px;text-align:left}
+.home-william__capabilities p,.home-william__architecture-list p{display:flex;flex-direction:column;gap:7px;margin:0;padding:20px 0;border-top:1px solid rgba(255,255,255,.22)}
+.home-william__capabilities strong,.home-william__architecture-list strong{font-size:1rem;font-weight:550;letter-spacing:-.015em}
+.home-william__capabilities span,.home-william__architecture-list span{color:rgba(255,255,255,.7);font-size:.88rem;line-height:1.5}
+@media(max-width:700px){.home-william__capabilities,.home-william__architecture-list{grid-template-columns:1fr;column-gap:0;margin-top:24px}.home-william__capabilities p,.home-william__architecture-list p{padding:14px 0}.home-william__capabilities span,.home-william__architecture-list span{font-size:.82rem}}
