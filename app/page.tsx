@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
+import SplitText from "@/components/SplitText";
 import "@/components/Home.css";
 
 export default function Home() {
@@ -29,8 +30,8 @@ export default function Home() {
           <section className="home-william home-william--enterprise" aria-labelledby="william-enterprise-title">
             <div className="home-william__copy home-william__copy--wide">
               <span className="home-william__eyebrow">02 / PRIVATE BY DESIGN</span>
-              <h2 id="william-enterprise-title">Built for the<br/><span>modern enterprise.</span></h2>
-              <p>Privacy-first artificial intelligence running on local architecture with secure cloud synchronization.</p>
+              <h2 id="william-enterprise-title"><SplitText text="Built for the" tag="span" /><br/><SplitText text="modern enterprise." tag="span" className="home-william__accent" /></h2>
+              <SplitText text="Privacy-first artificial intelligence running on local architecture with secure cloud synchronization." tag="p" className="home-william__split-caption" />
               <div className="home-william__specs" aria-label="Platform capabilities">
                 <div><span>01</span><strong>Local inference</strong><small>Keep sensitive workloads close to the source.</small></div>
                 <div><span>02</span><strong>Encrypted sync</strong><small>Protected state across trusted devices.</small></div>
@@ -43,8 +44,8 @@ export default function Home() {
           <section className="home-william home-william--architecture" aria-labelledby="william-architecture-title">
             <div className="home-william__copy home-william__copy--wide">
               <span className="home-william__eyebrow">03 / ENGINEERED SYSTEMS</span>
-              <h2 id="william-architecture-title">Architecture<br/><span>Overview.</span></h2>
-              <p>This technology represents the forefront of ADELOS engineering. By combining advanced logic systems with distributed computing models, we aim to achieve unprecedented levels of reliability and performance.</p>
+              <h2 id="william-architecture-title"><SplitText text="Architecture" tag="span" /><br/><SplitText text="Overview." tag="span" className="home-william__accent" /></h2>
+              <SplitText text="This technology represents the forefront of ADELOS engineering. By combining advanced logic systems with distributed computing models, we aim to achieve unprecedented levels of reliability and performance." tag="p" className="home-william__split-caption" />
               <div className="home-william__architecture-grid" aria-label="Architecture principles">
                 <div><span>01</span><strong>Reasoning layer</strong><small>Composable logic pipelines</small></div>
                 <div><span>02</span><strong>Execution fabric</strong><small>Distributed task scheduling</small></div>
