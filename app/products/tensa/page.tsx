@@ -5,8 +5,8 @@ export default function TENSAPage() {
     name="TENSA"
     number="05"
     category="Tendon Engineered Natural Systems Architecture"
-    description="Mechanically intelligent robotics. Advanced biomechanics research enabling true physical intelligence through artificial tendon systems."
+    description="A biomechanics and robotics research architecture exploring mechanically intelligent systems through artificial tendon technology."
     accent="orange"
-    status="Coming soon"
+    status="Under active development"
   />;
 }
