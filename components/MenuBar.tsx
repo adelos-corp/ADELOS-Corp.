@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 import GlassSurface from "./GlassSurface";
 import "./MenuBar.css";
 
@@ -19,8 +18,7 @@ const getActiveHref = (pathname: string | null) =>
 
 export default function MenuBar() {
   const pathname = usePathname();
-  const [pendingHref, setPendingHref] = useState<string | null>(null);
-  const activeHref = pendingHref ?? getActiveHref(pathname);
+  const activeHref = getActiveHref(pathname);
 
   return (
     <header className="menu-bar-wrap">
@@ -38,7 +36,6 @@ export default function MenuBar() {
               key={item.label}
               href={item.href}
               className={`menu-bar__item ${active ? "menu-bar__item--active" : ""}`}
-              onClick={() => setPendingHref(item.href)}
             >
               {active && (
                 <motion.span
