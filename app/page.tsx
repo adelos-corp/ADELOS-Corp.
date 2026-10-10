@@ -58,6 +58,42 @@ export default function Home() {
               </div>
             </div>
           </section>
+
+          <section className="home-william home-william--memory" aria-labelledby="william-memory-title">
+            <div className="home-william__copy home-william__copy--wide">
+              <span className="home-william__eyebrow">04 / MEMORY ARCHITECTURE</span>
+              <h2 id="william-memory-title"><SplitText text="Intelligence that" tag="span" /><br/><SplitText text="remembers." tag="span" className="home-william__accent" /></h2>
+              <div className="home-william__split-caption home-william__split-caption--lines" aria-label="Experience becomes memory. Memory becomes context. Context informs thought.">
+                <SplitText text="Experience becomes memory." tag="span" className="home-william__split-caption-line" delay={5} duration={420} />
+                <SplitText text="Memory becomes context." tag="span" className="home-william__split-caption-line" delay={5} duration={420} />
+                <SplitText text="Context informs thought." tag="span" className="home-william__split-caption-line" delay={5} duration={420} />
+              </div>
+              <div className="home-william__memory-list" aria-label="Memory lifecycle">
+                <p><strong>Memory formation</strong><span>Extracting meaningful information from interactions and experiences.</span></p>
+                <p><strong>Memory consolidation</strong><span>Organizing and preserving information beyond the immediate conversational context.</span></p>
+                <p><strong>Associative storage</strong><span>Connecting memories through relationships, context, and relevance.</span></p>
+                <p><strong>Contextual recall</strong><span>Retrieving relevant memories when a new situation calls for them.</span></p>
+              </div>
+            </div>
+          </section>
+
+          <section className="home-william home-william--recall" aria-labelledby="william-recall-title">
+            <div className="home-william__copy home-william__copy--wide">
+              <span className="home-william__eyebrow">05 / CONTEXTUAL RECALL</span>
+              <h2 id="william-recall-title"><SplitText text="Remember with" tag="span" /><br/><SplitText text="purpose." tag="span" className="home-william__accent" /></h2>
+              <div className="home-william__split-caption home-william__split-caption--lines" aria-label="Not merely retrieving information. Reconstructing the context that makes it meaningful.">
+                <SplitText text="Not merely retrieving information." tag="span" className="home-william__split-caption-line" delay={5} duration={420} />
+                <SplitText text="Reconstructing the context" tag="span" className="home-william__split-caption-line" delay={5} duration={420} />
+                <SplitText text="that makes it meaningful." tag="span" className="home-william__split-caption-line" delay={5} duration={420} />
+              </div>
+              <div className="home-william__memory-list" aria-label="Memory recall principles">
+                <p><strong>Associative retrieval</strong><span>Finding relevant memories through connected concepts.</span></p>
+                <p><strong>Relevance weighting</strong><span>Prioritizing memories according to the current context.</span></p>
+                <p><strong>Temporal continuity</strong><span>Accounting for how information and circumstances change over time.</span></p>
+                <p><strong>Context reconstruction</strong><span>Combining relevant memories into a coherent picture of the present situation.</span></p>
+              </div>
+            </div>
+          </section>
         </section>
         <SiteFooter />
       </div>
