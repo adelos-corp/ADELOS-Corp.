@@ -41,7 +41,7 @@ export default function MenuBar() {
         <img src="/adelos-logo.png" alt="ADELOS" />
       </Link>
 
-      <GlassSurface className="menu-bar__nav" width="max-content" height={54} borderRadius={999} brightness={50} opacity={0.93} blur={11} backgroundOpacity={0.02} saturation={1} distortionScale={-35} chromaticAberration={false}>
+      <GlassSurface className="menu-bar__nav" width="max-content" height={54} borderRadius={999} brightness={50} opacity={0.82} blur={11} backgroundOpacity={0.02} saturation={1} distortionScale={-35} chromaticAberration={false}>
         <nav className="menu-bar__nav-inner" aria-label="Primary navigation">
         {menuItems.map((item) => {
           const active = activeHref === item.href;
