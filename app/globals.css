@@ -14,10 +14,10 @@ img,video,canvas,svg{max-width:100%}
 button,input,textarea,select{font:inherit}
 ::selection{background:rgba(255,255,255,.2);color:#fff}
 
-/* A restrained page entrance on every fresh load or refresh. */
+/* Fade the page in without transforming the body, so fixed UI stays viewport-anchored. */
 @keyframes adelos-page-enter {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: none; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 body { animation: adelos-page-enter 850ms cubic-bezier(.2,.75,.25,1) both; }
 @media (prefers-reduced-motion: reduce) {
