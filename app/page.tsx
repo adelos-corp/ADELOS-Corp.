@@ -6,12 +6,12 @@ import SiteFooter from "@/components/SiteFooter";
 import "@/components/Home.css";
 
 const products = [
-  { number:"01", name:"William Graham", text:"Flagship artificial intelligence system.", href:"/products/william-graham", accent:"violet" as const },
-  { number:"02", name:"Studenthome", text:"Global student infrastructure.", href:"/products/studenthome", accent:"blue" as const },
+  { number:"01", name:"William Graham", text:"Privacy-first personalized AI.", href:"/products/william-graham", accent:"violet" as const },
+  { number:"02", name:"Studenthome", text:"A unified destination for global students.", href:"/products/studenthome", accent:"blue" as const },
   { number:"03", name:"Codelos", text:"Codelos IDE · Daemon · Sailwind · COCOA · Fly", href:"/products/codelos", accent:"orange" as const },
   { number:"04", name:"QESA", text:"Quantum Encryption Systems Architecture.", href:"/products/qesa", accent:"green" as const },
   { number:"05", name:"TENSA", text:"Tendon Engineered Natural Systems Architecture.", href:"/products/tensa", accent:"violet" as const },
-  { number:"06", name:"VISA", text:"VIsual Intelligence Systems Architecture.", href:"/products/visa", accent:"blue" as const },
+  { number:"06", name:"VISA", text:"Visual Intelligence Systems Architecture.", href:"/products/visa", accent:"blue" as const },
 ];
 
 export default function Home() {
@@ -59,7 +59,6 @@ export default function Home() {
 
         <SiteFooter />
       </div>
-
     </main>
   );
 }
