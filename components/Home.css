@@ -35,3 +35,14 @@
 @media(max-width:1050px){.home-hero__content{width:calc(100% - 48px)}.home-william{padding-left:24px;padding-right:24px}.home-william__copy,.home-william__copy--wide{width:min(920px,100%)}}
 @media(max-width:700px){.home-page{border-radius:0}.home-hero{min-height:100svh}.home-hero__content{width:calc(100% - 36px);min-height:100svh;padding:110px 0 64px}.home-hero h1{width:100%;font-size:clamp(2.55rem,9.2vw,4.25rem);line-height:.98;letter-spacing:-.065em}.home-hero h1 span{white-space:normal;text-wrap:balance}.home-hero__content>p{margin-top:24px;font-size:.98rem;line-height:1.55}.home-hero__actions{gap:22px;margin-top:30px}.home-hero__primary{padding:13px 18px;gap:12px}.home-hero__secondary{font-size:.82rem}.home-william{min-height:100svh;padding:82px 18px}.home-william-story__background{background-position:58% center;background-size:auto 100%}.home-william__copy,.home-william__copy--wide{width:100%}.home-william__eyebrow{margin-bottom:24px}.home-william h2{font-size:clamp(3.7rem,13vw,6rem)}.home-william--enterprise h2,.home-william--architecture h2{font-size:clamp(2.9rem,10vw,4.6rem)}.home-william__copy>p{max-width:440px;margin:24px 0;font-size:1rem}.home-william__specs,.home-william__architecture-grid{grid-template-columns:1fr;gap:8px;margin-top:24px}.home-william__specs>div,.home-william__architecture-grid>div{padding:12px 14px}.home-william__specs small,.home-william__architecture-grid small{font-size:.76rem}}
 @media(prefers-reduced-motion:reduce){.home-hero__primary,.home-william__link{transition:none}}
+
+
+/* React Bits Split Text reveal */
+.split-text{display:inline-block;max-width:100%;overflow:hidden;vertical-align:top}
+.split-text__unit{display:inline-block;opacity:0;transform:translate3d(0,40px,0);transition:opacity var(--split-duration,720ms) cubic-bezier(.22,1,.36,1) var(--split-delay,0ms),transform var(--split-duration,720ms) cubic-bezier(.22,1,.36,1) var(--split-delay,0ms);will-change:opacity,transform}
+.split-text--visible .split-text__unit{opacity:1;transform:translate3d(0,0,0)}
+.home-william h2 .split-text{overflow:hidden}
+.home-william h2 .home-william__accent{color:#c4a5ff}
+.home-william__split-caption{max-width:760px;margin:32px auto 28px;color:rgba(255,255,255,.92);font-size:clamp(1.05rem,1.35vw,1.25rem);line-height:1.65;letter-spacing:-.015em}
+@media(max-width:700px){.home-william__split-caption{max-width:440px;margin:24px auto;font-size:1rem}}
+@media(prefers-reduced-motion:reduce){.split-text__unit{opacity:1;transform:none;transition:none}}
