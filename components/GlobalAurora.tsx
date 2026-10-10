@@ -8,9 +8,9 @@ export default function GlobalAurora() {
   return (
     <div className="global-aurora" aria-hidden="true">
       <Aurora
-        colorStops={["#7cff67", "#c9b4df", "#684dff"]}
-        blend={0.5}
-        amplitude={1.0}
+        colorStops={["#00F5D4", "#7C3CFF", "#FF3D9A"]}
+        blend={0.62}
+        amplitude={1.12}
         speed={1}
       />
     </div>
