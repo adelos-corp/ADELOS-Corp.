@@ -11,10 +11,6 @@ export default function Home() {
         <div className="home-hero__content">
           <h1><span>Engineering solutions</span><span>that solve tomorrow.</span></h1>
           <p>Advanced systems. Deeper integration.<br/>A more capable tomorrow.</p>
-          <div className="home-hero__actions">
-            <Link href="/products" className="home-hero__primary">Explore <span>→</span></Link>
-            <Link href="/research" className="home-hero__secondary">Our Research</Link>
-          </div>
         </div>
       </section>
 
