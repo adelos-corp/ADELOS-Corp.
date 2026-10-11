@@ -7,6 +7,7 @@ export default function VISAPage() {
     category="Visual Intelligence Systems Architecture"
     description="A spatial-computing software experience built around visual intelligence, contextual awareness, and immersive interfaces. Designed to bring a new way of interacting with digital environments to everyday computing without requiring a dedicated headset."
     accent="green"
+    auroraColors={["#00FF07", "#75FF00", "#D1FF00"]}
     status="In development"
   />;
 }
