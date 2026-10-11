@@ -45,6 +45,7 @@ export default function Home() {
 
     const activate = (story: string) => {
       storyClasses.forEach((className) => sheet.classList.remove(className));
+      sheet.classList.remove("home-gradient-sheet--transitioning");
       sheet.classList.add(`home-gradient-sheet--${story}`);
       activeStory = story;
       pendingStory = null;
@@ -65,6 +66,7 @@ export default function Home() {
       }
 
       storyClasses.forEach((className) => sheet.classList.remove(className));
+      sheet.classList.add("home-gradient-sheet--transitioning");
       transitionTimer = setTimeout(() => {
         if (pendingStory === story) activate(story);
       }, 420);
