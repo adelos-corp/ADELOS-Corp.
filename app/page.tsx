@@ -10,30 +10,35 @@ export default function Home() {
   const williamStoryRef = useRef<HTMLElement | null>(null);
   const studenthomeStoryRef = useRef<HTMLElement | null>(null);
   const codelosStoryRef = useRef<HTMLElement | null>(null);
+  const visaStoryRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const william = williamStoryRef.current;
     const studenthome = studenthomeStoryRef.current;
     const codelos = codelosStoryRef.current;
+    const visa = visaStoryRef.current;
     const sheet = william?.closest(".home-gradient-sheet");
-    if (!william || !studenthome || !codelos || !sheet) return;
+    if (!william || !studenthome || !codelos || !visa || !sheet) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries.filter((entry) => entry.isIntersecting);
         const isVisible = (target: HTMLElement) => visible.some((entry) => entry.target === target);
 
-        const activeStory = isVisible(codelos)
-          ? "codelos"
-          : isVisible(studenthome)
-            ? "studenthome"
-            : isVisible(william)
-              ? "william"
-              : null;
+        const activeStory = isVisible(visa)
+          ? "visa"
+          : isVisible(codelos)
+            ? "codelos"
+            : isVisible(studenthome)
+              ? "studenthome"
+              : isVisible(william)
+                ? "william"
+                : null;
 
         if (activeStory) {
           sheet.classList.toggle("home-gradient-sheet--studenthome", activeStory === "studenthome");
           sheet.classList.toggle("home-gradient-sheet--codelos", activeStory === "codelos");
+          sheet.classList.toggle("home-gradient-sheet--visa", activeStory === "visa");
         }
       },
       { threshold: 0, rootMargin: "-18% 0px -18% 0px" }
@@ -42,6 +47,7 @@ export default function Home() {
     observer.observe(william);
     observer.observe(studenthome);
     observer.observe(codelos);
+    observer.observe(visa);
     return () => observer.disconnect();
   }, []);
 
@@ -333,6 +339,75 @@ export default function Home() {
               <Link href="/products/codelos" className="home-codelos__link">
                 Discover Codelos <span aria-hidden="true">↗</span>
               </Link>
+            </div>
+          </section>
+        </section>
+        <section ref={visaStoryRef} className="home-visa-story" aria-label="VISA visual intelligence and spatial interaction">
+          <section className="home-visa home-visa--intro" aria-labelledby="visa-title">
+            <div className="home-visa__copy">
+              <span className="home-visa__eyebrow">01 / VISUAL INTELLIGENCE</span>
+              <h2 id="visa-title"><SplitText text="See beyond" tag="span" /><br/><SplitText text="the interface." tag="span" className="home-visa__accent" /></h2>
+              <SplitText text="A new language for human–computer interaction, shaped by visual perception and natural movement." tag="p" className="home-visa__caption" delay={7} duration={480} />
+              <div className="home-visa__actions">
+                <a href="#visa-architecture" className="home-visa__primary">Explore the Architecture <span aria-hidden="true">↘</span></a>
+                <a href="#visa-discover" className="home-visa__secondary">Discover VISA <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </section>
+
+          <section className="home-visa home-visa--perception" aria-labelledby="visa-perception-title">
+            <div className="home-visa__copy home-visa__copy--wide">
+              <span className="home-visa__eyebrow">02 / A DIFFERENT WAY TO INTERACT</span>
+              <h2 id="visa-perception-title"><SplitText text="More than" tag="span" /><br/><SplitText text="a click." tag="span" className="home-visa__accent" /></h2>
+              <div className="home-visa__caption-lines">
+                <SplitText text="VISA explores how software can interpret" tag="span" className="home-visa__caption-line" delay={5} duration={420} />
+                <SplitText text="natural gestures as deliberate intent." tag="span" className="home-visa__caption-line" delay={5} duration={420} />
+              </div>
+            </div>
+          </section>
+
+          <section className="home-visa home-visa--vision" aria-labelledby="visa-vision-title">
+            <div className="home-visa__copy home-visa__copy--wide">
+              <span className="home-visa__eyebrow">03 / PERCEPTION INTO ACTION</span>
+              <h2 id="visa-vision-title"><SplitText text="Seen." tag="span" /><br/><SplitText text="Understood." tag="span" className="home-visa__accent" /></h2>
+              <div className="home-visa__feature-list">
+                <p><strong>Computer vision</strong><span>Read hand movement as visual input.</span></p>
+                <p><strong>Gesture interaction</strong><span>Turn recognized poses into meaningful commands.</span></p>
+                <p><strong>Temporal validation</strong><span>Use consecutive frames for more deliberate activation.</span></p>
+                <p><strong>Responsive interfaces</strong><span>Connect perception to visible software behavior.</span></p>
+              </div>
+            </div>
+          </section>
+
+          <section id="visa-architecture" className="home-visa home-visa--architecture" aria-labelledby="visa-architecture-title">
+            <div className="home-visa__copy home-visa__copy--wide">
+              <span className="home-visa__eyebrow">04 / ENGINEERED AS A SYSTEM</span>
+              <h2 id="visa-architecture-title"><SplitText text="From vision" tag="span" /><br/><SplitText text="to intention." tag="span" className="home-visa__accent" /></h2>
+              <p className="home-visa__caption">A modular pipeline keeps every stage clear, testable, and independently refined.</p>
+              <div className="home-visa__pipeline" aria-label="Camera, vision, gesture classification, temporal validation, interface">
+                <span>Camera</span><i aria-hidden="true">→</i><span>Vision</span><i aria-hidden="true">→</i><span>Gesture</span><i aria-hidden="true">→</i><span>Validation</span><i aria-hidden="true">→</i><span>Interface</span>
+              </div>
+            </div>
+          </section>
+
+          <section className="home-visa home-visa--foundations" aria-labelledby="visa-foundations-title">
+            <div className="home-visa__copy home-visa__copy--wide">
+              <span className="home-visa__eyebrow">05 / BUILT WITH PRECISION</span>
+              <h2 id="visa-foundations-title"><SplitText text="A deliberate" tag="span" /><br/><SplitText text="foundation." tag="span" className="home-visa__accent" /></h2>
+              <div className="home-visa__caption-lines">
+                <SplitText text="Python · Apple Vision · OpenCV" tag="span" className="home-visa__caption-line" delay={5} duration={420} />
+                <SplitText text="PySide6 · NumPy" tag="span" className="home-visa__caption-line" delay={5} duration={420} />
+              </div>
+              <p className="home-visa__fineprint">A focused prototype for exploring visual interaction, with recognized poses including OPEN, FIST, and L.</p>
+            </div>
+          </section>
+
+          <section id="visa-discover" className="home-visa home-visa--closing" aria-labelledby="visa-closing-title">
+            <div className="home-visa__copy home-visa__copy--closing">
+              <span className="home-visa__eyebrow">VISA / VISUAL INTELLIGENCE SYSTEMS ARCHITECTURE</span>
+              <h2 id="visa-closing-title"><SplitText text="Interact beyond" tag="span" /><br/><SplitText text="the ordinary." tag="span" className="home-visa__accent home-visa__closing-headline" delay={28} duration={760} /></h2>
+              <SplitText text="A software-first exploration of visual perception, gesture, and the next interface." tag="p" className="home-visa__closing-caption" delay={8} duration={520} />
+              <Link href="/products/visa" className="home-visa__link">Discover VISA <span aria-hidden="true">↗</span></Link>
             </div>
           </section>
         </section>
