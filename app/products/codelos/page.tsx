@@ -15,6 +15,7 @@ export default function CodelosPage() {
     category="Engineering Platform"
     description="An intelligent, distributed engineering platform designed for high-performance programming. Its product family includes Codelos IDE, Daemon, Sailwind, COCOA, and Fly."
     accent="orange"
+    auroraColors={["#FF8A35", "#FF4B20", "#3E1B0A"]}
     status="Under active development"
     relatedProducts={components}
   />;
