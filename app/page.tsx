@@ -98,8 +98,12 @@ export default function Home() {
           <section className="home-william home-william--closing" aria-labelledby="william-closing-title">
             <div className="home-william__copy home-william__copy--closing">
               <span className="home-william__eyebrow">WILLIAM GRAHAM / PERSONALIZED AI</span>
-              <h2 id="william-closing-title">Meet <span>William Graham.</span></h2>
-              <p>Intelligence shaped by memory, context, and the way you work.</p>
+              <h2 id="william-closing-title">
+                <SplitText text="Meet William Graham." tag="span" className="home-william__closing-headline" delay={32} duration={760} />
+              </h2>
+              <p>
+                <SplitText text="Intelligence shaped by memory, context, and the way you work." tag="span" className="home-william__closing-caption" delay={9} duration={520} />
+              </p>
               <Link href="/products/william-graham" className="home-william__link home-william__closing-link">
                 Explore William Graham <span aria-hidden="true">↗</span>
               </Link>
