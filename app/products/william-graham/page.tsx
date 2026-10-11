@@ -7,7 +7,7 @@ export default function WilliamGrahamPage(){
     category="Personalized AI Platform"
     description="Privacy-first artificial intelligence running on local architecture with secure cloud synchronization. Built for the modern enterprise."
     accent="violet"
-    auroraColors={["#7B2CFF", "#5B00D4", "#2C145C"]}
+    auroraColors={["#5F00C9", "#591F8E", "#5227FF"]}
     status="Working"
   />;
 }
