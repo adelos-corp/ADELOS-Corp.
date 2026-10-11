@@ -122,7 +122,7 @@
 .home-story-background__layer--visa{background-image:url("https://raw.githubusercontent.com/adelos-corp/ADELOS-Corp./main/e243c5a8-5ae6-4970-a2fe-79a6aad34e9f.png")}
 .home-story-background__layer--qesa{background-image:url("https://raw.githubusercontent.com/adelos-corp/ADELOS-Corp./main/5e8be181-b8bc-4376-9249-f0a4cf85f2d8.png")}
 .home-gradient-sheet--qesa .home-story-background__layer--qesa{opacity:1}
-.home-story-background__layer--tensa{background:radial-gradient(ellipse at 72% 44%,rgba(108,24,29,.56) 0%,rgba(66,19,19,.42) 26%,rgba(41,1,1,.96) 70%),linear-gradient(135deg,#050303 0%,#290101 52%,#100404 100%)}
+.home-story-background__layer--tensa{background-image:linear-gradient(110deg,rgba(8,0,0,.18),rgba(41,1,1,.04) 52%,rgba(8,0,0,.28)),url("https://raw.githubusercontent.com/adelos-corp/ADELOS-Corp./main/93657028-5d29-4b41-9b29-a6d7501312ff.png");background-position:center;background-size:cover;background-repeat:no-repeat}
 .home-gradient-sheet--tensa .home-story-background__layer--tensa{opacity:1}
 .home-gradient-sheet--william .home-story-background__layer--william,
 .home-gradient-sheet:not(.home-gradient-sheet--studenthome):not(.home-gradient-sheet--codelos):not(.home-gradient-sheet--visa):not(.home-gradient-sheet--qesa):not(.home-gradient-sheet--tensa) .home-story-background__layer--william{opacity:1}
