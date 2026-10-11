@@ -98,7 +98,8 @@ export default function Home() {
             <div className="home-william__copy home-william__copy--closing">
               <span className="home-william__eyebrow">WILLIAM GRAHAM / PERSONALIZED AI</span>
               <h2 id="william-closing-title">
-                <SplitText text="Meet William Graham." tag="span" className="home-william__closing-headline" delay={32} duration={760} />
+                <SplitText text="Meet" tag="span" className="home-william__closing-headline home-william__closing-meet" delay={32} duration={760} />{" "}
+                <SplitText text="William Graham." tag="span" className="home-william__closing-headline home-william__closing-accent" delay={32} duration={760} />
               </h2>
               <p>
                 <SplitText text="Intelligence shaped by memory, context, and the way you work." tag="span" className="home-william__closing-caption" delay={9} duration={520} />
