@@ -121,7 +121,7 @@
 .home-story-background__layer--codelos{background-image:url("https://raw.githubusercontent.com/adelos-corp/ADELOS-Corp./main/3c2963c1-762f-4e13-ac56-48d249d34d03.png")}
 .home-story-background__layer--visa{background-image:url("https://raw.githubusercontent.com/adelos-corp/ADELOS-Corp./main/e243c5a8-5ae6-4970-a2fe-79a6aad34e9f.png")}
 .home-gradient-sheet--william .home-story-background__layer--william,
-.home-gradient-sheet:not(.home-gradient-sheet--studenthome):not(.home-gradient-sheet--codelos):not(.home-gradient-sheet--visa) .home-story-background__layer--william{opacity:1}
+.home-gradient-sheet:not(.home-gradient-sheet--transitioning):not(.home-gradient-sheet--studenthome):not(.home-gradient-sheet--codelos):not(.home-gradient-sheet--visa) .home-story-background__layer--william{opacity:1}
 .home-gradient-sheet--studenthome .home-story-background__layer--studenthome{opacity:1}
 .home-gradient-sheet--codelos .home-story-background__layer--codelos{opacity:1}
 .home-gradient-sheet--visa .home-story-background__layer--visa{opacity:1}
