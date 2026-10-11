@@ -115,7 +115,7 @@
 /* Isolated product-story backgrounds: exactly one layer is visible at a time. */
 .home-gradient-sheet{isolation:isolate;background:#02091b}
 .home-story-background{position:sticky;top:0;z-index:0;width:100%;height:100svh;margin-bottom:-100svh;pointer-events:none}
-.home-story-background__layer{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;opacity:0;transition:none;will-change:auto}
+.home-story-background__layer{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;opacity:0;transition:opacity 420ms cubic-bezier(.4,0,.2,1);will-change:opacity}
 .home-story-background__layer--william{background-image:url("/wg-reference.jpeg")}
 .home-story-background__layer--studenthome{background-image:url("https://raw.githubusercontent.com/adelos-corp/ADELOS-Corp./main/70d223e3-1c53-4c76-912c-bc785c1593b1.png")}
 .home-story-background__layer--codelos{background-image:url("https://raw.githubusercontent.com/adelos-corp/ADELOS-Corp./main/3c2963c1-762f-4e13-ac56-48d249d34d03.png")}
