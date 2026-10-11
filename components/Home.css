@@ -122,8 +122,10 @@
 .home-story-background__layer--visa{background-image:url("https://raw.githubusercontent.com/adelos-corp/ADELOS-Corp./main/e243c5a8-5ae6-4970-a2fe-79a6aad34e9f.png")}
 .home-story-background__layer--qesa{background-image:url("https://raw.githubusercontent.com/adelos-corp/ADELOS-Corp./main/5e8be181-b8bc-4376-9249-f0a4cf85f2d8.png")}
 .home-gradient-sheet--qesa .home-story-background__layer--qesa{opacity:1}
+.home-story-background__layer--tensa{background:radial-gradient(ellipse at 72% 44%,rgba(108,24,29,.56) 0%,rgba(66,19,19,.42) 26%,rgba(41,1,1,.96) 70%),linear-gradient(135deg,#050303 0%,#290101 52%,#100404 100%)}
+.home-gradient-sheet--tensa .home-story-background__layer--tensa{opacity:1}
 .home-gradient-sheet--william .home-story-background__layer--william,
-.home-gradient-sheet:not(.home-gradient-sheet--studenthome):not(.home-gradient-sheet--codelos):not(.home-gradient-sheet--visa):not(.home-gradient-sheet--qesa) .home-story-background__layer--william{opacity:1}
+.home-gradient-sheet:not(.home-gradient-sheet--studenthome):not(.home-gradient-sheet--codelos):not(.home-gradient-sheet--visa):not(.home-gradient-sheet--qesa):not(.home-gradient-sheet--tensa) .home-story-background__layer--william{opacity:1}
 .home-gradient-sheet--studenthome .home-story-background__layer--studenthome{opacity:1}
 .home-gradient-sheet--codelos .home-story-background__layer--codelos{opacity:1}
 .home-gradient-sheet--visa .home-story-background__layer--visa{opacity:1}
@@ -347,3 +349,60 @@
   .home-qesa--closing p{max-width:440px;margin:24px auto 28px;font-size:1rem}
 }
 @media(prefers-reduced-motion:reduce){.home-qesa__link{transition:none}}
+
+
+/* TENSA: deep oxblood gradients and soft, tendon-like arcs of light. */
+.home-tensa-story{position:relative;isolation:isolate;color:#fff;--tensa-red:#290101;--tensa-blood:#421313;--tensa-deep:#3A0202;--tensa-light:#F08B8B}
+.home-tensa{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:100%;min-height:100svh;margin:0 auto;padding:100px max(36px,calc((100vw - 1380px)/2));overflow:visible;background:transparent;text-align:center}
+.home-tensa__copy{position:relative;z-index:2;width:min(820px,90%);display:flex;flex-direction:column;align-items:center;text-align:center}
+.home-tensa__copy--wide{width:min(960px,100%)}
+.home-tensa__eyebrow{display:block;margin-bottom:30px;color:rgba(255,220,220,.72);font-size:.65rem;letter-spacing:.28em}
+.home-tensa h2{margin:0;font-size:clamp(4.3rem,8vw,8.8rem);font-weight:500;line-height:.94;letter-spacing:-.075em}
+.home-tensa .split-text{overflow:hidden}
+.home-tensa__accent{color:#E68B8B}
+.home-tensa__caption,.home-tensa__caption-lines{max-width:780px;margin:30px auto 28px;color:rgba(255,239,239,.86);font-size:clamp(1.05rem,1.35vw,1.25rem);line-height:1.65;letter-spacing:-.015em}
+.home-tensa__caption-lines{display:flex;flex-direction:column;align-items:center}
+.home-tensa__caption-line{display:block}
+.home-tensa__system-line{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px;margin-top:20px;color:rgba(255,222,222,.76);font-size:.66rem;letter-spacing:.18em}
+.home-tensa__system-line i{color:#E68B8B;font-style:normal}
+.home-tensa__feature-list{display:grid;width:100%;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;row-gap:0;margin-top:32px;text-align:left}
+.home-tensa__feature-list p{display:flex;flex-direction:column;gap:7px;margin:0;padding:20px 0;border-top:1px solid rgba(230,139,139,.38)}
+.home-tensa__feature-list strong{font-size:1rem;font-weight:550;letter-spacing:-.015em}
+.home-tensa__feature-list span{color:rgba(255,230,230,.74);font-size:.88rem;line-height:1.5}
+.home-tensa--tendons{justify-content:flex-end}
+.home-tensa--tendons .home-tensa__copy{align-items:flex-end;text-align:right}
+.home-tensa--tendons .home-tensa__eyebrow,.home-tensa--tendons .home-tensa__caption-lines{text-align:right}
+.home-tensa--tendons .home-tensa__caption-lines{align-items:flex-end}
+.home-tensa--tendons .home-tensa__feature-list p{align-items:flex-end;text-align:right}
+.home-tensa--mechanics{justify-content:flex-start}
+.home-tensa--mechanics .home-tensa__copy{align-items:flex-start;text-align:left}
+.home-tensa--mechanics .home-tensa__eyebrow,.home-tensa--mechanics .home-tensa__caption-lines{text-align:left}
+.home-tensa--mechanics .home-tensa__caption-lines{align-items:flex-start}
+.home-tensa--mechanics .home-tensa__feature-list p{align-items:flex-start}
+.home-tensa--integration h2,.home-tensa--jenny h2{font-size:clamp(3.7rem,6.8vw,7.2rem);line-height:.96}
+.home-tensa__fineprint{max-width:680px;margin:22px auto 0;color:rgba(255,220,220,.58);font-size:.84rem;line-height:1.6}
+.home-tensa--closing{min-height:100svh}
+.home-tensa__copy--closing{width:min(1180px,100%)}
+.home-tensa--closing .home-tensa__eyebrow{margin-bottom:28px}
+.home-tensa--closing h2{max-width:100%;font-size:clamp(4.5rem,9vw,9.8rem);line-height:.94;letter-spacing:-.08em}
+.home-tensa--closing p{max-width:760px;margin:30px auto 34px;color:rgba(255,239,239,.8);font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.6}
+.home-tensa__link{display:inline-flex;align-items:center;gap:22px;padding:16px 0;color:#fff;text-decoration:none;font-size:1rem;border-bottom:1px solid rgba(230,139,139,.78);transition:gap 260ms ease,border-color 260ms ease}
+.home-tensa__link span{color:#E68B8B}
+.home-tensa__link:hover{gap:30px;border-color:#F08B8B}
+@media(max-width:1050px){.home-tensa{padding-left:24px;padding-right:24px}}
+@media(max-width:700px){
+  .home-tensa{min-height:100svh;padding:82px 18px}
+  .home-tensa__copy,.home-tensa__copy--wide{width:100%}
+  .home-tensa__eyebrow{margin-bottom:24px}
+  .home-tensa h2{font-size:clamp(3.4rem,12vw,5.8rem)}
+  .home-tensa--integration h2,.home-tensa--jenny h2{font-size:clamp(2.9rem,10vw,4.6rem)}
+  .home-tensa__caption,.home-tensa__caption-lines{max-width:440px;margin:24px auto;font-size:1rem}
+  .home-tensa__feature-list{grid-template-columns:1fr;column-gap:0;margin-top:24px}
+  .home-tensa__feature-list p{padding:14px 0}
+  .home-tensa__feature-list span{font-size:.82rem}
+  .home-tensa__system-line{gap:9px;font-size:.56rem;letter-spacing:.1em}
+  .home-tensa__fineprint{font-size:.78rem}
+  .home-tensa--closing h2{font-size:clamp(3.4rem,12vw,5.5rem);line-height:.98}
+  .home-tensa--closing p{max-width:440px;margin:24px auto 28px;font-size:1rem}
+}
+@media(prefers-reduced-motion:reduce){.home-tensa__link{transition:none}}
