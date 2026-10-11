@@ -9,5 +9,9 @@ export default function StudenthomePage(){
     accent="blue"
     auroraColors={["#0049BA", "#2F8CF4", "#0079C1"]}
     status="Beta"
+    openOptions={[
+      { label: "Modern interface", href: "https://studenthome-v2.vercel.app/" },
+      { label: "Simplified interface", href: "https://studenthome-1.vercel.app/" },
+    ]}
   />;
 }
