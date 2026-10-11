@@ -7,30 +7,39 @@ import SplitText from "@/components/SplitText";
 import "@/components/Home.css";
 
 export default function Home() {
+  const williamStoryRef = useRef<HTMLElement | null>(null);
   const studenthomeStoryRef = useRef<HTMLElement | null>(null);
   const codelosStoryRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
+    const william = williamStoryRef.current;
     const studenthome = studenthomeStoryRef.current;
     const codelos = codelosStoryRef.current;
-    const sheet = studenthome?.closest(".home-gradient-sheet");
-    if (!studenthome || !codelos || !sheet) return;
+    const sheet = william?.closest(".home-gradient-sheet");
+    if (!william || !studenthome || !codelos || !sheet) return;
 
-    let activeStory: "studenthome" | "codelos" = "studenthome";
     const observer = new IntersectionObserver(
       (entries) => {
-        const codelosEntry = entries.find((entry) => entry.target === codelos && entry.isIntersecting);
-        const studenthomeEntry = entries.find((entry) => entry.target === studenthome && entry.isIntersecting);
+        const visible = entries.filter((entry) => entry.isIntersecting);
+        const isVisible = (target: HTMLElement) => visible.some((entry) => entry.target === target);
 
-        if (codelosEntry) activeStory = "codelos";
-        else if (studenthomeEntry) activeStory = "studenthome";
+        const activeStory = isVisible(codelos)
+          ? "codelos"
+          : isVisible(studenthome)
+            ? "studenthome"
+            : isVisible(william)
+              ? "william"
+              : null;
 
-        sheet.classList.toggle("home-gradient-sheet--studenthome", activeStory === "studenthome");
-        sheet.classList.toggle("home-gradient-sheet--codelos", activeStory === "codelos");
+        if (activeStory) {
+          sheet.classList.toggle("home-gradient-sheet--studenthome", activeStory === "studenthome");
+          sheet.classList.toggle("home-gradient-sheet--codelos", activeStory === "codelos");
+        }
       },
       { threshold: 0, rootMargin: "-18% 0px -18% 0px" }
     );
 
+    observer.observe(william);
     observer.observe(studenthome);
     observer.observe(codelos);
     return () => observer.disconnect();
@@ -51,7 +60,7 @@ export default function Home() {
           <div className="home-story-background__layer home-story-background__layer--studenthome" />
           <div className="home-story-background__layer home-story-background__layer--codelos" />
         </div>
-        <section className="home-william-story" aria-label="William Graham">
+        <section ref={williamStoryRef} className="home-william-story" aria-label="William Graham">
           <section className="home-william home-william--intro" aria-labelledby="william-title">
             <div className="home-william__copy">
               <span className="home-william__eyebrow">01 / PERSONALIZED AI</span>
