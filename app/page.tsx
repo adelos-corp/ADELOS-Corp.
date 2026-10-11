@@ -11,6 +11,7 @@ export default function Home() {
   const studenthomeStoryRef = useRef<HTMLElement | null>(null);
   const codelosStoryRef = useRef<HTMLElement | null>(null);
   const visaStoryRef = useRef<HTMLElement | null>(null);
+  const qesaStoryRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const sheet = williamStoryRef.current?.closest(".home-gradient-sheet");
@@ -20,7 +21,7 @@ export default function Home() {
     // The narrow center band prevents a neighboring story entering early.
     const screens = Array.from(
       sheet.querySelectorAll<HTMLElement>(
-        ".home-william-story > .home-william, .home-studenthome-story > .home-studenthome, .home-codelos-story > .home-codelos, .home-visa-story > .home-visa"
+        ".home-william-story > .home-william, .home-studenthome-story > .home-studenthome, .home-codelos-story > .home-codelos, .home-visa-story > .home-visa, .home-qesa-story > .home-qesa"
       )
     );
     if (!screens.length) return;
@@ -31,10 +32,12 @@ export default function Home() {
       "home-gradient-sheet--studenthome",
       "home-gradient-sheet--codelos",
       "home-gradient-sheet--visa",
+      "home-gradient-sheet--qesa",
     ];
     let activeStory: string | null = null;
 
     const storyFor = (screen: HTMLElement) => {
+      if (screen.closest(".home-qesa-story")) return "qesa";
       if (screen.closest(".home-visa-story")) return "visa";
       if (screen.closest(".home-codelos-story")) return "codelos";
       if (screen.closest(".home-studenthome-story")) return "studenthome";
@@ -92,6 +95,7 @@ export default function Home() {
           <div className="home-story-background__layer home-story-background__layer--studenthome" />
           <div className="home-story-background__layer home-story-background__layer--codelos" />
           <div className="home-story-background__layer home-story-background__layer--visa" />
+          <div className="home-story-background__layer home-story-background__layer--qesa" />
         </div>
         <section ref={williamStoryRef} className="home-william-story" aria-label="William Graham">
           <section className="home-william home-william--intro" aria-labelledby="william-title">
@@ -435,6 +439,94 @@ export default function Home() {
               <h2 id="visa-closing-title"><SplitText text="Interact beyond" tag="span" /><br/><SplitText text="the ordinary." tag="span" className="home-visa__accent home-visa__closing-headline" delay={28} duration={760} /></h2>
               <SplitText text="A software-first exploration of visual perception, gesture, and the next interface." tag="p" className="home-visa__closing-caption" delay={8} duration={520} />
               <Link href="/products/visa" className="home-visa__link">Discover VISA <span aria-hidden="true">↗</span></Link>
+            </div>
+          </section>
+        </section>
+
+        <section ref={qesaStoryRef} className="home-qesa-story" aria-label="QESA security architecture">
+          <section className="home-qesa home-qesa--intro" aria-labelledby="qesa-title">
+            <div className="home-qesa__copy">
+              <span className="home-qesa__eyebrow">01 / SYSTEMS ARCHITECTURE</span>
+              <h2 id="qesa-title"><SplitText text="Security," tag="span" /><br/><SplitText text="by design." tag="span" className="home-qesa__accent" /></h2>
+              <SplitText text="A modular security architecture for protecting applications, communications, and the systems behind them." tag="p" className="home-qesa__caption" delay={7} duration={480} />
+              <div className="home-qesa__system-line" aria-label="A connected security foundation">
+                <span>PROTECT</span><i aria-hidden="true">/</i><span>MONITOR</span><i aria-hidden="true">/</i><span>EVOLVE</span>
+              </div>
+            </div>
+          </section>
+
+          <section className="home-qesa home-qesa--cryptography" aria-labelledby="qesa-cryptography-title">
+            <div className="home-qesa__copy home-qesa__copy--wide">
+              <span className="home-qesa__eyebrow">02 / CRYPTOGRAPHIC FOUNDATION</span>
+              <h2 id="qesa-cryptography-title"><SplitText text="Trust starts" tag="span" /><br/><SplitText text="at the core." tag="span" className="home-qesa__accent" /></h2>
+              <div className="home-qesa__caption-lines">
+                <SplitText text="Established cryptographic foundations." tag="span" className="home-qesa__caption-line" delay={5} duration={420} />
+                <SplitText text="Clear boundaries for every secret and identity." tag="span" className="home-qesa__caption-line" delay={5} duration={420} />
+              </div>
+              <div className="home-qesa__feature-list">
+                <p><strong>Cryptographic services</strong><span>Consistent interfaces for protected application workflows.</span></p>
+                <p><strong>Key lifecycle</strong><span>Generation, storage, rotation, and controlled retirement.</span></p>
+                <p><strong>Identity and access</strong><span>Authentication and least-privilege authorisation.</span></p>
+                <p><strong>Secure communication</strong><span>Standards-based protection between trusted services.</span></p>
+              </div>
+            </div>
+          </section>
+
+          <section className="home-qesa home-qesa--monitoring" aria-labelledby="qesa-monitoring-title">
+            <div className="home-qesa__copy home-qesa__copy--wide">
+              <span className="home-qesa__eyebrow">03 / INTELLIGENT MONITORING</span>
+              <h2 id="qesa-monitoring-title"><SplitText text="See the signal." tag="span" /><br/><SplitText text="Understand the risk." tag="span" className="home-qesa__accent" /></h2>
+              <div className="home-qesa__caption-lines">
+                <SplitText text="Bring security events into a clearer picture." tag="span" className="home-qesa__caption-line" delay={5} duration={420} />
+                <SplitText text="Surface anomalies for informed human review." tag="span" className="home-qesa__caption-line" delay={5} duration={420} />
+              </div>
+              <div className="home-qesa__feature-list">
+                <p><strong>Event correlation</strong><span>Connect related signals across system activity.</span></p>
+                <p><strong>Anomaly analysis</strong><span>Highlight behaviour that may warrant investigation.</span></p>
+                <p><strong>Risk prioritisation</strong><span>Help teams focus on the events that matter most.</span></p>
+                <p><strong>Human-reviewed response</strong><span>Keep consequential security decisions under explicit control.</span></p>
+              </div>
+            </div>
+          </section>
+
+          <section className="home-qesa home-qesa--quantum" aria-labelledby="qesa-quantum-title">
+            <div className="home-qesa__copy home-qesa__copy--wide">
+              <span className="home-qesa__eyebrow">04 / QUANTUM RESEARCH</span>
+              <h2 id="qesa-quantum-title"><SplitText text="Explore what’s next." tag="span" /><br/><SplitText text="Prove what works." tag="span" className="home-qesa__accent" /></h2>
+              <div className="home-qesa__caption-lines">
+                <SplitText text="Experiment with quantum concepts in controlled simulations." tag="span" className="home-qesa__caption-line" delay={5} duration={420} />
+                <SplitText text="Evaluate post-quantum standards on their actual merits." tag="span" className="home-qesa__caption-line" delay={5} duration={420} />
+              </div>
+              <div className="home-qesa__research-line" aria-label="Quantum research scope">
+                <span>QISKIT SIMULATION</span><i aria-hidden="true">/</i><span>CRYPTOGRAPHIC EVALUATION</span><i aria-hidden="true">/</i><span>RESEARCH FIRST</span>
+              </div>
+              <p className="home-qesa__fineprint">Quantum simulation is a research tool, not a claim of quantum-secure production encryption or quantum key distribution.</p>
+            </div>
+          </section>
+
+          <section className="home-qesa home-qesa--ecosystem" aria-labelledby="qesa-ecosystem-title">
+            <div className="home-qesa__copy home-qesa__copy--wide">
+              <span className="home-qesa__eyebrow">05 / SECURITY ACROSS ADELOS</span>
+              <h2 id="qesa-ecosystem-title"><SplitText text="One architecture." tag="span" /><br/><SplitText text="Many trust boundaries." tag="span" className="home-qesa__accent" /></h2>
+              <div className="home-qesa__caption-lines">
+                <SplitText text="A proposed security foundation for the ADELOS ecosystem." tag="span" className="home-qesa__caption-line" delay={5} duration={420} />
+                <SplitText text="Modular services. Explicit boundaries. Measurable assurance." tag="span" className="home-qesa__caption-line" delay={5} duration={420} />
+              </div>
+              <div className="home-qesa__feature-list">
+                <p><strong>William Graham</strong><span>Potentially protected service access and communication.</span></p>
+                <p><strong>Codelos</strong><span>A proposed path for source and dependency security checks.</span></p>
+                <p><strong>Other ADELOS services</strong><span>Potential shared identity and cryptographic services.</span></p>
+                <p><strong>Built to be validated</strong><span>Designed around testing, auditability, and independent review.</span></p>
+              </div>
+            </div>
+          </section>
+
+          <section id="qesa-discover" className="home-qesa home-qesa--closing" aria-labelledby="qesa-closing-title">
+            <div className="home-qesa__copy home-qesa__copy--closing">
+              <span className="home-qesa__eyebrow">QESA / QUANTUM ENCRYPTION SYSTEMS ARCHITECTURE</span>
+              <h2 id="qesa-closing-title"><SplitText text="Security that" tag="span" /><br/><SplitText text="starts at the foundation." tag="span" className="home-qesa__accent home-qesa__closing-headline" delay={28} duration={760} /></h2>
+              <SplitText text="Cryptographic protection, intelligent monitoring, and quantum-security research, brought together in a modular architecture." tag="p" className="home-qesa__closing-caption" delay={8} duration={520} />
+              <Link href="/products/qesa" className="home-qesa__link">Discover QESA <span aria-hidden="true">↗</span></Link>
             </div>
           </section>
         </section>
