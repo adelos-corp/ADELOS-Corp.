@@ -123,7 +123,7 @@
 .home-story-background__layer--qesa{background-image:url("https://raw.githubusercontent.com/adelos-corp/ADELOS-Corp./main/5e8be181-b8bc-4376-9249-f0a4cf85f2d8.png")}
 .home-gradient-sheet--qesa .home-story-background__layer--qesa{opacity:1}
 .home-gradient-sheet--william .home-story-background__layer--william,
-.home-gradient-sheet:not(.home-gradient-sheet--studenthome):not(.home-gradient-sheet--codelos):not(.home-gradient-sheet--visa) .home-story-background__layer--william{opacity:1}
+.home-gradient-sheet:not(.home-gradient-sheet--studenthome):not(.home-gradient-sheet--codelos):not(.home-gradient-sheet--visa):not(.home-gradient-sheet--qesa) .home-story-background__layer--william{opacity:1}
 .home-gradient-sheet--studenthome .home-story-background__layer--studenthome{opacity:1}
 .home-gradient-sheet--codelos .home-story-background__layer--codelos{opacity:1}
 .home-gradient-sheet--visa .home-story-background__layer--visa{opacity:1}
