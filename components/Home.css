@@ -120,12 +120,14 @@
 .home-story-background__layer--studenthome{background-image:url("https://raw.githubusercontent.com/adelos-corp/ADELOS-Corp./main/70d223e3-1c53-4c76-912c-bc785c1593b1.png")}
 .home-story-background__layer--codelos{background-image:url("https://raw.githubusercontent.com/adelos-corp/ADELOS-Corp./main/3c2963c1-762f-4e13-ac56-48d249d34d03.png")}
 .home-story-background__layer--visa{background-image:url("https://raw.githubusercontent.com/adelos-corp/ADELOS-Corp./main/e243c5a8-5ae6-4970-a2fe-79a6aad34e9f.png")}
+.home-story-background__layer--qesa{background-image:url("https://raw.githubusercontent.com/adelos-corp/ADELOS-Corp./main/5e8be181-b8bc-4376-9249-f0a4cf85f2d8.png")}
+.home-gradient-sheet--qesa .home-story-background__layer--qesa{opacity:1}
 .home-gradient-sheet--william .home-story-background__layer--william,
 .home-gradient-sheet:not(.home-gradient-sheet--studenthome):not(.home-gradient-sheet--codelos):not(.home-gradient-sheet--visa) .home-story-background__layer--william{opacity:1}
 .home-gradient-sheet--studenthome .home-story-background__layer--studenthome{opacity:1}
 .home-gradient-sheet--codelos .home-story-background__layer--codelos{opacity:1}
 .home-gradient-sheet--visa .home-story-background__layer--visa{opacity:1}
-.home-william-story,.home-studenthome-story,.home-codelos-story,.home-visa-story{position:relative;z-index:1}
+.home-william-story,.home-studenthome-story,.home-codelos-story,.home-visa-story,.home-qesa-story{position:relative;z-index:1}
 .home-studenthome-story{position:relative;isolation:isolate;color:#fff;--studenthome-blue-deep:#0049BA;--studenthome-blue-bright:#2F8CF4;--studenthome-blue-cyan:#0079C1}
 .home-studenthome{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:100%;min-height:100svh;margin:0 auto;padding:100px max(36px,calc((100vw - 1380px)/2));overflow:visible;background:transparent;text-align:center}
 .home-studenthome__copy{position:relative;z-index:2;width:min(820px,90%);display:flex;flex-direction:column;align-items:center;text-align:center}
@@ -288,3 +290,60 @@
   .home-visa--closing p{max-width:440px;margin:24px auto 28px;font-size:1rem}
 }
 @media(prefers-reduced-motion:reduce){.home-visa__primary,.home-visa__secondary,.home-visa__link{transition:none}}
+
+
+/* QESA: a restrained emerald gradient for the security architecture story. */
+.home-qesa-story{position:relative;isolation:isolate;color:#fff;--qesa-green:#012901;--qesa-forest:#134216;--qesa-emerald:#023A02;--qesa-light:#9BFFAC}
+.home-qesa{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:100%;min-height:100svh;margin:0 auto;padding:100px max(36px,calc((100vw - 1380px)/2));overflow:visible;background:transparent;text-align:center}
+.home-qesa__copy{position:relative;z-index:2;width:min(820px,90%);display:flex;flex-direction:column;align-items:center;text-align:center}
+.home-qesa__copy--wide{width:min(960px,100%)}
+.home-qesa__eyebrow{display:block;margin-bottom:30px;color:rgba(205,255,215,.72);font-size:.65rem;letter-spacing:.28em}
+.home-qesa h2{margin:0;font-size:clamp(4.3rem,8vw,8.8rem);font-weight:500;line-height:.94;letter-spacing:-.075em}
+.home-qesa .split-text{overflow:hidden}
+.home-qesa__accent{color:#75D995}
+.home-qesa__caption,.home-qesa__caption-lines{max-width:780px;margin:30px auto 28px;color:rgba(239,255,242,.86);font-size:clamp(1.05rem,1.35vw,1.25rem);line-height:1.65;letter-spacing:-.015em}
+.home-qesa__caption-lines{display:flex;flex-direction:column;align-items:center}
+.home-qesa__caption-line{display:block}
+.home-qesa__system-line,.home-qesa__research-line{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px;margin-top:20px;color:rgba(220,255,225,.76);font-size:.66rem;letter-spacing:.2em}
+.home-qesa__system-line i,.home-qesa__research-line i{color:#75D995;font-style:normal}
+.home-qesa__feature-list{display:grid;width:100%;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;row-gap:0;margin-top:32px;text-align:left}
+.home-qesa__feature-list p{display:flex;flex-direction:column;gap:7px;margin:0;padding:20px 0;border-top:1px solid rgba(117,217,149,.42)}
+.home-qesa__feature-list strong{font-size:1rem;font-weight:550;letter-spacing:-.015em}
+.home-qesa__feature-list span{color:rgba(232,255,236,.74);font-size:.88rem;line-height:1.5}
+.home-qesa--cryptography{justify-content:flex-end}
+.home-qesa--cryptography .home-qesa__copy{align-items:flex-end;text-align:right}
+.home-qesa--cryptography .home-qesa__eyebrow,.home-qesa--cryptography .home-qesa__caption-lines{text-align:right}
+.home-qesa--cryptography .home-qesa__caption-lines{align-items:flex-end}
+.home-qesa--cryptography .home-qesa__feature-list p{align-items:flex-end;text-align:right}
+.home-qesa--monitoring{justify-content:flex-start}
+.home-qesa--monitoring .home-qesa__copy{align-items:flex-start;text-align:left}
+.home-qesa--monitoring .home-qesa__eyebrow,.home-qesa--monitoring .home-qesa__caption-lines{text-align:left}
+.home-qesa--monitoring .home-qesa__caption-lines{align-items:flex-start}
+.home-qesa--monitoring .home-qesa__feature-list p{align-items:flex-start}
+.home-qesa--quantum h2,.home-qesa--ecosystem h2{font-size:clamp(3.7rem,6.8vw,7.2rem);line-height:.96}
+.home-qesa__fineprint{max-width:680px;margin:22px auto 0;color:rgba(225,255,231,.58);font-size:.84rem;line-height:1.6}
+.home-qesa--closing{min-height:100svh}
+.home-qesa__copy--closing{width:min(1180px,100%)}
+.home-qesa--closing .home-qesa__eyebrow{margin-bottom:28px}
+.home-qesa--closing h2{max-width:100%;font-size:clamp(4.5rem,9vw,9.8rem);line-height:.94;letter-spacing:-.08em}
+.home-qesa--closing p{max-width:760px;margin:30px auto 34px;color:rgba(239,255,242,.8);font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.6}
+.home-qesa__link{display:inline-flex;align-items:center;gap:22px;padding:16px 0;color:#fff;text-decoration:none;font-size:1rem;border-bottom:1px solid rgba(117,217,149,.8);transition:gap 260ms ease,border-color 260ms ease}
+.home-qesa__link span{color:#75D995}
+.home-qesa__link:hover{gap:30px;border-color:#9BFFAC}
+@media(max-width:1050px){.home-qesa{padding-left:24px;padding-right:24px}}
+@media(max-width:700px){
+  .home-qesa{min-height:100svh;padding:82px 18px}
+  .home-qesa__copy,.home-qesa__copy--wide{width:100%}
+  .home-qesa__eyebrow{margin-bottom:24px}
+  .home-qesa h2{font-size:clamp(3.4rem,12vw,5.8rem)}
+  .home-qesa--quantum h2,.home-qesa--ecosystem h2{font-size:clamp(2.9rem,10vw,4.6rem)}
+  .home-qesa__caption,.home-qesa__caption-lines{max-width:440px;margin:24px auto;font-size:1rem}
+  .home-qesa__feature-list{grid-template-columns:1fr;column-gap:0;margin-top:24px}
+  .home-qesa__feature-list p{padding:14px 0}
+  .home-qesa__feature-list span{font-size:.82rem}
+  .home-qesa__system-line,.home-qesa__research-line{gap:9px;font-size:.56rem;letter-spacing:.12em}
+  .home-qesa__fineprint{font-size:.78rem}
+  .home-qesa--closing h2{font-size:clamp(3.4rem,12vw,5.5rem);line-height:.98}
+  .home-qesa--closing p{max-width:440px;margin:24px auto 28px;font-size:1rem}
+}
+@media(prefers-reduced-motion:reduce){.home-qesa__link{transition:none}}
