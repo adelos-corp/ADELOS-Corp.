@@ -80,7 +80,7 @@ export default function Home() {
           <section className="home-william home-william--recall" aria-labelledby="william-recall-title">
             <div className="home-william__copy home-william__copy--wide">
               <span className="home-william__eyebrow">05 / CONTEXTUAL RECALL</span>
-              <h2 id="william-recall-title"><SplitText text="Remember with" tag="span" /><br/><SplitText text="purpose." tag="span" className="home-william__accent" /></h2>
+              <h2 id="william-recall-title"><SplitText text="Remember with purpose." tag="span" className="home-william__recall-headline" /></h2>
               <div className="home-william__split-caption home-william__split-caption--lines" aria-label="Not merely retrieving information. Reconstructing the context that makes it meaningful.">
                 <SplitText text="Not merely retrieving information." tag="span" className="home-william__split-caption-line" delay={5} duration={420} />
                 <SplitText text="Reconstructing the context" tag="span" className="home-william__split-caption-line" delay={5} duration={420} />
