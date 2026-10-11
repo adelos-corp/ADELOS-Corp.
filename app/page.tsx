@@ -11,6 +11,7 @@ export default function Home() {
   const studenthomeStoryRef = useRef<HTMLElement | null>(null);
   const codelosStoryRef = useRef<HTMLElement | null>(null);
   const visaStoryRef = useRef<HTMLElement | null>(null);
+  const tensaStoryRef = useRef<HTMLElement | null>(null);
   const qesaStoryRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function Home() {
     // The narrow center band prevents a neighboring story entering early.
     const screens = Array.from(
       sheet.querySelectorAll<HTMLElement>(
-        ".home-william-story > .home-william, .home-studenthome-story > .home-studenthome, .home-codelos-story > .home-codelos, .home-visa-story > .home-visa, .home-qesa-story > .home-qesa"
+        ".home-william-story > .home-william, .home-studenthome-story > .home-studenthome, .home-codelos-story > .home-codelos, .home-visa-story > .home-visa, .home-qesa-story > .home-qesa, .home-tensa-story > .home-tensa"
       )
     );
     if (!screens.length) return;
@@ -32,11 +33,13 @@ export default function Home() {
       "home-gradient-sheet--studenthome",
       "home-gradient-sheet--codelos",
       "home-gradient-sheet--visa",
+      "home-gradient-sheet--tensa",
       "home-gradient-sheet--qesa",
     ];
     let activeStory: string | null = null;
 
     const storyFor = (screen: HTMLElement) => {
+      if (screen.closest(".home-tensa-story")) return "tensa";
       if (screen.closest(".home-qesa-story")) return "qesa";
       if (screen.closest(".home-visa-story")) return "visa";
       if (screen.closest(".home-codelos-story")) return "codelos";
@@ -95,6 +98,7 @@ export default function Home() {
           <div className="home-story-background__layer home-story-background__layer--studenthome" />
           <div className="home-story-background__layer home-story-background__layer--codelos" />
           <div className="home-story-background__layer home-story-background__layer--visa" />
+          <div className="home-story-background__layer home-story-background__layer--tensa" />
           <div className="home-story-background__layer home-story-background__layer--qesa" />
         </div>
         <section ref={williamStoryRef} className="home-william-story" aria-label="William Graham">
@@ -527,6 +531,95 @@ export default function Home() {
               <h2 id="qesa-closing-title"><SplitText text="Security that" tag="span" /><br/><SplitText text="starts at the foundation." tag="span" className="home-qesa__accent home-qesa__closing-headline" delay={28} duration={760} /></h2>
               <SplitText text="Cryptographic protection, intelligent monitoring, and quantum-security research, brought together in a modular architecture." tag="p" className="home-qesa__closing-caption" delay={8} duration={520} />
               <Link href="/products/qesa" className="home-qesa__link">Discover QESA <span aria-hidden="true">↗</span></Link>
+            </div>
+          </section>
+        </section>
+
+        <section ref={tensaStoryRef} className="home-tensa-story" aria-label="TENSA biomechanical systems architecture">
+          <section className="home-tensa home-tensa--intro" aria-labelledby="tensa-title">
+            <div className="home-tensa__copy">
+              <span className="home-tensa__eyebrow">01 / BIOMECHANICAL SYSTEMS</span>
+              <h2 id="tensa-title"><SplitText text="Intelligence," tag="span" /><br/><SplitText text="embodied." tag="span" className="home-tensa__accent" /></h2>
+              <SplitText text="A new approach to movement, where engineered mechanics take inspiration from the intelligence of living systems." tag="p" className="home-tensa__caption" delay={7} duration={480} />
+              <div className="home-tensa__system-line" aria-label="TENSA design principles">
+                <span>STRUCTURE</span><i aria-hidden="true">/</i><span>MOVEMENT</span><i aria-hidden="true">/</i><span>FEEDBACK</span>
+              </div>
+            </div>
+          </section>
+
+          <section className="home-tensa home-tensa--tendons" aria-labelledby="tensa-tendons-title">
+            <div className="home-tensa__copy home-tensa__copy--wide">
+              <span className="home-tensa__eyebrow">02 / TENDON-FIRST ENGINEERING</span>
+              <h2 id="tensa-tendons-title"><SplitText text="Designed to" tag="span" /><br/><SplitText text="move naturally." tag="span" className="home-tensa__accent" /></h2>
+              <div className="home-tensa__caption-lines">
+                <SplitText text="Force is more than a motor turning a joint." tag="span" className="home-tensa__caption-line" delay={5} duration={420} />
+                <SplitText text="It travels through a system built to respond." tag="span" className="home-tensa__caption-line" delay={5} duration={420} />
+              </div>
+              <div className="home-tensa__feature-list">
+                <p><strong>Artificial tendons</strong><span>Explore compliant force transmission and controlled elasticity.</span></p>
+                <p><strong>Energy and force</strong><span>Investigate load distribution, energy storage, and release.</span></p>
+                <p><strong>Biologically inspired geometry</strong><span>Study linked limb segments and dynamic movement constraints.</span></p>
+                <p><strong>Mechanical resilience</strong><span>Evaluate fatigue, wear, and safe failure behaviour.</span></p>
+              </div>
+            </div>
+          </section>
+
+          <section className="home-tensa home-tensa--mechanics" aria-labelledby="tensa-mechanics-title">
+            <div className="home-tensa__copy home-tensa__copy--wide">
+              <span className="home-tensa__eyebrow">03 / MECHANICALLY EMBODIED INTELLIGENCE</span>
+              <h2 id="tensa-mechanics-title"><SplitText text="Not every response" tag="span" /><br/><SplitText text="needs a command." tag="span" className="home-tensa__accent" /></h2>
+              <div className="home-tensa__caption-lines">
+                <SplitText text="Let geometry, compliance, and dynamics" tag="span" className="home-tensa__caption-line" delay={5} duration={420} />
+                <SplitText text="contribute to stability and movement." tag="span" className="home-tensa__caption-line" delay={5} duration={420} />
+              </div>
+              <div className="home-tensa__feature-list">
+                <p><strong>Passive stabilisation</strong><span>Use mechanical constraints to support controlled movement.</span></p>
+                <p><strong>Compliant response</strong><span>Explore elastic responses to changing forces and disturbances.</span></p>
+                <p><strong>Sensory feedback</strong><span>Measure force, position, pressure, and movement.</span></p>
+                <p><strong>Distributed control</strong><span>Study local responses alongside electronic control systems.</span></p>
+              </div>
+            </div>
+          </section>
+
+          <section className="home-tensa home-tensa--integration" aria-labelledby="tensa-integration-title">
+            <div className="home-tensa__copy home-tensa__copy--wide">
+              <span className="home-tensa__eyebrow">04 / PHYSIOLOGICAL INTERFACES</span>
+              <h2 id="tensa-integration-title"><SplitText text="Built around" tag="span" /><br/><SplitText text="the living system." tag="span" className="home-tensa__accent" /></h2>
+              <div className="home-tensa__caption-lines">
+                <SplitText text="Research into the interface between" tag="span" className="home-tensa__caption-line" delay={5} duration={420} />
+                <SplitText text="engineered structures and human physiology." tag="span" className="home-tensa__caption-line" delay={5} duration={420} />
+              </div>
+              <div className="home-tensa__feature-list">
+                <p><strong>Prosthetic systems</strong><span>Investigate naturalistic movement and sensory feedback.</span></p>
+                <p><strong>Physiological interfaces</strong><span>Explore biological signals and mechanical attachment with safety as a prerequisite.</span></p>
+                <p><strong>Biocompatibility</strong><span>Evaluate material and tissue response for each intended application.</span></p>
+                <p><strong>Regenerative research</strong><span>A long-term research direction, not a demonstrated capability.</span></p>
+              </div>
+            </div>
+          </section>
+
+          <section className="home-tensa home-tensa--jenny" aria-labelledby="tensa-jenny-title">
+            <div className="home-tensa__copy home-tensa__copy--wide">
+              <span className="home-tensa__eyebrow">05 / THE EMBODIED SYSTEM</span>
+              <h2 id="tensa-jenny-title"><SplitText text="Intelligence needs" tag="span" /><br/><SplitText text="a physical world." tag="span" className="home-tensa__accent" /></h2>
+              <div className="home-tensa__caption-lines">
+                <SplitText text="William Graham provides the proposed cognitive layer." tag="span" className="home-tensa__caption-line" delay={5} duration={420} />
+                <SplitText text="TENSA explores the physical substrate." tag="span" className="home-tensa__caption-line" delay={5} duration={420} />
+                <SplitText text="JENNY is the envisioned embodied integration." tag="span" className="home-tensa__caption-line" delay={5} duration={420} />
+              </div>
+              <div className="home-tensa__system-line" aria-label="Proposed JENNY architecture">
+                <span>WILLIAM GRAHAM / COGNITION</span><i aria-hidden="true">+</i><span>TENSA / EMBODIMENT</span><i aria-hidden="true">=</i><span>JENNY</span>
+              </div>
+              <p className="home-tensa__fineprint">A proposed architecture. Physical interfaces, control boundaries, and safety mechanisms remain to be defined.</p>
+            </div>
+          </section>
+
+          <section id="tensa-discover" className="home-tensa home-tensa--closing" aria-labelledby="tensa-closing-title">
+            <div className="home-tensa__copy home-tensa__copy--closing">
+              <span className="home-tensa__eyebrow">TENSA / TENDON ENGINEERED NATURAL SYSTEMS ARCHITECTURE</span>
+              <h2 id="tensa-closing-title"><SplitText text="The next evolution" tag="span" /><br/><SplitText text="of embodied intelligence." tag="span" className="home-tensa__accent home-tensa__closing-headline" delay={28} duration={760} /></h2>
+              <SplitText text="Mechanically intelligent systems inspired by biology, designed for movement, and developed through rigorous research." tag="p" className="home-tensa__closing-caption" delay={8} duration={520} />
+              <Link href="/products/tensa" className="home-tensa__link">Discover TENSA <span aria-hidden="true">↗</span></Link>
             </div>
           </section>
         </section>
