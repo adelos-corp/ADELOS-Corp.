@@ -50,3 +50,19 @@
   .product-detail-related a{min-height:86px;border-radius:0}
 }
 @media(prefers-reduced-motion:reduce){.product-detail-related a,.product-detail-open,.product-detail-link{transition:none}}
+
+
+/* Product launch choice dialog, used by Studenthome. */
+.product-choice-backdrop{position:fixed;z-index:100;inset:0;display:grid;place-items:center;padding:24px;background:rgba(0,0,0,.66);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);animation:product-choice-fade-in .2s ease both}
+.product-choice-dialog{position:relative;width:min(560px,100%);padding:clamp(28px,5vw,48px);border:1px solid rgba(255,255,255,.2);border-radius:28px;background:linear-gradient(145deg,rgba(9,22,42,.96),rgba(3,7,17,.98));box-shadow:0 30px 100px rgba(0,0,0,.5);color:#fff;animation:product-choice-rise-in .28s cubic-bezier(.2,.8,.2,1) both}
+.product-choice-close{position:absolute;top:16px;right:18px;width:38px;height:38px;border:1px solid rgba(255,255,255,.18);border-radius:50%;background:rgba(255,255,255,.06);color:#fff;font-size:1.5rem;line-height:1;cursor:pointer}
+.product-choice-dialog h2{max-width:420px;margin:28px 0 12px;font-size:clamp(2rem,5vw,3.2rem);font-weight:500;line-height:1;letter-spacing:-.055em}
+.product-choice-dialog>p{margin:0;color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.6}
+.product-choice-options{display:grid;gap:10px;margin-top:28px}
+.product-choice-option{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 20px;border:1px solid rgba(130,190,255,.26);border-radius:15px;background:rgba(42,112,190,.1);color:#fff;text-decoration:none;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+.product-choice-option:hover{transform:translateY(-2px);border-color:rgba(130,190,255,.62);background:rgba(42,112,190,.2)}
+.product-choice-option span{font-size:.98rem;font-weight:500}
+.product-choice-option b{font-weight:400;color:#9ccfff}
+@keyframes product-choice-fade-in{from{opacity:0}to{opacity:1}}
+@keyframes product-choice-rise-in{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.product-choice-backdrop,.product-choice-dialog{animation:none}.product-choice-option{transition:none}}
