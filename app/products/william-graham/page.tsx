@@ -9,5 +9,6 @@ export default function WilliamGrahamPage(){
     accent="violet"
     auroraColors={["#5F00C9", "#591F8E", "#5227FF"]}
     status="Working"
+    openHref="https://neroai.in"
   />;
 }
