@@ -92,3 +92,18 @@
   .home-william--recall h2{font-size:clamp(2.6rem,8.8vw,4.1rem);letter-spacing:-.065em}
   .home-william--recall .home-william__recall-headline{white-space:normal}
 }
+
+
+/* Closing call to action for William Graham */
+.home-william--closing{min-height:100svh}
+.home-william__copy--closing{width:min(1180px,100%)}
+.home-william--closing .home-william__eyebrow{margin-bottom:28px}
+.home-william--closing h2{max-width:100%;font-size:clamp(4.5rem,9vw,9.8rem);line-height:.94;letter-spacing:-.08em}
+.home-william--closing h2 span{color:#c4a5ff}
+.home-william--closing p{max-width:680px;margin:30px auto 34px;color:rgba(255,255,255,.76);font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.6}
+.home-william__closing-link{align-self:center;gap:22px;padding:16px 0;font-size:1rem}
+.home-william__closing-link:hover{gap:30px}
+@media(max-width:700px){
+  .home-william--closing h2{font-size:clamp(3.4rem,12vw,5.5rem);line-height:.98}
+  .home-william--closing p{max-width:440px;margin:24px auto 28px;font-size:1rem}
+}
