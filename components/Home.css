@@ -113,7 +113,7 @@
 
 
 /* Isolated product-story backgrounds: exactly one layer is visible at a time. */
-.home-gradient-sheet{isolation:isolate;background:#02091b}
+.home-gradient-sheet{isolation:isolate;background:#02091b;border-radius:0 0 50px 50px;overflow:clip}
 .home-story-background{position:sticky;top:0;z-index:0;width:100%;height:100svh;margin-bottom:-100svh;pointer-events:none}
 .home-story-background__layer{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;opacity:0;transition:opacity 1250ms cubic-bezier(.22,1,.36,1);will-change:opacity}
 .home-story-background__layer--william{background-image:url("/wg-reference.jpeg")}
