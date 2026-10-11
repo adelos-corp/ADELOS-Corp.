@@ -63,3 +63,32 @@
 .home-william__memory-list strong{font-size:1rem;font-weight:550;letter-spacing:-.015em}
 .home-william__memory-list span{color:rgba(255,255,255,.7);font-size:.88rem;line-height:1.5}
 @media(max-width:700px){.home-william--memory h2,.home-william--recall h2{font-size:clamp(2.9rem,10vw,4.6rem)}.home-william__memory-list{grid-template-columns:1fr;column-gap:0;margin-top:24px}.home-william__memory-list p{padding:14px 0}.home-william__memory-list span{font-size:.82rem}}
+
+
+/* Directional layouts for the William Graham story */
+.home-william--enterprise{justify-content:flex-end}
+.home-william--enterprise .home-william__copy{align-items:flex-end;text-align:right}
+.home-william--enterprise .home-william__eyebrow,
+.home-william--enterprise .home-william__split-caption{text-align:right}
+.home-william--enterprise .home-william__capabilities{ text-align:right }
+.home-william--enterprise .home-william__capabilities p{align-items:flex-end}
+.home-william--architecture{justify-content:flex-start}
+.home-william--architecture .home-william__copy{align-items:flex-start;text-align:left}
+.home-william--architecture .home-william__eyebrow,
+.home-william--architecture .home-william__split-caption{text-align:left}
+.home-william--architecture .home-william__split-caption--lines{align-items:flex-start}
+.home-william--architecture .home-william__architecture-list{text-align:left}
+.home-william--recall .home-william__copy{width:min(1440px,100%);align-items:center;text-align:center}
+.home-william--recall h2{width:100%;font-size:clamp(4rem,8.4vw,9.2rem);line-height:.98;letter-spacing:-.075em}
+.home-william--recall .home-william__recall-headline{white-space:nowrap}
+@media(max-width:1050px){
+  .home-william--recall h2{font-size:clamp(3.4rem,7.6vw,6.8rem)}
+}
+@media(max-width:700px){
+  .home-william--enterprise .home-william__copy{align-items:flex-end;text-align:right}
+  .home-william--enterprise .home-william__capabilities{width:100%}
+  .home-william--architecture .home-william__copy{align-items:flex-start;text-align:left}
+  .home-william--architecture .home-william__split-caption--lines{align-items:flex-start}
+  .home-william--recall h2{font-size:clamp(2.6rem,8.8vw,4.1rem);letter-spacing:-.065em}
+  .home-william--recall .home-william__recall-headline{white-space:normal}
+}
