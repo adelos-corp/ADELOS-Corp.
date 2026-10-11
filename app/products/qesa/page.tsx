@@ -7,7 +7,7 @@ export default function QESAPage() {
     category="Quantum Encryption Systems Architecture"
     description="An enterprise cybersecurity architecture for quantum-ready networking and secure infrastructure, with AI-assisted monitoring."
     accent="emerald"
-    auroraColors={["#00E6B8", "#087F8C", "#063D45"]}
+    auroraColors={["#012901", "#134216", "#023A02"]}
     status="Coming soon"
   />;
 }
