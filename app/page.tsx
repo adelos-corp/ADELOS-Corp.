@@ -26,6 +26,16 @@ export default function Home() {
     if (!screens.length) return;
 
     const intersecting = new Set<HTMLElement>();
+    const storyClasses = [
+      "home-gradient-sheet--william",
+      "home-gradient-sheet--studenthome",
+      "home-gradient-sheet--codelos",
+      "home-gradient-sheet--visa",
+    ];
+    let activeStory: string | null = null;
+    let pendingStory: string | null = null;
+    let transitionTimer: ReturnType<typeof setTimeout> | null = null;
+
     const storyFor = (screen: HTMLElement) => {
       if (screen.closest(".home-visa-story")) return "visa";
       if (screen.closest(".home-codelos-story")) return "codelos";
@@ -33,11 +43,31 @@ export default function Home() {
       return "william";
     };
 
+    const activate = (story: string) => {
+      storyClasses.forEach((className) => sheet.classList.remove(className));
+      sheet.classList.add(`home-gradient-sheet--${story}`);
+      activeStory = story;
+      pendingStory = null;
+      transitionTimer = null;
+    };
+
     const setActiveStory = (story: string) => {
-      sheet.classList.toggle("home-gradient-sheet--william", story === "william");
-      sheet.classList.toggle("home-gradient-sheet--studenthome", story === "studenthome");
-      sheet.classList.toggle("home-gradient-sheet--codelos", story === "codelos");
-      sheet.classList.toggle("home-gradient-sheet--visa", story === "visa");
+      if (story === activeStory || story === pendingStory) return;
+      pendingStory = story;
+
+      if (transitionTimer) clearTimeout(transitionTimer);
+
+      // First fade the outgoing image to the neutral base. Only then reveal
+      // the next product's image, so two product identities never overlap.
+      if (activeStory === null) {
+        activate(story);
+        return;
+      }
+
+      storyClasses.forEach((className) => sheet.classList.remove(className));
+      transitionTimer = setTimeout(() => {
+        if (pendingStory === story) activate(story);
+      }, 420);
     };
 
     const observer = new IntersectionObserver(
@@ -64,7 +94,10 @@ export default function Home() {
     );
 
     screens.forEach((screen) => observer.observe(screen));
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (transitionTimer) clearTimeout(transitionTimer);
+    };
   }, []);
 
   return (
