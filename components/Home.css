@@ -121,19 +121,19 @@
 .home-gradient-sheet--studenthome .home-story-background__layer--william{opacity:0}
 .home-gradient-sheet--studenthome .home-story-background__layer--studenthome{opacity:1}
 .home-william-story,.home-studenthome-story{position:relative;z-index:1}
-.home-studenthome-story{position:relative;isolation:isolate;color:#fff}
+.home-studenthome-story{position:relative;isolation:isolate;color:#fff;--studenthome-blue-deep:#0049BA;--studenthome-blue-bright:#2F8CF4;--studenthome-blue-cyan:#0079C1}
 .home-studenthome{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:100%;min-height:100svh;margin:0 auto;padding:100px max(36px,calc((100vw - 1380px)/2));overflow:visible;background:transparent;text-align:center}
 .home-studenthome__copy{position:relative;z-index:2;width:min(820px,90%);display:flex;flex-direction:column;align-items:center;text-align:center}
 .home-studenthome__copy--wide{width:min(960px,100%)}
 .home-studenthome__eyebrow{display:block;margin-bottom:30px;color:rgba(210,231,255,.78);font-size:.65rem;letter-spacing:.28em}
 .home-studenthome h2{margin:0;font-size:clamp(4.3rem,8vw,8.8rem);font-weight:500;line-height:.94;letter-spacing:-.075em}
-.home-studenthome__accent{color:#2F8CF4}
+.home-studenthome__accent{color:var(--studenthome-blue-bright)}
 .home-studenthome .split-text{overflow:hidden}
 .home-studenthome__caption,.home-studenthome__caption-lines{max-width:780px;margin:30px auto 28px;color:rgba(237,246,255,.88);font-size:clamp(1.05rem,1.35vw,1.25rem);line-height:1.65;letter-spacing:-.015em}
 .home-studenthome__caption-lines{display:flex;flex-direction:column;align-items:center}
 .home-studenthome__caption-line{display:block}
 .home-studenthome__feature-list{display:grid;width:100%;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;row-gap:0;margin-top:32px;text-align:left}
-.home-studenthome__feature-list p{display:flex;flex-direction:column;gap:7px;margin:0;padding:20px 0;border-top:1px solid rgba(91,166,255,.35)}
+.home-studenthome__feature-list p{display:flex;flex-direction:column;gap:7px;margin:0;padding:20px 0;border-top:1px solid color-mix(in srgb,var(--studenthome-blue-cyan) 65%,transparent)}
 .home-studenthome__feature-list strong{font-size:1rem;font-weight:550;letter-spacing:-.015em}
 .home-studenthome__feature-list span{color:rgba(223,238,255,.74);font-size:.88rem;line-height:1.5}
 .home-studenthome--unified{justify-content:flex-end}
@@ -152,8 +152,8 @@
 .home-studenthome--closing .home-studenthome__eyebrow{margin-bottom:28px}
 .home-studenthome--closing h2{max-width:100%;font-size:clamp(4.5rem,9vw,9.8rem);line-height:.94;letter-spacing:-.08em}
 .home-studenthome--closing p{max-width:760px;margin:30px auto 34px;color:rgba(237,246,255,.8);font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.6}
-.home-studenthome__link{display:inline-flex;align-items:center;gap:22px;padding:16px 0;color:#fff;text-decoration:none;font-size:1rem;border-bottom:1px solid rgba(91,166,255,.75);transition:gap 260ms ease,border-color 260ms ease}
-.home-studenthome__link:hover{gap:30px;border-color:#2F8CF4}
+.home-studenthome__link{display:inline-flex;align-items:center;gap:22px;padding:16px 0;color:#fff;text-decoration:none;font-size:1rem;border-bottom:1px solid color-mix(in srgb,var(--studenthome-blue-bright) 75%,transparent);transition:gap 260ms ease,border-color 260ms ease}
+.home-studenthome__link:hover{gap:30px;border-color:var(--studenthome-blue-bright)}
 @media(max-width:1050px){.home-studenthome{padding-left:24px;padding-right:24px}}
 @media(max-width:700px){
   .home-story-background__layer{background-position:58% center}
