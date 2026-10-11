@@ -33,8 +33,6 @@ export default function Home() {
       "home-gradient-sheet--visa",
     ];
     let activeStory: string | null = null;
-    let pendingStory: string | null = null;
-    let transitionTimer: ReturnType<typeof setTimeout> | null = null;
 
     const storyFor = (screen: HTMLElement) => {
       if (screen.closest(".home-visa-story")) return "visa";
@@ -43,33 +41,13 @@ export default function Home() {
       return "william";
     };
 
-    const activate = (story: string) => {
+    const setActiveStory = (story: string) => {
+      if (story === activeStory) return;
+      // Change the destination immediately; CSS crossfades the two image
+      // layers together, and smoothly reverses if the user changes direction.
       storyClasses.forEach((className) => sheet.classList.remove(className));
-      sheet.classList.remove("home-gradient-sheet--transitioning");
       sheet.classList.add(`home-gradient-sheet--${story}`);
       activeStory = story;
-      pendingStory = null;
-      transitionTimer = null;
-    };
-
-    const setActiveStory = (story: string) => {
-      if (story === activeStory || story === pendingStory) return;
-      pendingStory = story;
-
-      if (transitionTimer) clearTimeout(transitionTimer);
-
-      // First fade the outgoing image to the neutral base. Only then reveal
-      // the next product's image, so two product identities never overlap.
-      if (activeStory === null) {
-        activate(story);
-        return;
-      }
-
-      storyClasses.forEach((className) => sheet.classList.remove(className));
-      sheet.classList.add("home-gradient-sheet--transitioning");
-      transitionTimer = setTimeout(() => {
-        if (pendingStory === story) activate(story);
-      }, 420);
     };
 
     const observer = new IntersectionObserver(
@@ -96,10 +74,7 @@ export default function Home() {
     );
 
     screens.forEach((screen) => observer.observe(screen));
-    return () => {
-      observer.disconnect();
-      if (transitionTimer) clearTimeout(transitionTimer);
-    };
+    return () => observer.disconnect();
   }, []);
 
   return (
