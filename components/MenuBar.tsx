@@ -37,7 +37,17 @@ export default function MenuBar() {
 
   return (
     <header className="menu-bar-wrap">
-      <Link href="/" className="menu-bar__brand" aria-label="ADELOS Corp. home">
+      <Link
+        href="/"
+        className="menu-bar__brand"
+        aria-label="ADELOS Corp. home"
+        onClick={(event) => {
+          if (pathname === "/") {
+            event.preventDefault();
+            window.dispatchEvent(new Event("adelos:scroll-top"));
+          }
+        }}
+      >
         <img src="/adelos-logo.png" alt="ADELOS" />
       </Link>
 
