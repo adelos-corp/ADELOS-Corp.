@@ -65,6 +65,7 @@ export default function Home() {
           <div className="home-story-background__layer home-story-background__layer--william" />
           <div className="home-story-background__layer home-story-background__layer--studenthome" />
           <div className="home-story-background__layer home-story-background__layer--codelos" />
+          <div className="home-story-background__layer home-story-background__layer--visa" />
         </div>
         <section ref={williamStoryRef} className="home-william-story" aria-label="William Graham">
           <section className="home-william home-william--intro" aria-labelledby="william-title">
