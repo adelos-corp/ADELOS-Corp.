@@ -6,7 +6,8 @@ export default function TENSAPage() {
     number="05"
     category="Tendon Engineered Natural Systems Architecture"
     description="A biomechanics and robotics research architecture exploring mechanically intelligent systems through artificial tendon technology."
-    accent="orange"
+    accent="red"
+    auroraColors={["#FF3B42", "#C51E32", "#4B0A18"]}
     status="Under active development"
   />;
 }
