@@ -48,7 +48,6 @@ export default function ProductDetail({
                   Open {name} <b aria-hidden="true">↗</b>
                 </button>
               )}
-              <Link href="/products" className="product-detail-link">All Products <b aria-hidden="true">→</b></Link>
             </div>
             <div className="product-detail-status"><span />{status}</div>
           </div>
