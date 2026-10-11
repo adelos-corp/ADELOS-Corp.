@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
+import Aurora from "@/components/Aurora";
 import "./ProductDetail.css";
 
 type ProductDetailProps = {
@@ -7,7 +8,8 @@ type ProductDetailProps = {
   number: string;
   category: string;
   description: string;
-  accent?: "violet" | "blue" | "green" | "orange";
+  accent?: "violet" | "blue" | "green" | "orange" | "red" | "emerald";
+  auroraColors: [string, string, string];
   status: string;
   openHref?: string;
   relatedProducts?: { name: string; href: string; description: string }[];
@@ -19,12 +21,16 @@ export default function ProductDetail({
   category,
   description,
   accent = "violet",
+  auroraColors,
   status,
   openHref,
   relatedProducts,
 }: ProductDetailProps) {
   return (
-    <main className="product-detail-page">
+    <main className={`product-detail-page product-detail-page--${accent}`}>
+      <div className="product-detail-aurora" aria-hidden="true">
+        <Aurora colorStops={auroraColors} blend={0.58} amplitude={1.05} speed={0.8} />
+      </div>
       <section className={`product-detail-hero product-detail-hero--${accent}`}>
         <div className="product-detail-layout">
           <div className="product-detail-copy">
@@ -45,17 +51,6 @@ export default function ProductDetail({
               <Link href="/products" className="product-detail-link">All Products <b aria-hidden="true">→</b></Link>
             </div>
             <div className="product-detail-status"><span />{status}</div>
-          </div>
-
-          <div className="product-detail-art" aria-hidden="true">
-            <div className="product-detail-art__grid" />
-            <div className="product-detail-art__orbit product-detail-art__orbit--outer" />
-            <div className="product-detail-art__orbit product-detail-art__orbit--middle" />
-            <div className="product-detail-art__orbit product-detail-art__orbit--inner" />
-            <div className="product-detail-art__core" />
-            <div className="product-detail-art__beam" />
-            <span className="product-detail-art__index">{number.padStart(2, "0")}</span>
-            <span className="product-detail-art__label">{name.toUpperCase()}</span>
           </div>
         </div>
 
