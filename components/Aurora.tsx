@@ -98,13 +98,23 @@ void main() {
   vec3 rampColor;
   COLOR_RAMP(colors, uv.x, rampColor);
 
-  float height = snoise(vec2(uv.x * 2.0 + uTime * 0.1, uTime * 0.25)) * 0.5 * uAmplitude;
+  // Landscape keeps the established desktop effect. Portrait screens use
+  // narrower, curtain-like structure and a firm upper-sky falloff instead
+  // of the broad rolling waves that can flood the whole mobile page.
+  float portrait = 1.0 - step(0.82, uResolution.x / uResolution.y);
+  float wave = snoise(vec2(uv.x * 2.0 + uTime * 0.1, uTime * 0.25));
+  float curtain = snoise(vec2(uv.x * 5.2 + uTime * 0.035, uv.y * 0.9 - uTime * 0.12));
+  float mobileWave = wave * 0.16 + curtain * 0.11;
+  float height = mix(wave * 0.5 * uAmplitude, mobileWave * uAmplitude, portrait);
   height = exp(height);
-  height = (uv.y * 2.0 - height + 0.2);
+  height = uv.y * 2.0 - height + 0.2;
   float intensity = 0.6 * height;
 
   float midPoint = 0.20;
   float auroraAlpha = smoothstep(midPoint - uBlend * 0.5, midPoint + uBlend * 0.5, intensity);
+  float mobileSkyFalloff = smoothstep(0.34, 0.76, uv.y);
+  auroraAlpha *= mix(1.0, mobileSkyFalloff, portrait);
+  intensity *= mix(1.0, 0.9, portrait);
 
   vec3 auroraColor = intensity * rampColor;
 
