@@ -7,6 +7,7 @@ export default function StudenthomePage(){
     category="Education Platform"
     description="A seamless, unified destination for global students, bridging the gap between distributed education systems and continuous learning."
     accent="blue"
+    auroraColors={["#00B7FF", "#176BFF", "#163C9A"]}
     status="Beta"
   />;
 }
