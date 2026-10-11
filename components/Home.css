@@ -99,7 +99,7 @@
 .home-william__copy--closing{width:min(1180px,100%)}
 .home-william--closing .home-william__eyebrow{margin-bottom:28px}
 .home-william--closing h2{max-width:100%;font-size:clamp(4.5rem,9vw,9.8rem);line-height:.94;letter-spacing:-.08em}
-.home-william--closing h2 span{color:#c4a5ff}
+.home-william--closing h2 span{color:#fff}
 .home-william--closing p{max-width:680px;margin:30px auto 34px;color:rgba(255,255,255,.76);font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.6}
 .home-william__closing-link{align-self:center;gap:22px;padding:16px 0;font-size:1rem}
 .home-william__closing-link:hover{gap:30px}
