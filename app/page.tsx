@@ -13,41 +13,57 @@ export default function Home() {
   const visaStoryRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    const william = williamStoryRef.current;
-    const studenthome = studenthomeStoryRef.current;
-    const codelos = codelosStoryRef.current;
-    const visa = visaStoryRef.current;
-    const sheet = william?.closest(".home-gradient-sheet");
-    if (!william || !studenthome || !codelos || !visa || !sheet) return;
+    const sheet = williamStoryRef.current?.closest(".home-gradient-sheet");
+    if (!sheet) return;
+
+    // Observe individual screens, not the long product-story wrappers.
+    // The narrow center band prevents a neighboring story entering early.
+    const screens = Array.from(
+      sheet.querySelectorAll<HTMLElement>(
+        ".home-william-story > .home-william, .home-studenthome-story > .home-studenthome, .home-codelos-story > .home-codelos, .home-visa-story > .home-visa"
+      )
+    );
+    if (!screens.length) return;
+
+    const intersecting = new Set<HTMLElement>();
+    const storyFor = (screen: HTMLElement) => {
+      if (screen.closest(".home-visa-story")) return "visa";
+      if (screen.closest(".home-codelos-story")) return "codelos";
+      if (screen.closest(".home-studenthome-story")) return "studenthome";
+      return "william";
+    };
+
+    const setActiveStory = (story: string) => {
+      sheet.classList.toggle("home-gradient-sheet--william", story === "william");
+      sheet.classList.toggle("home-gradient-sheet--studenthome", story === "studenthome");
+      sheet.classList.toggle("home-gradient-sheet--codelos", story === "codelos");
+      sheet.classList.toggle("home-gradient-sheet--visa", story === "visa");
+    };
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries.filter((entry) => entry.isIntersecting);
-        const isVisible = (target: HTMLElement) => visible.some((entry) => entry.target === target);
-
-        const activeStory = isVisible(visa)
-          ? "visa"
-          : isVisible(codelos)
-            ? "codelos"
-            : isVisible(studenthome)
-              ? "studenthome"
-              : isVisible(william)
-                ? "william"
-                : null;
-
-        if (activeStory) {
-          sheet.classList.toggle("home-gradient-sheet--studenthome", activeStory === "studenthome");
-          sheet.classList.toggle("home-gradient-sheet--codelos", activeStory === "codelos");
-          sheet.classList.toggle("home-gradient-sheet--visa", activeStory === "visa");
+        for (const entry of entries) {
+          const screen = entry.target as HTMLElement;
+          if (entry.isIntersecting) intersecting.add(screen);
+          else intersecting.delete(screen);
         }
+
+        // Pick the screen nearest the viewport center when screens meet at
+        // a boundary. This is stable even when multiple observer entries batch.
+        const viewportCenter = window.innerHeight / 2;
+        const activeScreen = Array.from(intersecting).sort((a, b) => {
+          const aRect = a.getBoundingClientRect();
+          const bRect = b.getBoundingClientRect();
+          return Math.abs((aRect.top + aRect.bottom) / 2 - viewportCenter) -
+            Math.abs((bRect.top + bRect.bottom) / 2 - viewportCenter);
+        })[0];
+
+        if (activeScreen) setActiveStory(storyFor(activeScreen));
       },
-      { threshold: 0, rootMargin: "-18% 0px -18% 0px" }
+      { threshold: 0, rootMargin: "-45% 0px -45% 0px" }
     );
 
-    observer.observe(william);
-    observer.observe(studenthome);
-    observer.observe(codelos);
-    observer.observe(visa);
+    screens.forEach((screen) => observer.observe(screen));
     return () => observer.disconnect();
   }, []);
 
