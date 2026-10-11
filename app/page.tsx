@@ -94,6 +94,17 @@ export default function Home() {
               </div>
             </div>
           </section>
+
+          <section className="home-william home-william--closing" aria-labelledby="william-closing-title">
+            <div className="home-william__copy home-william__copy--closing">
+              <span className="home-william__eyebrow">WILLIAM GRAHAM / PERSONALIZED AI</span>
+              <h2 id="william-closing-title">Meet <span>William Graham.</span></h2>
+              <p>Intelligence shaped by memory, context, and the way you work.</p>
+              <Link href="/products/william-graham" className="home-william__link home-william__closing-link">
+                Explore William Graham <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
+          </section>
         </section>
         <SiteFooter />
       </div>
