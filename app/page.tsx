@@ -8,18 +8,31 @@ import "@/components/Home.css";
 
 export default function Home() {
   const studenthomeStoryRef = useRef<HTMLElement | null>(null);
+  const codelosStoryRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    const story = studenthomeStoryRef.current;
-    const sheet = story?.closest(".home-gradient-sheet");
-    if (!story || !sheet) return;
+    const studenthome = studenthomeStoryRef.current;
+    const codelos = codelosStoryRef.current;
+    const sheet = studenthome?.closest(".home-gradient-sheet");
+    if (!studenthome || !codelos || !sheet) return;
 
+    let activeStory: "studenthome" | "codelos" = "studenthome";
     const observer = new IntersectionObserver(
-      ([entry]) => sheet.classList.toggle("home-gradient-sheet--studenthome", entry.isIntersecting),
+      (entries) => {
+        const codelosEntry = entries.find((entry) => entry.target === codelos && entry.isIntersecting);
+        const studenthomeEntry = entries.find((entry) => entry.target === studenthome && entry.isIntersecting);
+
+        if (codelosEntry) activeStory = "codelos";
+        else if (studenthomeEntry) activeStory = "studenthome";
+
+        sheet.classList.toggle("home-gradient-sheet--studenthome", activeStory === "studenthome");
+        sheet.classList.toggle("home-gradient-sheet--codelos", activeStory === "codelos");
+      },
       { threshold: 0, rootMargin: "-18% 0px -18% 0px" }
     );
 
-    observer.observe(story);
+    observer.observe(studenthome);
+    observer.observe(codelos);
     return () => observer.disconnect();
   }, []);
 
@@ -36,6 +49,7 @@ export default function Home() {
         <div className="home-story-background" aria-hidden="true">
           <div className="home-story-background__layer home-story-background__layer--william" />
           <div className="home-story-background__layer home-story-background__layer--studenthome" />
+          <div className="home-story-background__layer home-story-background__layer--codelos" />
         </div>
         <section className="home-william-story" aria-label="William Graham">
           <section className="home-william home-william--intro" aria-labelledby="william-title">
@@ -217,6 +231,98 @@ export default function Home() {
               <SplitText text="One home for the services, records, and opportunities that move student life forward." tag="p" className="home-studenthome__closing-caption" delay={8} duration={520} />
               <Link href="/products/studenthome" className="home-studenthome__link">
                 Discover Studenthome <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
+          </section>
+        </section>
+
+        <section ref={codelosStoryRef} className="home-codelos-story" aria-label="Codelos engineering platform">
+          <section className="home-codelos home-codelos--intro" aria-labelledby="codelos-title">
+            <div className="home-codelos__copy">
+              <span className="home-codelos__eyebrow">01 / ENGINEERING PLATFORM</span>
+              <h2 id="codelos-title"><SplitText text="The Codelos" tag="span" /><br/><SplitText text="Ecosystem." tag="span" className="home-codelos__accent" /></h2>
+              <SplitText text="The complete developer platform for intelligent, distributed, and high-performance software engineering." tag="p" className="home-codelos__caption" delay={7} duration={480} />
+              <div className="home-codelos__system-line" aria-label="A connected engineering lifecycle">
+                <span>DESIGN</span><i aria-hidden="true">/</i><span>BUILD</span><i aria-hidden="true">/</i><span>SHIP</span><i aria-hidden="true">/</i><span>OPERATE</span>
+              </div>
+            </div>
+          </section>
+
+          <section className="home-codelos home-codelos--daemon" aria-labelledby="codelos-daemon-title">
+            <div className="home-codelos__copy home-codelos__copy--wide">
+              <span className="home-codelos__eyebrow">02 / AI-ASSISTED ENGINEERING</span>
+              <h2 id="codelos-daemon-title"><SplitText text="Meet" tag="span" /><br/><SplitText text="Daemon." tag="span" className="home-codelos__accent" /></h2>
+              <div className="home-codelos__caption-lines" aria-label="An AI-native development environment that works alongside the engineer.">
+                <SplitText text="An AI-native development environment" tag="span" className="home-codelos__caption-line" delay={5} duration={420} />
+                <SplitText text="that works alongside the engineer." tag="span" className="home-codelos__caption-line" delay={5} duration={420} />
+              </div>
+              <div className="home-codelos__feature-list">
+                <p><strong>Context-aware coding</strong><span>Ground suggestions in project structure, dependencies, and the code already in motion.</span></p>
+                <p><strong>Debugging intelligence</strong><span>Trace failures across call paths, surface likely causes, and turn diagnostics into actionable fixes.</span></p>
+                <p><strong>Automated workflows</strong><span>Coordinate repeatable engineering tasks while keeping the developer in control.</span></p>
+                <p><strong>Execution-aware assistance</strong><span>Connect edits, tests, terminal actions, and feedback in one continuous loop.</span></p>
+              </div>
+            </div>
+          </section>
+
+          <section className="home-codelos home-codelos--cocoa" aria-labelledby="codelos-cocoa-title">
+            <div className="home-codelos__copy home-codelos__copy--wide">
+              <span className="home-codelos__eyebrow">03 / COLLABORATIVE WORKSPACE</span>
+              <h2 id="codelos-cocoa-title"><SplitText text="Better work," tag="span" /><br/><SplitText text="together." tag="span" className="home-codelos__accent" /></h2>
+              <div className="home-codelos__caption-lines" aria-label="A shared workspace for people, projects, and engineering knowledge.">
+                <SplitText text="A shared workspace for people," tag="span" className="home-codelos__caption-line" delay={5} duration={420} />
+                <SplitText text="projects, and engineering knowledge." tag="span" className="home-codelos__caption-line" delay={5} duration={420} />
+              </div>
+              <div className="home-codelos__feature-list">
+                <p><strong>Shared coding sessions</strong><span>Work through complex changes with teammates in a coordinated, real-time environment.</span></p>
+                <p><strong>Living documentation</strong><span>Keep technical decisions, implementation notes, and project context close to the work.</span></p>
+                <p><strong>Team coordination</strong><span>Align ownership, review cycles, and next actions without fragmenting the workflow.</span></p>
+                <p><strong>AI-assisted knowledge flow</strong><span>Make project knowledge easier to discover, summarize, and carry forward.</span></p>
+              </div>
+            </div>
+          </section>
+
+          <section className="home-codelos home-codelos--fly" aria-labelledby="codelos-fly-title">
+            <div className="home-codelos__copy home-codelos__copy--wide">
+              <span className="home-codelos__eyebrow">04 / CONTINUOUS DELIVERY</span>
+              <h2 id="codelos-fly-title"><SplitText text="From commit" tag="span" /><br/><SplitText text="to production." tag="span" className="home-codelos__accent" /></h2>
+              <div className="home-codelos__caption-lines" aria-label="Fly brings repeatable delivery workflows into the Codelos engineering lifecycle.">
+                <SplitText text="Fly turns the path from source to release" tag="span" className="home-codelos__caption-line" delay={5} duration={420} />
+                <SplitText text="into a visible, repeatable workflow." tag="span" className="home-codelos__caption-line" delay={5} duration={420} />
+              </div>
+              <div className="home-codelos__feature-list">
+                <p><strong>Pipeline orchestration</strong><span>Compose build, test, package, and deployment stages into a consistent release path.</span></p>
+                <p><strong>Policy gates</strong><span>Apply quality checks and approval boundaries before changes move between environments.</span></p>
+                <p><strong>Artifact provenance</strong><span>Keep build outputs and release metadata traceable across the delivery lifecycle.</span></p>
+                <p><strong>Deployment feedback</strong><span>Bring health signals and release status back into the engineering workflow.</span></p>
+              </div>
+            </div>
+          </section>
+
+          <section className="home-codelos home-codelos--sailwind" aria-labelledby="codelos-sailwind-title">
+            <div className="home-codelos__copy home-codelos__copy--wide">
+              <span className="home-codelos__eyebrow">05 / DISTRIBUTED ENGINEERING</span>
+              <h2 id="codelos-sailwind-title"><SplitText text="Build beyond" tag="span" /><br/><SplitText text="the local machine." tag="span" className="home-codelos__accent" /></h2>
+              <div className="home-codelos__caption-lines" aria-label="Sailwind extends the Codelos workflow across connected development and deployment environments.">
+                <SplitText text="Sailwind connects the engineering surface" tag="span" className="home-codelos__caption-line" delay={5} duration={420} />
+                <SplitText text="to a distributed execution model." tag="span" className="home-codelos__caption-line" delay={5} duration={420} />
+              </div>
+              <div className="home-codelos__feature-list">
+                <p><strong>Regional execution nodes</strong><span>Position workloads closer to teams, infrastructure, and the systems they serve.</span></p>
+                <p><strong>Environment portability</strong><span>Carry consistent project configuration across development, staging, and production.</span></p>
+                <p><strong>Service-aware routing</strong><span>Coordinate work across available environments with clear boundaries and observability.</span></p>
+                <p><strong>Resilient engineering fabric</strong><span>Design for graceful recovery when a node or dependency becomes unavailable.</span></p>
+              </div>
+            </div>
+          </section>
+
+          <section className="home-codelos home-codelos--closing" aria-labelledby="codelos-closing-title">
+            <div className="home-codelos__copy home-codelos__copy--closing">
+              <span className="home-codelos__eyebrow">CODELOS / ENGINEERING PLATFORM</span>
+              <h2 id="codelos-closing-title"><SplitText text="Engineering," tag="span" /><br/><SplitText text="in full flow." tag="span" className="home-codelos__accent home-codelos__closing-headline" delay={28} duration={760} /></h2>
+              <SplitText text="One connected environment for the people, intelligence, and infrastructure behind modern software." tag="p" className="home-codelos__closing-caption" delay={8} duration={520} />
+              <Link href="/products/codelos" className="home-codelos__link">
+                Discover Codelos <span aria-hidden="true">↗</span>
               </Link>
             </div>
           </section>
