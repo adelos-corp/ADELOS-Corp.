@@ -45,3 +45,5 @@ body > main.products-page{animation:none}
   .products-endnote{flex-direction:column;gap:9px;line-height:1.5}
 }
 @media(prefers-reduced-motion:reduce){.products-shell,.products-page > footer,.products-page > .site-footer{animation:none}.product-card-link,.product-card__explore b{transition:none}}
+
+@media(max-width:760px){.products-aurora{opacity:.48}}
