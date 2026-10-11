@@ -23,7 +23,6 @@ export default function Home() {
               <span className="home-william__eyebrow">01 / PERSONALIZED AI</span>
               <h2 id="william-title">William<br/><span>Graham.</span></h2>
               <p>Intelligence that feels less like a tool, and more like an extension of you.</p>
-              <Link href="/products/william-graham" className="home-william__link">Discover William Graham <span aria-hidden="true">↗</span></Link>
             </div>
           </section>
 
