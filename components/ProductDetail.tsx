@@ -68,7 +68,7 @@ export default function ProductDetail({
           <nav className="product-detail-related" aria-label="Related products">
             <div className="product-detail-related__heading"><span>THE CODELOS FAMILY</span><span>EXPLORE COMPONENTS ↘</span></div>
             <div>{relatedProducts.map((item) => (
-              {item.href.startsWith("https://") ? (
+              item.href.startsWith("https://") ? (
                 <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer">
                   <strong>{item.name}</strong>
                   <small>{item.description}</small>
