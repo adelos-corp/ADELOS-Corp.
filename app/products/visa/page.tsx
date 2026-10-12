@@ -9,5 +9,6 @@ export default function VISAPage() {
     accent="green"
     auroraColors={["#00FF07", "#75FF00", "#D1FF00"]}
     status="In development"
+    openHref="/visa"
   />;
 }
