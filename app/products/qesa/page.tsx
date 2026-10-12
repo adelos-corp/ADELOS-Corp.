@@ -9,5 +9,6 @@ export default function QESAPage() {
     accent="emerald"
     auroraColors={["#012901", "#134216", "#023A02"]}
     status="Coming soon"
+    openHref="/qesa"
   />;
 }
