@@ -1,15 +1,5 @@
 .product-site{position:relative;isolation:isolate;overflow:clip;background:#050509;color:#f6f5fb;--product-accent:#574CFD;--product-background:none}
 .product-site a{color:inherit;text-decoration:none}
-.product-site-nav{position:absolute;z-index:5;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px clamp(20px,5vw,76px);border-bottom:1px solid rgba(255,255,255,.1);background:rgba(5,5,9,.22);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-.product-site-brand{display:flex;align-items:center;gap:12px;font-size:.78rem;letter-spacing:.12em;white-space:nowrap}
-.product-site-brand>span:last-child{font-size:.7rem;letter-spacing:.15em}
-.product-site-brand i{color:var(--product-accent);font-style:normal}
-.product-site-brand__mark{display:grid;place-items:center;width:32px;height:32px;border:1px solid color-mix(in srgb,var(--product-accent) 72%,white 10%);border-radius:10px;color:var(--product-accent);font-size:1rem;font-weight:600}
-.product-site-nav nav{display:flex;align-items:center;gap:clamp(16px,3vw,42px)}
-.product-site-nav nav a,.product-site-all{color:rgba(255,255,255,.68);font-size:.76rem;transition:color .2s ease}
-.product-site-nav nav a:hover,.product-site-all:hover{color:#fff}
-.product-site-all{display:flex;align-items:center;gap:12px;white-space:nowrap}
-.product-site-all span{color:var(--product-accent)}
 .product-site-hero{position:relative;display:flex;align-items:center;min-height:min(940px,100svh);min-height:max(780px,100svh);padding:150px clamp(24px,10vw,160px) 90px;overflow:hidden;background:radial-gradient(ellipse at 76% 44%,color-mix(in srgb,var(--product-accent) 25%,transparent),transparent 34%),linear-gradient(130deg,rgba(0,0,0,.28),rgba(0,0,0,.86)),var(--product-background) center/cover no-repeat,#050509}
 .product-site-hero:after{position:absolute;inset:auto 0 0;height:220px;content:"";background:linear-gradient(transparent,#050509);pointer-events:none}
 .product-site-hero__copy{position:relative;z-index:2;width:min(760px,100%)}
@@ -52,5 +42,5 @@
 .product-site-bottom{display:flex;justify-content:space-between;gap:20px;padding:22px clamp(24px,5vw,76px);border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4);font-size:.58rem;letter-spacing:.18em}
 .product-site-bottom a{color:rgba(255,255,255,.72)}
 .product-site-bottom a span{margin-left:8px;color:var(--product-accent)}
-@media(max-width:800px){.product-site-nav{padding:18px 20px}.product-site-nav nav{display:none}.product-site-hero{min-height:780px;padding:140px 24px 100px}.product-site-hero__visual{top:34%;right:-30%;width:100vw;opacity:.4}.product-site-hero h1{font-size:clamp(4.5rem,17vw,8rem)}.product-site-acronym{margin-top:38px}.product-site-section{grid-template-columns:1fr;gap:28px;padding:90px 24px}.product-site-section--offset .product-site-section__content{padding-top:0}.product-site-section h2{font-size:clamp(3rem,12vw,5.4rem)}.product-site-capabilities{grid-template-columns:1fr;margin-top:32px}.product-site-closing{padding:100px 24px}.product-site-closing h2{font-size:clamp(3.6rem,14vw,6rem)}.product-site-bottom{font-size:.5rem;letter-spacing:.1em}.product-site-all{font-size:.64rem}.product-site-brand>span:last-child{font-size:.58rem}}
+@media(max-width:800px){.product-site-nav{padding:18px 20px}.product-site-nav nav{display:none}.product-site-hero{min-height:780px;padding:140px 24px 100px}.product-site-hero__visual{top:34%;right:-30%;width:100vw;opacity:.4}.product-site-hero h1{font-size:clamp(4.5rem,17vw,8rem)}.product-site-acronym{margin-top:38px}.product-site-section{grid-template-columns:1fr;gap:28px;padding:90px 24px}.product-site-section--offset .product-site-section__content{padding-top:0}.product-site-section h2{font-size:clamp(3rem,12vw,5.4rem)}.product-site-capabilities{grid-template-columns:1fr;margin-top:32px}.product-site-closing{padding:100px 24px}.product-site-closing h2{font-size:clamp(3.6rem,14vw,6rem)}.product-site-bottom{font-size:.5rem;letter-spacing:.1em}.product-site-brand>span:last-child{font-size:.58rem}}
 @media(prefers-reduced-motion:reduce){.product-site-button,.product-site-closing__link span{transition:none}}
