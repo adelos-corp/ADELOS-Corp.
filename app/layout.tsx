@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   description: "ADELOS Corp. builds advanced systems, research architectures, and engineering solutions.",
   icons: {
     icon: [
-      { url: "/adelos-logo-black.png", media: "(prefers-color-scheme: light)", type: "image/svg+xml" },
-      { url: "/adelos-logo-white.png", media: "(prefers-color-scheme: dark)", type: "image/svg+xml" },
+      { url: "/adelos-logo-black.png", media: "(prefers-color-scheme: light)", type: "image/png" },
+      { url: "/adelos-logo-white.png", media: "(prefers-color-scheme: dark)", type: "image/png" },
     ],
     shortcut: ["/adelos-logo-white.png"],
     apple: ["/adelos-logo-white.png"],
