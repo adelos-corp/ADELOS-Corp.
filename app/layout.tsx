@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   description: "ADELOS Corp. builds advanced systems, research architectures, and engineering solutions.",
   icons: {
     icon: [
-      { url: "/adelos-icon-black.svg", media: "(prefers-color-scheme: light)", type: "image/svg+xml" },
-      { url: "/adelos-icon-white.svg", media: "(prefers-color-scheme: dark)", type: "image/svg+xml" },
+      { url: "/adelos-logo-black.png", media: "(prefers-color-scheme: light)", type: "image/svg+xml" },
+      { url: "/adelos-logo-white.png", media: "(prefers-color-scheme: dark)", type: "image/svg+xml" },
     ],
-    shortcut: ["/adelos-icon-white.svg"],
-    apple: ["/adelos-icon-white.svg"],
+    shortcut: ["/adelos-logo-white.png"],
+    apple: ["/adelos-logo-white.png"],
   },
 };
 
