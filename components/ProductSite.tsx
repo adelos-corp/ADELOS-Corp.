@@ -23,13 +23,6 @@ export type ProductSiteData = {
 export default function ProductSite({ product }: { product: ProductSiteData }) {
   return (
     <main className="product-site" style={{ "--product-accent": product.accent, "--product-background": `url("${product.background}")` } as CSSProperties}>
-      <header className="product-site-nav">
-        <Link href="/" className="product-site-brand" aria-label="ADELOS Corp home"><span className="product-site-brand__mark">A</span><span>ADELOS <i>/</i> {product.name}</span></Link>
-        <nav aria-label={product.name + " navigation"}>
-          <a href="#overview">Overview</a><a href="#architecture">Architecture</a><a href="#discover">Discover</a>
-        </nav>
-        <Link href="/products" className="product-site-all">ADELOS portfolio <span aria-hidden="true">↗</span></Link>
-      </header>
 
       <section id="overview" className="product-site-hero">
         <div className="product-site-hero__visual" aria-hidden="true"><div className="product-site-orbit product-site-orbit--one"/><div className="product-site-orbit product-site-orbit--two"/><div className="product-site-core"/></div>
