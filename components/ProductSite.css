@@ -1,0 +1,56 @@
+.product-site{position:relative;isolation:isolate;overflow:clip;background:#050509;color:#f6f5fb;--product-accent:#574CFD;--product-background:none}
+.product-site a{color:inherit;text-decoration:none}
+.product-site-nav{position:absolute;z-index:5;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px clamp(20px,5vw,76px);border-bottom:1px solid rgba(255,255,255,.1);background:rgba(5,5,9,.22);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.product-site-brand{display:flex;align-items:center;gap:12px;font-size:.78rem;letter-spacing:.12em;white-space:nowrap}
+.product-site-brand>span:last-child{font-size:.7rem;letter-spacing:.15em}
+.product-site-brand i{color:var(--product-accent);font-style:normal}
+.product-site-brand__mark{display:grid;place-items:center;width:32px;height:32px;border:1px solid color-mix(in srgb,var(--product-accent) 72%,white 10%);border-radius:10px;color:var(--product-accent);font-size:1rem;font-weight:600}
+.product-site-nav nav{display:flex;align-items:center;gap:clamp(16px,3vw,42px)}
+.product-site-nav nav a,.product-site-all{color:rgba(255,255,255,.68);font-size:.76rem;transition:color .2s ease}
+.product-site-nav nav a:hover,.product-site-all:hover{color:#fff}
+.product-site-all{display:flex;align-items:center;gap:12px;white-space:nowrap}
+.product-site-all span{color:var(--product-accent)}
+.product-site-hero{position:relative;display:flex;align-items:center;min-height:min(940px,100svh);min-height:max(780px,100svh);padding:150px clamp(24px,10vw,160px) 90px;overflow:hidden;background:radial-gradient(ellipse at 76% 44%,color-mix(in srgb,var(--product-accent) 25%,transparent),transparent 34%),linear-gradient(130deg,rgba(0,0,0,.28),rgba(0,0,0,.86)),var(--product-background) center/cover no-repeat,#050509}
+.product-site-hero:after{position:absolute;inset:auto 0 0;height:220px;content:"";background:linear-gradient(transparent,#050509);pointer-events:none}
+.product-site-hero__copy{position:relative;z-index:2;width:min(760px,100%)}
+.product-site-overline{display:block;color:rgba(255,255,255,.56);font-size:.62rem;letter-spacing:.28em;line-height:1.7}
+.product-site-acronym{margin:46px 0 12px;color:var(--product-accent);font-size:.72rem;letter-spacing:.23em;text-transform:uppercase}
+.product-site-hero h1{margin:0;font-size:clamp(5.4rem,13vw,13rem);font-weight:450;line-height:.78;letter-spacing:-.095em}
+.product-site-hero h1 span{color:var(--product-accent)}
+.product-site-tagline{max-width:700px;margin:34px 0 16px;font-size:clamp(1.3rem,2.6vw,2.15rem);line-height:1.2;letter-spacing:-.035em}
+.product-site-description{max-width:550px;margin:0;color:rgba(255,255,255,.64);font-size:1rem;line-height:1.8}
+.product-site-hero__actions{display:flex;align-items:center;flex-wrap:wrap;gap:26px;margin-top:32px}
+.product-site-button{display:inline-flex;align-items:center;gap:28px;padding:15px 19px;border:1px solid color-mix(in srgb,var(--product-accent) 62%,white 12%);border-radius:999px;background:rgba(255,255,255,.045);font-size:.8rem;transition:background .25s ease,transform .25s ease}
+.product-site-button:hover{transform:translateY(-2px);background:color-mix(in srgb,var(--product-accent) 17%,transparent)}
+.product-site-button span{color:var(--product-accent)}
+.product-site-status{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,.52);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase}
+.product-site-status i{width:6px;height:6px;border-radius:50%;background:var(--product-accent);box-shadow:0 0 14px var(--product-accent)}
+.product-site-hero__visual{position:absolute;top:50%;right:-6%;width:min(56vw,760px);aspect-ratio:1;transform:translateY(-48%);opacity:.7;pointer-events:none}
+.product-site-orbit{position:absolute;inset:10%;border:1px solid color-mix(in srgb,var(--product-accent) 50%,transparent);border-radius:50%;transform:rotate(-28deg) scaleY(.54)}
+.product-site-orbit--two{inset:0 12%;transform:rotate(54deg) scaleY(.7);border-color:color-mix(in srgb,var(--product-accent) 25%,transparent)}
+.product-site-core{position:absolute;inset:28%;border-radius:50%;background:radial-gradient(circle at 34% 30%,color-mix(in srgb,var(--product-accent) 70%,white 8%),color-mix(in srgb,var(--product-accent) 22%,transparent) 32%,transparent 70%);filter:blur(3px);box-shadow:0 0 100px color-mix(in srgb,var(--product-accent) 30%,transparent)}
+.product-site-hero__index{position:absolute;z-index:2;right:clamp(24px,5vw,76px);bottom:40px;left:clamp(24px,5vw,76px);display:flex;justify-content:space-between;color:rgba(255,255,255,.4);font-size:.56rem;letter-spacing:.2em}
+.product-site-story{position:relative;z-index:1;background:#050509}
+.product-site-section{display:grid;grid-template-columns:minmax(130px,.55fr) minmax(0,1.45fr);gap:clamp(28px,8vw,130px);padding:clamp(90px,13vw,190px) clamp(24px,10vw,160px);border-top:1px solid rgba(255,255,255,.09)}
+.product-site-section--offset .product-site-section__content{padding-top:clamp(0px,4vw,54px)}
+.product-site-section__index{display:flex;align-items:flex-start;gap:18px;color:rgba(255,255,255,.42);font-size:.62rem;letter-spacing:.18em}
+.product-site-section__index span:first-child{color:var(--product-accent)}
+.product-site-section__content{max-width:1000px}
+.product-site-section h2{max-width:900px;margin:0;font-size:clamp(3rem,7.3vw,7.5rem);font-weight:430;line-height:.92;letter-spacing:-.075em}
+.product-site-section__body{max-width:660px;margin:28px 0 0;color:rgba(255,255,255,.62);font-size:clamp(1rem,1.5vw,1.2rem);line-height:1.8}
+.product-site-capabilities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 38px;margin-top:52px}
+.product-site-capability{position:relative;padding:22px 0 25px 20px;border-top:1px solid color-mix(in srgb,var(--product-accent) 38%,transparent)}
+.product-site-capability__dot{position:absolute;top:29px;left:0;width:5px;height:5px;border-radius:50%;background:var(--product-accent)}
+.product-site-capability h3{margin:0 0 9px;font-size:1rem;font-weight:500}
+.product-site-capability p{max-width:390px;margin:0;color:rgba(255,255,255,.56);font-size:.85rem;line-height:1.65}
+.product-site-closing{position:relative;overflow:hidden;padding:clamp(100px,15vw,210px) clamp(24px,10vw,160px);background:radial-gradient(ellipse at 70% 55%,color-mix(in srgb,var(--product-accent) 22%,transparent),transparent 40%),#07070c;border-top:1px solid rgba(255,255,255,.1)}
+.product-site-closing h2{max-width:1150px;margin:30px 0;font-size:clamp(3.8rem,9vw,9.2rem);font-weight:430;line-height:.9;letter-spacing:-.08em}
+.product-site-closing>p{max-width:620px;color:rgba(255,255,255,.62);font-size:1rem;line-height:1.8}
+.product-site-closing__link{display:inline-flex;align-items:center;gap:22px;margin-top:24px;padding:16px 0;border-bottom:1px solid var(--product-accent);font-size:.9rem}
+.product-site-closing__link span{color:var(--product-accent);transition:transform .2s ease}
+.product-site-closing__link:hover span{transform:translate(3px,-3px)}
+.product-site-bottom{display:flex;justify-content:space-between;gap:20px;padding:22px clamp(24px,5vw,76px);border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4);font-size:.58rem;letter-spacing:.18em}
+.product-site-bottom a{color:rgba(255,255,255,.72)}
+.product-site-bottom a span{margin-left:8px;color:var(--product-accent)}
+@media(max-width:800px){.product-site-nav{padding:18px 20px}.product-site-nav nav{display:none}.product-site-hero{min-height:780px;padding:140px 24px 100px}.product-site-hero__visual{top:34%;right:-30%;width:100vw;opacity:.4}.product-site-hero h1{font-size:clamp(4.5rem,17vw,8rem)}.product-site-acronym{margin-top:38px}.product-site-section{grid-template-columns:1fr;gap:28px;padding:90px 24px}.product-site-section--offset .product-site-section__content{padding-top:0}.product-site-section h2{font-size:clamp(3rem,12vw,5.4rem)}.product-site-capabilities{grid-template-columns:1fr;margin-top:32px}.product-site-closing{padding:100px 24px}.product-site-closing h2{font-size:clamp(3.6rem,14vw,6rem)}.product-site-bottom{font-size:.5rem;letter-spacing:.1em}.product-site-all{font-size:.64rem}.product-site-brand>span:last-child{font-size:.58rem}}
+@media(prefers-reduced-motion:reduce){.product-site-button,.product-site-closing__link span{transition:none}}
