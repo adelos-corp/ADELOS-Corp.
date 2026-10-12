@@ -2,10 +2,10 @@ import ProductDetail from "@/components/ProductDetail";
 
 const components = [
   { name: "Codelos IDE", href: "/products/codelos/ide", description: "Development environment" },
-  { name: "Daemon", href: "/products/codelos/daemon", description: "Distributed systems" },
-  { name: "Sailwind", href: "/products/codelos/sailwind", description: "Platform interface" },
+  { name: "Daemon", href: "https://daemon-labs.vercel.app/", description: "Distributed systems" },
+  { name: "Sailwind", href: "https://visa-adelos.vercel.app/", description: "Platform interface" },
   { name: "COCOA", href: "/products/codelos/cocoa", description: "Codelos component" },
-  { name: "Fly", href: "/products/codelos/fly", description: "Codelos component" },
+  { name: "Fly", href: "https://aom-workshop-2026.vercel.app/", description: "Codelos component" },
 ];
 
 export default function CodelosPage() {
