@@ -371,7 +371,7 @@ export default function Home() {
               <span className="home-codelos__eyebrow">CODELOS / ENGINEERING PLATFORM</span>
               <h2 id="codelos-closing-title"><SplitText text="Engineering," tag="span" /><br/><SplitText text="in full flow." tag="span" className="home-codelos__accent home-codelos__closing-headline" delay={28} duration={760} /></h2>
               <SplitText text="One connected environment for the people, intelligence, and infrastructure behind modern software." tag="p" className="home-codelos__closing-caption" delay={8} duration={520} />
-              <Link href="/codelos" className="home-codelos__link">
+              <Link href="/products/codelos" className="home-codelos__link">
                 Discover Codelos <span aria-hidden="true">↗</span>
               </Link>
             </div>
@@ -442,7 +442,7 @@ export default function Home() {
               <span className="home-visa__eyebrow">VISA / VISUAL INTELLIGENCE SYSTEMS ARCHITECTURE</span>
               <h2 id="visa-closing-title"><SplitText text="Interact beyond" tag="span" /><br/><SplitText text="the ordinary." tag="span" className="home-visa__accent home-visa__closing-headline" delay={28} duration={760} /></h2>
               <SplitText text="A software-first exploration of visual perception, gesture, and the next interface." tag="p" className="home-visa__closing-caption" delay={8} duration={520} />
-              <Link href="/visa" className="home-visa__link">Discover VISA <span aria-hidden="true">↗</span></Link>
+              <Link href="/products/visa" className="home-visa__link">Discover VISA <span aria-hidden="true">↗</span></Link>
             </div>
           </section>
         </section>
@@ -530,7 +530,7 @@ export default function Home() {
               <span className="home-qesa__eyebrow">QESA / QUANTUM ENCRYPTION SYSTEMS ARCHITECTURE</span>
               <h2 id="qesa-closing-title"><SplitText text="Security that" tag="span" /><br/><SplitText text="starts at the foundation." tag="span" className="home-qesa__accent home-qesa__closing-headline" delay={28} duration={760} /></h2>
               <SplitText text="Cryptographic protection, intelligent monitoring, and quantum-security research, brought together in a modular architecture." tag="p" className="home-qesa__closing-caption" delay={8} duration={520} />
-              <Link href="/qesa" className="home-qesa__link">Discover QESA <span aria-hidden="true">↗</span></Link>
+              <Link href="/products/qesa" className="home-qesa__link">Discover QESA <span aria-hidden="true">↗</span></Link>
             </div>
           </section>
         </section>
@@ -619,7 +619,7 @@ export default function Home() {
               <span className="home-tensa__eyebrow">TENSA / TENDON ENGINEERED NATURAL SYSTEMS ARCHITECTURE</span>
               <h2 id="tensa-closing-title"><SplitText text="The next evolution" tag="span" /><br/><SplitText text="of embodied intelligence." tag="span" className="home-tensa__accent home-tensa__closing-headline" delay={28} duration={760} /></h2>
               <SplitText text="Mechanically intelligent systems inspired by biology, designed for movement, and developed through rigorous research." tag="p" className="home-tensa__closing-caption" delay={8} duration={520} />
-              <Link href="/tensa" className="home-tensa__link">Discover TENSA <span aria-hidden="true">↗</span></Link>
+              <Link href="/products/tensa" className="home-tensa__link">Discover TENSA <span aria-hidden="true">↗</span></Link>
             </div>
           </section>
         </section>
