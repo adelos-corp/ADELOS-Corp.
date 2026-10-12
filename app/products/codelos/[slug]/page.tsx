@@ -11,5 +11,5 @@ const components: Record<string, { name: string; number: string }> = {
 export default async function CodelosComponentPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const item = components[slug] ?? { name: "Codelos", number: "03" };
-  return <ProductDetail name={item.name} number={item.number} category="Codelos" description="A component of the Codelos engineering platform." accent="orange" status="Under active development"/>;
+  return <ProductDetail name={item.name} number={item.number} category="Codelos" description="A component of the Codelos engineering platform." accent="orange" auroraColors={["#FF9A3D", "#FF5A36", "#3A120A"]} status="Under active development"/>;
 }
