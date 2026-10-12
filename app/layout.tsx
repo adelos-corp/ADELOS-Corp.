@@ -10,6 +10,14 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   title: "ADELOS Corp. | Engineering solutions that solve tomorrow.",
   description: "ADELOS Corp. builds advanced systems, research architectures, and engineering solutions.",
+  icons: {
+    icon: [
+      { url: "/adelos-icon-black.svg", media: "(prefers-color-scheme: light)", type: "image/svg+xml" },
+      { url: "/adelos-icon-white.svg", media: "(prefers-color-scheme: dark)", type: "image/svg+xml" },
+    ],
+    shortcut: ["/adelos-icon-white.svg"],
+    apple: ["/adelos-icon-white.svg"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
