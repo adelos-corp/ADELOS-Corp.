@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import SiteFooter from "@/components/SiteFooter";
 import "./ProductSite.css";
 
@@ -21,7 +22,7 @@ export type ProductSiteData = {
 
 export default function ProductSite({ product }: { product: ProductSiteData }) {
   return (
-    <main className="product-site" style={{ "--product-accent": product.accent, "--product-background": `url("${product.background}")` } as React.CSSProperties}>
+    <main className="product-site" style={{ "--product-accent": product.accent, "--product-background": `url("${product.background}")` } as CSSProperties}>
       <header className="product-site-nav">
         <Link href="/" className="product-site-brand" aria-label="ADELOS Corp home"><span className="product-site-brand__mark">A</span><span>ADELOS <i>/</i> {product.name}</span></Link>
         <nav aria-label={product.name + " navigation"}>
