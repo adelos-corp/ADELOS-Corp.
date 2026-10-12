@@ -9,5 +9,6 @@ export default function TENSAPage() {
     accent="red"
     auroraColors={["#290101", "#421313", "#3A0202"]}
     status="Under active development"
+    openHref="/tensa"
   />;
 }
