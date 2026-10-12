@@ -80,7 +80,7 @@ export default function ProductDetail({
                   <small>{item.description}</small>
                   <b aria-hidden="true">↗</b>
                 </Link>
-              )}
+              )
             ))}</div>
           </nav>
         )}
