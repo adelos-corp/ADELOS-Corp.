@@ -17,6 +17,7 @@ export default function CodelosPage() {
     accent="violet"
     auroraColors={["#574CFD", "#0E0597", "#002FFF"]}
     status="Under active development"
+    openHref="/codelos"
     relatedProducts={components}
   />;
 }
